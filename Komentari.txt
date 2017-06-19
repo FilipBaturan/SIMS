@@ -1,5 +1,6 @@
 ZA ACU
 ---------------------------------------------
+Mozda da stavis dodavanje za dodavanje imena i lozinke u jedan, kao samo dodavanja. Posto i jedan i drugi nemaju dodatnih veza sa ostalima. Nisam siguran da li tako treba?
 
 
 
