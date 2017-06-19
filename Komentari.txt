@@ -21,5 +21,23 @@ ZA PATKICU
 
 
 
-ZA VODJU TIMA
+ZA BELO MESO
 -------------------------------------------------
+Dodaj Administratora kao aktera u svom use case i izmeni smerove strelica za include i extend.
+Kod use case dijagrama, kod slucaja za Dodavanje entiteta stavi kod Exceptions 
+ukoloko pokusa da doda vec postojeci enititet, sistem korisniku prijavljuje gresku. U Exceptions
+stavljas sve izuzetke koji mogu da se dese. Ista stvar kod brisanja i izmene ako korisnik
+hoce da obrise ili izmeni nepostojeci entitet.
+Za Dodavanje entiteta možes da stavis u Extension points ako korisnik aktivira opciju za dodavanje
+igraca vrši se dodavanje igraca, ako korisnik aktivira opciju za dodavanje tima vrši se dodavanje 
+tima itd... Isto tako brisanje,izmenu i ostalo
+
+NEDOUMICE
+-------------------------------------------------
+DA LI JE MOCUJE DA TIM IGRA UTAKMICU AKO NAJVIŠE IMA MANJE OD PET  IGRACA
+
+KAKO CEMO PREDSTAVLJSTI KRAJ UTAKMICE, DA LI CE BITI POSEBNO DUGME ZA KRAJ
+ILI CE SE KRAJ AUTOMATSKI REGISTROVATI NAKON ISTEKA VREMENA.
+
+PRLIKOM AZURIRANJA UTAKMICE DA LI JE POTREBNO IMATI POSEBNO DUGME ZA ODUSTANJE
+OD AŽURIANJA UTAKMICE I PRITOM DA SE NE EVINDENTIRAJU ZABELEZENE PROMENE....
