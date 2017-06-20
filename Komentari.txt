@@ -11,9 +11,18 @@ Posto i jedan i drugi nemaju dodatnih veza sa ostalima. Nisam siguran da li tako
 
 ZA PATKICU
 -----------------------------------------------
+azuriranje utakmice(use case): dodati podvrstu pogotka, promasaja, licne greske, izgubljene lopte, skoka?
+
+
+ZA FILIPA
+-----------------------------------------------
 
 
 
+ZA ASISTENTA
+-----------------------------------------------
+Da li je okej da u use case dijagramu za login stoje unos korisnickog imena i unos lozinke
+posebno ili mogu da stoje zajedno?  
 
 
 
