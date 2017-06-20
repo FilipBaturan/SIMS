@@ -16,7 +16,14 @@ azuriranje utakmice(use case): dodati podvrstu pogotka, promasaja, licne greske,
 
 ZA FILIPA
 -----------------------------------------------
-
+Dodaj Administratora kao aktera u svom use case i izmeni smerove strelica za include i extend.
+Kod use case dijagrama, kod slucaja za Dodavanje entiteta stavi kod Exceptions 
+ukoloko pokusa da doda vec postojeci enititet, sistem korisniku prijavljuje gresku. U Exceptions
+stavljas sve izuzetke koji mogu da se dese. Ista stvar kod brisanja i izmene ako korisnik
+hoce da obrise ili izmeni nepostojeci entitet.
+Za Dodavanje entiteta možes da stavis u Extension points ako korisnik aktivira opciju za dodavanje
+igraca vrši se dodavanje igraca, ako korisnik aktivira opciju za dodavanje tima vrši se dodavanje 
+tima itd... Isto tako brisanje,izmenu i ostalo
 
 
 ZA ASISTENTA
@@ -25,10 +32,14 @@ Da li je okej da u use case dijagramu za login stoje unos korisnickog imena i un
 posebno ili mogu da stoje zajedno?  
 
 
+NEDOUMICE
+----------------------------------------------
+
+KAKO CEMO PREDSTAVLJSTI KRAJ UTAKMICE, DA LI CE BITI POSEBNO DUGME ZA KRAJ
+ILI CE SE KRAJ AUTOMATSKI REGISTROVATI NAKON ISTEKA VREMENA.
+
+PRLIKOM AZURIRANJA UTAKMICE DA LI JE POTREBNO IMATI POSEBNO DUGME ZA ODUSTANJE
+OD AŽURIANJA UTAKMICE I PRITOM DA SE NE EVINDENTIRAJU ZABELEZENE PROMENE....
 
 
 
-
-
-ZA VODJU TIMA
--------------------------------------------------
