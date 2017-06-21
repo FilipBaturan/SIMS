@@ -1,9 +1,6 @@
 
 PITANJA ZA SVE
 ----------------------
-DA LI KLUB ILI SALA TREBAJU DA IMAJU MESTO?
-
-Zasto nam je trener korisnik aplikacije?? Zar ne bi samo trebalo da svaki tim ima svog trenera?
 
 
 
@@ -48,8 +45,6 @@ OD AŽURIANJA UTAKMICE I PRITOM DA SE NE EVINDENTIRAJU ZABELEZENE PROMENE....
 PITATI ZA ADMINA
 
 PITATI ZA EXCEPTION KOD AZURIRANJE BAZE, 2. EXTENSIONS
-
-DA LI KLUB ILI SALA TREBAJU DA IMAJU MESTO?
 
 
 
