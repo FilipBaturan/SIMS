@@ -1,7 +1,15 @@
+
+PITANJA ZA SVE
+----------------------
+DA LI KLUB ILI SALA TREBAJU DA IMAJU MESTO?
+
+Zasto nam je trener korisnik aplikacije?? Zar ne bi samo trebalo da svaki tim ima svog trenera?
+
+
+
 ZA ACU
 ---------------------------------------------
-Mozda da stavis dodavanje za dodavanje imena i lozinke u jedan, kao samo dodavanja.
-Posto i jedan i drugi nemaju dodatnih veza sa ostalima. Nisam siguran da li tako treba?
+
 
 
 
@@ -12,6 +20,8 @@ Posto i jedan i drugi nemaju dodatnih veza sa ostalima. Nisam siguran da li tako
 ZA PATKICU
 -----------------------------------------------
 azuriranje utakmice(use case): dodati podvrstu pogotka, promasaja, licne greske, izgubljene lopte, skoka?
+
+
 
 
 ZA FILIPA
@@ -38,6 +48,8 @@ OD AŽURIANJA UTAKMICE I PRITOM DA SE NE EVINDENTIRAJU ZABELEZENE PROMENE....
 PITATI ZA ADMINA
 
 PITATI ZA EXCEPTION KOD AZURIRANJE BAZE, 2. EXTENSIONS
+
+DA LI KLUB ILI SALA TREBAJU DA IMAJU MESTO?
 
 
 
