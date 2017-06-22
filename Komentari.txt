@@ -16,7 +16,7 @@ ZA ACU
 
 ZA PATKICU
 -----------------------------------------------
-azuriranje utakmice(use case): dodati podvrstu pogotka, promasaja, licne greske, izgubljene lopte, skoka?
+
 
 
 
@@ -44,7 +44,9 @@ PITATI ZA ADMINA
 PITATI ZA EXCEPTION KOD AZURIRANJE BAZE, 2. EXTENSIONS
 
 Da li mozemo imati slobodne igrace, zbor kolekcije igraca unutar same aplikacije, a ne samo unutar kluba?
-Da li mozemo da imamo slucaj da nema trenera za u nekom klubu, u odredjenom trenutku?
+(ako ne mozemo da imamo slobodne igrace onda promenimo minimalni kardinalitet izmedju kluba i igraca) 
+Da li mozemo da imamo slucaj da nema trenera u nekom klubu, u odredjenom trenutku?
+(ako ne moze isti slucaj kao i za igrace)
 Da li mozemo da vrsimo asocijaciju neke klase sa asocijativnom klasom?
 Da li treba da evidentiramo svaku izmenu pojedinacno sa podacima vezanim za istu, ili da samo brojimo
 koliko izmena je isvrseno?
@@ -52,5 +54,15 @@ koliko izmena je isvrseno?
 Kako se koriste signali u powerdesigner-u
 
 
+Da li treba da dodamo u utakmici stanje timeout i stanje  zavrsena
 
 
+
+treba izmeniti da se klase koje imaju asocijativnu klasu da imaju usemrenu asocijaciju tako da 
+utakmica ne  videli tu referencu.U sustini utakmica ce imati samo referecnu na domacina i na gosta
+i preko njih pristupa trenerima i igracima i vrsi azuriranje
+
+problem sa kompozicijom, ucinak igraca i ucinak trenera imaju kompoziciju sa klasom licne greske,
+to znaci kad bi se obrisao trener trebalo bi da se obrise i objekat licne greske ali problem je 
+u tome sto je ona vezana za igraca, moje resenje je da za jednog stavimo kompoziciju a za sve ostle
+da se stavi agregacija
