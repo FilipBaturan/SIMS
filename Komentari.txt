@@ -48,7 +48,7 @@ Da li mozemo imati slobodne igrace, zbor kolekcije igraca unutar same aplikacije
 Da li mozemo da imamo slucaj da nema trenera u nekom klubu, u odredjenom trenutku?
 (ako ne moze isti slucaj kao i za igrace)
 Da li mozemo da vrsimo asocijaciju neke klase sa asocijativnom klasom?
-Da li treba da evidentiramo svaku izmenu pojedinacno sa podacima vezanim za istu, ili da samo brojimo
+Da li treba da evidentiramo svaku izmenu pojedinacno sa podacima vezanim za nju, ili da samo brojimo
 koliko izmena je isvrseno?
 
 Kako se koriste signali u powerdesigner-u
@@ -58,7 +58,7 @@ Da li treba da dodamo u utakmici stanje timeout i stanje  zavrsena
 
 
 
-treba izmeniti da se klase koje imaju asocijativnu klasu da imaju usemrenu asocijaciju tako da 
+treba izmeniti da se klase koje imaju asocijativnu klasu da imaju usmerenu asocijaciju tako da 
 utakmica ne  videli tu referencu.U sustini utakmica ce imati samo referecnu na domacina i na gosta
 i preko njih pristupa trenerima i igracima i vrsi azuriranje
 
