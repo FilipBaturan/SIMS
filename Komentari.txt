@@ -49,5 +49,8 @@ Da li mozemo da vrsimo asocijaciju neke klase sa asocijativnom klasom?
 Da li treba da evidentiramo svaku izmenu pojedinacno sa podacima vezanim za istu, ili da samo brojimo
 koliko izmena je isvrseno?
 
+Kako se koriste signali u powerdesigner-u
+
+
 
 
