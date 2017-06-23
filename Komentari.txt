@@ -32,9 +32,6 @@ Da li je okej da u use case dijagramu za login stoje unos korisnickog imena i un
 posebno ili mogu da stoje zajedno?  
 
 
-NEDOUMICE
-----------------------------------------------
-
 KAKO CEMO PREDSTAVLJSTI KRAJ UTAKMICE, DA LI CE BITI POSEBNO DUGME ZA KRAJ
 ILI CE SE KRAJ AUTOMATSKI REGISTROVATI NAKON ISTEKA VREMENA.
 
@@ -45,6 +42,12 @@ OD AŽURIANJA UTAKMICE I PRITOM DA SE NE EVINDENTIRAJU ZABELEZENE PROMENE....
 PITATI ZA ADMINA
 
 PITATI ZA EXCEPTION KOD AZURIRANJE BAZE, 2. EXTENSIONS
+
+Da li mozemo imati slobodne igrace, zbor kolekcije igraca unutar same aplikacije, a ne samo unutar kluba?
+Da li mozemo da imamo slucaj da nema trenera za u nekom klubu, u odredjenom trenutku?
+Da li mozemo da vrsimo asocijaciju neke klase sa asocijativnom klasom?
+Da li treba da evidentiramo svaku izmenu pojedinacno sa podacima vezanim za istu, ili da samo brojimo
+koliko izmena je isvrseno?
 
 
 
