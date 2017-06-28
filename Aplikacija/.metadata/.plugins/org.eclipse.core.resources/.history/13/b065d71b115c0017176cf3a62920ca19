@@ -1,0 +1,9 @@
+package Model;
+import java.util.Date;
+
+public class Osoba {
+	int id;
+	String ime;
+	String prezime;
+	Date datumRodjenja;
+}
