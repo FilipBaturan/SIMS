@@ -1,0 +1,10 @@
+package Model;
+
+public class Mesto {
+<<<<<<< HEAD
+	private int broj;
+=======
+
+	private String naziv;
+>>>>>>> branch 'master' of https://github.com/FilipBaturan/SIMS.git
+}

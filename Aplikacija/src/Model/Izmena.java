@@ -1,0 +1,16 @@
+package Model;
+
+public class Izmena {
+	public Igrac ulazi;
+	public Igrac izlazi;
+	
+	public Izmena(){}
+	
+	public Izmena(Igrac ulazi, Igrac izlazi) {
+		super();
+		this.ulazi = ulazi;
+		this.izlazi = izlazi;
+	}
+	
+	
+}
