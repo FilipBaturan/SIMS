@@ -9,7 +9,7 @@ public class Main {
 	public static void main(String[] args) {
 		System.out.println("Jeeeeeeeeeeeeeee\n");
 		PrijavljivanjeDijalog go = new PrijavljivanjeDijalog();
-		
+		System.out.println("Izmenio nesto");
 
 	}
 
