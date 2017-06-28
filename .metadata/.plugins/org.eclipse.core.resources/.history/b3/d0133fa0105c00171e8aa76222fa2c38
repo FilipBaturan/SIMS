@@ -1,0 +1,10 @@
+package GUI;
+
+import javax.swing.JFrame;
+
+public class GlavniOkvir extends JFrame{
+
+	//this.setTitle("asd");
+	
+	
+}

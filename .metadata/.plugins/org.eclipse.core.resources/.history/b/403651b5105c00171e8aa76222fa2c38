@@ -1,0 +1,14 @@
+package GUI;
+
+import javax.swing.JFrame;
+
+public class GlavniOkvir extends JFrame{
+
+	public GlavniOkvir()
+	{
+		this.setTitle("Test naslov");
+	}
+	//this.setTitle("asd");
+	
+	
+}
