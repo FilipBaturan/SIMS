@@ -1,0 +1,15 @@
+package Model;
+
+import GUI.GlavniOkvir;
+
+public class Main {
+
+	public static void main(String[] args) {
+		System.out.println("Jeeeeeeeeeeeeeee\n");
+		GlavniOkvir go = new GlavniOkvir();
+		go.setLocation(250, 100);
+		go.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+	}
+
+}
