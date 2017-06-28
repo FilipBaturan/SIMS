@@ -5,10 +5,13 @@ import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.GridLayout;
 import java.awt.Insets;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
@@ -23,7 +26,7 @@ public class PrijavljivanjeDijalog extends JFrame{
 		this.setSize(400, 200);
 		
 		
-		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
 		
 		
 	}
@@ -33,12 +36,11 @@ public class PrijavljivanjeDijalog extends JFrame{
 		
 		JLabel ime = new JLabel("Unesite korisnicko ime");
 		JTextField poljeZaIme = new JTextField();
-		
 		poljeZaIme.setColumns(15);
-		JLabel prezime = new JLabel("Unesite lozinku");
 		
-		JTextField poljePrezimena = new JTextField();
-		poljePrezimena.setColumns(15);
+		JLabel lozinka = new JLabel("Unesite lozinku");
+		JTextField poljeLozinke = new JTextField();
+		poljeLozinke.setColumns(15);
 		
 		JButton okButton = new JButton("OK");
 		JButton cancleButton = new JButton("Cancel");
@@ -54,8 +56,8 @@ public class PrijavljivanjeDijalog extends JFrame{
 		
 		JPanel p2 = new JPanel();
 		p2.setLayout(new GridLayout(1,1));
-		p2.add(prezime);
-		p2.add(poljePrezimena);
+		p2.add(lozinka);
+		p2.add(poljeLozinke);
 		
 		JPanel p3 = new JPanel();
 		p3.setLayout(new GridLayout(1,1));
@@ -90,6 +92,47 @@ public class PrijavljivanjeDijalog extends JFrame{
 		glavniPanel.add(p4, gbc);
 		
 		this.getContentPane().add(glavniPanel, BorderLayout.CENTER);
+		
+		
+		cancleButton.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+			}
+		});
+		
+		
+		okButton.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				String korisnickoImeTekst = ime.getText();
+				String lozinkaTekst = lozinka.getText();
+				
+				if (true/*pronadjiKorisnika(korisnickoImeTekst, lozinkaTekst*/)
+				{
+					dispose();
+					new GlavniProzor();
+				}
+				else
+				{
+					JOptionPane.showMessageDialog(null, "Uneti korinisk ne postoji"
+							, "Nepostojeci Korosnik", JOptionPane.INFORMATION_MESSAGE);
+				}
+			}
+		});
+		
+		
+		registracija.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				new RegistracijaDijalog();
+				
+			}
+		});
+		
 		
 	}
 	
