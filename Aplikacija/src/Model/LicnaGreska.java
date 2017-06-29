@@ -3,12 +3,9 @@ package Model;
 public class LicnaGreska {
 	private VrstaLicneGreske tipLicneGreske;
 
-	public LicnaGreska() {
-		super();
-	}
+	public LicnaGreska() { }
 
 	public LicnaGreska(VrstaLicneGreske tipLicneGreske) {
-		super();
 		this.tipLicneGreske = tipLicneGreske;
 	}
 
