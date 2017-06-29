@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class Klub {
 	private String naziv;
 	private int id;
+	public StatistikaKluba statistikaKluba;
 	public Mesto mestoOsnivanja;
 	public Trener trener;
 	public ArrayList<Igrac> igraci;
