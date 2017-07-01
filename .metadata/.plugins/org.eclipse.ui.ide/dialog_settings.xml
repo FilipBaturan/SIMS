@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
+<<<<<<< HEAD
 	<section name="ExternalProjectImportWizard">
 		<item value="false" key="WizardProjectsImportPage.STORE_NESTED_PROJECTS"/>
 		<item value="false" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
@@ -19,4 +20,9 @@
 		<item value="202" key="DIALOG_X_ORIGIN"/>
 		<item value="197" key="DIALOG_Y_ORIGIN"/>
 	</section>
+=======
+	<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+		<item value="D:\FTN-SIIT\SIMS\projekat_kosarka\SIMS\Aplikacija"/>
+	</list>
+>>>>>>> 992c461453f53874c4b50818b4d866c8207723a3
 </section>

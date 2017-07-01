@@ -1,0 +1,9 @@
+package Model;
+
+public class Mesto {	
+	private int postanskiBroj;
+	private String naziv;
+	private String treciAtribut;
+	private String cetvrtiAtribut;
+
+}

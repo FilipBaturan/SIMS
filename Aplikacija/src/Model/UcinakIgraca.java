@@ -14,7 +14,7 @@ public class UcinakIgraca {
 	private Date vreme;
 	public ArrayList<LicnaGreska> licneGreske;
 	public ArrayList<Pokusaj> pokusaji;
-	public ArrayList<IzgubljenaLoptaIgraca> izgubljeneLopteIgraca;
+	public ArrayList<VrstaIzgubljeneLopteIgraca> izgubljeneLopteIgraca;
 
 	public UcinakIgraca() {
 	}
