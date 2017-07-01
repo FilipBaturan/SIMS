@@ -117,9 +117,7 @@ public class RegistracijaDijalog extends JFrame {
 				String lozinkaTekst = poljeLozinke.getText();
 				String potvrdaTekst = poljePotvrdeLozinke.getText();
 
-				if (true/*
-						 * !pronadjiKorisnika(korisnickoImeTekst, lozinkaTekst
-						 */) {
+				if (true/*pronadjiKorisnika(korisnickoImeTekst, lozinkaTekst)*/) {
 					if (lozinkaTekst.compareTo(potvrdaTekst) == 0) {
 						// dodajKorniska(korisnickoImeTekst, lozinkaTekst)
 						dispose();
