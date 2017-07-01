@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
 <fullyQualifiedTypeName name="java.util.List"/>
-<fullyQualifiedTypeName name="Model.VrstaIzgubljeneLopteTima"/>
 <fullyQualifiedTypeName name="Model.IzgubljenaLoptaTima"/>
-<fullyQualifiedTypeName name="Model.VrstaIzgubljeneLopteIgraca"/>
 <fullyQualifiedTypeName name="Model.VrstaLicneGreske"/>
 <fullyQualifiedTypeName name="java.util.Date"/>
-<fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="Model.Pokusaj"/>
 <fullyQualifiedTypeName name="Model.IzgubljenaLoptaIgraca"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="Model.VrstaIzgubljeneLopteIgraca"/>
+<fullyQualifiedTypeName name="Model.VrstaIzgubljeneLopteTima"/>
 </qualifiedTypeNameHistroy>
