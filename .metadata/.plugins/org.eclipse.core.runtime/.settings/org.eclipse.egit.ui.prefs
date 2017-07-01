@@ -1,6 +1,2 @@
-<<<<<<< HEAD
-commit_dialog_history_messages=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<messages>\r\n<message>SAMO APLIKACIJA</message>\r\n<message>Aplikacija</message>\r\n<message>Glavni</message>\r\n<message>Registracija Dijalog</message>\r\n<message>Pocetni GUI</message>\r\n<message>Prijavljivanje Dijalog</message>\r\n<message>Cetvrti commit</message>\r\n<message>Merge branch &apos;master&apos; of https\://github.com/FilipBaturan/SIMS.git&\#x0A;&\#x0A;Conflicts\:&\#x0A;&\#x09;Aplikacija/src/Model/Mesto.java&\#x0A;</message>\r\n<message>Treci commit</message>\r\n<message>Proba za komit</message>\r\n</messages>
-=======
 commit_dialog_history_messages=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<messages>\r\n<message>Dodavanje klasa koje su falile u prosloj verziji.</message>\r\n<message>Dodate klase koje su falile u modelu.&\#x0A;</message>\r\n<message>Odradjena osnovna konstrukcija klasa u modelu, fali nekoliko klasa.</message>\r\n</messages>
->>>>>>> 24aa18a262f6e5768d2661b50c0eb3f3a0e80faf
 eclipse.preferences.version=1

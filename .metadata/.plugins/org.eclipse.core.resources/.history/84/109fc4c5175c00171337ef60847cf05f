@@ -1,7 +1,0 @@
-package Model;
-
-public class Mesto {
-
-	private String naziv;
-	private Strnig treciAtribut;
-}

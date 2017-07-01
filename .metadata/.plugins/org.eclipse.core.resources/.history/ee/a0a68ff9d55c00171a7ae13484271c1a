@@ -1,9 +1,0 @@
-package Model;
-
-public class Aplikacija {
-	
-	public Aplikacija() {
-		// TODO Auto-generated constructor stub
-	}
-
-}
