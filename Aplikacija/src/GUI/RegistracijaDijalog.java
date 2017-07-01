@@ -16,6 +16,8 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+import Model.Aplikacija;
+
 public class RegistracijaDijalog extends JFrame {
 
 	public RegistracijaDijalog() {
@@ -117,9 +119,9 @@ public class RegistracijaDijalog extends JFrame {
 				String lozinkaTekst = poljeLozinke.getText();
 				String potvrdaTekst = poljePotvrdeLozinke.getText();
 
-				if (true/*pronadjiKorisnika(korisnickoImeTekst, lozinkaTekst)*/) {
+				if (Aplikacija.pronadjiKorisnika(korisnickoImeTekst, lozinkaTekst)) {
 					if (lozinkaTekst.compareTo(potvrdaTekst) == 0) {
-						// dodajKorniska(korisnickoImeTekst, lozinkaTekst)
+						Aplikacija.dodajKorisnika(korisnickoImeTekst, lozinkaTekst);
 						dispose();
 					} else {
 						JOptionPane.showMessageDialog(null, "Vase lozinke se ne poklapaju", "Razlicite lozinke",
