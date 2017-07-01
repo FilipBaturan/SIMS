@@ -1,0 +1,8 @@
+package Model;
+
+public class Pokusaj {
+	private boolean pogodjen;
+	private int brojPoena;
+	private int zona;
+	private int cetvrtina;
+}

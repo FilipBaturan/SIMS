@@ -1,0 +1,6 @@
+package Model;
+
+public class UcinakTrenera {
+	private int brojIzgubljenihLopti;
+	public ArrayList<TimeOut> timeOuti;
+}

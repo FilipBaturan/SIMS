@@ -1,0 +1,6 @@
+package Model;
+
+public class Izmena {
+	public Igrac ulazi;
+	public Igrac izlazi;
+}
