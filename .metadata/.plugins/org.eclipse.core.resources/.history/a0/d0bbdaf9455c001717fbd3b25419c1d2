@@ -1,0 +1,18 @@
+package Model;
+
+import java.util.Date;
+import java.util.ArrayList;
+
+public class UcinakIgraca {
+	private int skokoviUNapadu;
+	private int skokoviUOdbrani;
+	private int asistencije;
+	private int osvojeneLopte;
+	private int blokade;
+	private int poeni;
+	private int indeks;
+	private Date vreme;
+	public ArrayList<LicnaGreska> licneGreske;
+	public ArrayList<Pokusaj> pokusaji;
+
+}

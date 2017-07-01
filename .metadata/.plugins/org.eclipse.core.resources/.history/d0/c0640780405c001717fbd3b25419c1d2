@@ -1,0 +1,11 @@
+package Model;
+
+import java.util.ArrayList;
+
+public class Klub {
+	private String naziv;
+	private int id;
+	public Mesto mestoOsnivanja;
+	public Trener trener;
+	public ArrayList<Igrac> igraci;
+}

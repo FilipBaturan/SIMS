@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
+<<<<<<< HEAD
 <fullyQualifiedTypeName name="GUI.GlavniOkvir"/>
 <fullyQualifiedTypeName name="javax.swing.JFrame"/>
 <fullyQualifiedTypeName name="GUI.GlavniProzor"/>
@@ -18,4 +19,15 @@
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="Model.Korisnik"/>
 <fullyQualifiedTypeName name="java.applet.Applet"/>
+=======
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="Model.VrstaIzgubljeneLopteTima"/>
+<fullyQualifiedTypeName name="Model.IzgubljenaLoptaTima"/>
+<fullyQualifiedTypeName name="Model.VrstaIzgubljeneLopteIgraca"/>
+<fullyQualifiedTypeName name="Model.VrstaLicneGreske"/>
+<fullyQualifiedTypeName name="java.util.Date"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="Model.Pokusaj"/>
+<fullyQualifiedTypeName name="Model.IzgubljenaLoptaIgraca"/>
+>>>>>>> 24aa18a262f6e5768d2661b50c0eb3f3a0e80faf
 </qualifiedTypeNameHistroy>

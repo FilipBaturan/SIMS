@@ -1,0 +1,16 @@
+package GUI;
+
+import javax.swing.JFrame;
+
+public class GlavniProzor extends JFrame{
+
+	public GlavniProzor() {
+		
+		this.setTitle("Glavni prozor");
+		this.setVisible(true);
+		this.setLocation(250, 100);
+		this.setSize(900, 600);
+		
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	}
+}
