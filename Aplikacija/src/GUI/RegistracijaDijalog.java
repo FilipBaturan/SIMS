@@ -8,6 +8,7 @@ import java.awt.Insets;
 import java.awt.Label;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.LineNumberInputStream;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -115,14 +116,15 @@ public class RegistracijaDijalog extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 
-				String korisnickoImeTekst = ime.getText();
+				String korisnickoImeTekst = poljeZaIme.getText();
 				String lozinkaTekst = poljeLozinke.getText();
 				String potvrdaTekst = poljePotvrdeLozinke.getText();
 
-				if (Aplikacija.pronadjiKorisnika(korisnickoImeTekst, lozinkaTekst)) {
+				if (!Aplikacija.pronadjiKorisnika(korisnickoImeTekst, lozinkaTekst)) {
 					if (lozinkaTekst.compareTo(potvrdaTekst) == 0) {
 						Aplikacija.dodajKorisnika(korisnickoImeTekst, lozinkaTekst);
 						dispose();
+						System.out.println(Aplikacija.listaKorisnika.size());
 					} else {
 						JOptionPane.showMessageDialog(null, "Vase lozinke se ne poklapaju", "Razlicite lozinke",
 								JOptionPane.INFORMATION_MESSAGE);
