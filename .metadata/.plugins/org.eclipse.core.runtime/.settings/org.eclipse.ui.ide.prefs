@@ -1,5 +1,12 @@
+=\=\=\=\=\=\=
+<<<<<<<=HEAD
+>>>>>>>=992c461453f53874c4b50818b4d866c8207723a3
 PROBLEMS_FILTERS_MIGRATE=true
 eclipse.preferences.version=1
+<<<<<<< HEAD
 platformState=1498659472000
+=======
+platformState=1498148849412
+>>>>>>> 81239b93c9a93e5b39d874565f76e01ea11d5e81
 quickStart=false
 tipsAndTricks=true
