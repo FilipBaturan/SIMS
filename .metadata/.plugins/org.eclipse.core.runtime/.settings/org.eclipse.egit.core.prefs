@@ -1,3 +1,8 @@
-GitRepositoriesView.GitDirectories=C\:\\Users\\TheManiac\\Documents\\Specifikacija i modelovanje softvera\\SIMS\\.git;
+<<<<<<< HEAD
+GitRepositoriesView.GitDirectories=D\:\\FTN-SIIT\\SIMS\\projekat_kosarka\\.git;D\:\\FTN-SIIT\\SIMS\\projekat_kosarka\\SIMS\\.git;
+GitRepositoriesView.GitDirectories.relative=D\:\\FTN-SIIT\\SIMS\\projekat_kosarka\\.git;.git;
+=======
+GitRepositoriesView.GitDirectories=C\:\\Users\\TheManiac\\Documents\\Specifikacija i modelovanje softvera\\SIMS\\.git;D\:\\Faks\\Semestar IV\\SIMS\\Projekat\\SIMS\\.git;
 GitRepositoriesView.GitDirectories.relative=.git;
+>>>>>>> 987de20736ac6f7ab22cb4cd3731bc8c97ce90f3
 eclipse.preferences.version=1

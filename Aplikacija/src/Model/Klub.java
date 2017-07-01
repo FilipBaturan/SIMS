@@ -10,6 +10,14 @@ public class Klub {
 	public Trener trener;
 	public ArrayList<Igrac> igraci;
 
+	public Klub() {
+	}
+
+	public Klub(String naziv, int id) {
+		this.naziv = naziv;
+		this.id = id;
+	}
+
 	public String getNaziv() {
 		return naziv;
 	}
@@ -30,13 +38,7 @@ public class Klub {
 		return mestoOsnivanja;
 	}
 
-	public Klub(String naziv, int id) {
-		super();
-		this.naziv = naziv;
-		this.id = id;
-	}
-	
-	public void dodajIgraca(Igrac i){
+	public void dodajIgraca(Igrac i) {
 		igraci.add(i);
 	}
 

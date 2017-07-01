@@ -1,0 +1,6 @@
+package Model;
+
+public class StatistikaKluba {
+	private int brojNapada;
+	public ArrayList<IzgubljenaLopta> 
+}

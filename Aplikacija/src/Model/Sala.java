@@ -8,7 +8,6 @@ public class Sala {
 	}
 
 	public Sala(String nazivSale, int id) {
-		super();
 		this.nazivSale = nazivSale;
 		this.id = id;
 	}

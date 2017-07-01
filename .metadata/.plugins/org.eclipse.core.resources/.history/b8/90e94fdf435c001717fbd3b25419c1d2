@@ -1,0 +1,14 @@
+package Model;
+
+public class IzgubljenaLoptaTima {
+	private VrstaIzgubljeneLopteTima tipIzgubljeneLopteTima;
+	
+	public IzgubljenaLoptaTima() {}
+
+	public IzgubljenaLoptaTima(VrstaIzgubljeneLopteTima tipIzgubljeneLopteTima) {
+		super();
+		this.tipIzgubljeneLopteTima = tipIzgubljeneLopteTima;
+	}
+	
+	
+}

@@ -1,0 +1,13 @@
+package Model;
+
+import java.util.Date;
+public class UcinakIgraca {
+	private int skokoviUNapadu;
+	private int skokoviUOdbrani;
+	private int asistencije;
+	private int osvojeneLopte;
+	private int blokade;
+	private int poeni;
+	private int indeks;
+	private Time vreme;
+}

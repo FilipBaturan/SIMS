@@ -1,0 +1,10 @@
+package Model;
+import java.util.List;
+
+public class Klub {
+	private String naziv;
+	private int id;
+	public Mesto mestoOsnivanja;
+	public list<Igrac> igraci;
+	
+}

@@ -7,7 +7,9 @@ import GUI.PrijavljivanjeDijalog;
 public class Aplikacija {
 	
 	static ArrayList<Korisnik> listaKorisnika = new ArrayList<Korisnik>(); 
-	
+	static ArrayList<Mesto> listaMesta = new ArrayList<Mesto>();
+	static ArrayList<Klub> listaKlubova = new ArrayList<Klub>();
+	static ArrayList<Sala> listaSala = new ArrayList<Sala>();
 	
 	public Aplikacija() {
 		new PrijavljivanjeDijalog();
@@ -24,6 +26,22 @@ public class Aplikacija {
 		}
 		
 		return false;
+	}
+	
+	public static void dodajKorisnika(String korisnickoIme, String lozinka){
+		listaKorisnika.add(new Korisnik(korisnickoIme, lozinka));
+	}
+	
+	public static void dodajMesto(int postanski, String naziv){
+		listaMesta.add(new Mesto(postanski, naziv));
+	}
+	
+	public static void dodajKlub(int id, String naziv){
+		listaKlubova.add(new Klub(naziv, id));
+	}
+	
+	public static void dodajSalu(String naziv, int id){
+		listaSala.add(new Sala(naziv, id));
 	}
 			
 }

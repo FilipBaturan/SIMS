@@ -1,0 +1,9 @@
+package Model;
+
+import java.util.ArrayList;
+
+public class UcinakTrenera {
+	private int brojIzgubljenihLopti;
+	public ArrayList<TimeOut> timeOuti;
+	public ArrayList<LicnaGreska> licneGreske;
+}
