@@ -1,0 +1,114 @@
+package GUI;
+
+import java.awt.BorderLayout;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.Image;
+import java.awt.Insets;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+public class GlavniProzor extends JFrame{
+
+	JPanel gornjiPanel = new JPanel();
+	JPanel donjiPanel = new JPanel();
+	
+	public GlavniProzor() {
+		
+		this.setTitle("Glavni prozor");
+		this.setVisible(true);
+		this.setLocation(250, 100);
+		this.setSize(900, 600);
+		
+		this.setPanel();
+		this.setImage();
+		this.setButtons();
+		
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	}
+
+	private void setButtons() {
+		
+
+		GridBagConstraints gbc = new GridBagConstraints();
+		gbc.insets=new Insets(50, 5, 5, 5);
+		
+		donjiPanel.setLayout(new GridBagLayout());
+		
+		JButton dugme1 = new JButton("DUGME 1");
+		JButton dugme2 = new JButton("DUGME 2");
+		JButton dugme3 = new JButton("DUGME 3");
+		JButton dugme4 = new JButton("DUGME 4");
+		
+		gbc.gridx=0;
+		gbc.gridy=0;
+		donjiPanel.add(dugme1,gbc);
+		
+		gbc.gridx=0;
+		gbc.gridy=1;
+		donjiPanel.add(dugme2,gbc);
+		
+		gbc.gridx=1;
+		gbc.gridy=0;
+		donjiPanel.add(dugme3,gbc);
+		
+		gbc.gridx=1;
+		gbc.gridy=1;
+		donjiPanel.add(dugme4,gbc);
+		
+	}
+
+	private void setPanel() {
+		
+		
+		GridBagConstraints gbc = new GridBagConstraints();
+		gbc.insets=new Insets(5, 5, 5, 5);
+		
+		JPanel glavniPanel =new JPanel();
+		glavniPanel.setLayout(new GridBagLayout());
+		
+		gbc.gridx=0;
+		gbc.gridy=0;
+		glavniPanel.add(gornjiPanel,gbc);
+		
+		gbc.gridx=1;
+		gbc.gridy=0;
+		glavniPanel.add(donjiPanel, gbc);
+		
+		this.getContentPane().add(glavniPanel, BorderLayout.CENTER);
+		
+	}
+
+	private void setImage() {
+		
+			
+			//
+			BufferedImage img;
+			ImageIcon imageIcon = new ImageIcon(new ImageIcon("./slike/Kosarka.jpg").getImage().getScaledInstance(20, 20, Image.SCALE_DEFAULT));
+			JLabel slika = new JLabel();
+			slika.setIcon(imageIcon);
+			gornjiPanel.add(slika)
+			
+			
+			/*
+			img = ImageIO.read(new File("./slike/Kosarka.jpg"));
+			Image scaledImage = img.getScaledInstance(slika.getWidth(),slika.getHeight(),Image.SCALE_SMOOTH);
+			ImageIcon slika2 = new ImageIcon(scaledImage);
+			slika = new JLabel(slika2);
+			slika.setBounds(MAXIMIZED_VERT, MAXIMIZED_HORIZ, MAXIMIZED_VERT, MAXIMIZED_HORIZ);
+			;*/
+			
+		
+		
+	
+		
+	}
+}

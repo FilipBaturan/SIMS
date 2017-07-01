@@ -1,0 +1,22 @@
+package Model;
+
+import java.util.ArrayList;
+
+import GUI.PrijavljivanjeDijalog;
+
+public class Aplikacija {
+	
+	ArrayList<Korisnik> listaKorisnika = new ArrayList<Korisnik>(); 
+	
+	
+	public Aplikacija() {
+		new PrijavljivanjeDijalog();
+	}
+
+	
+	public bool pronadjiKorisnika(String korisnickoImeTekst, String lozinkaTekst)
+	{
+		
+	}
+			
+}

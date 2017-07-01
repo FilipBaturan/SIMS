@@ -1,0 +1,17 @@
+package Model;
+
+import GUI.PrijavljivanjeDijalog;
+
+public class Aplikacija {
+	
+	ArrayList<Korisnik> listaKorisnika = new ArrayList<Korisnik>(); 
+	
+	
+	public Aplikacija() {
+		new PrijavljivanjeDijalog();
+	}
+
+	
+	bool pronadjiKorisnika(korisnickoImeTekst, lozinkaTekst
+			
+}

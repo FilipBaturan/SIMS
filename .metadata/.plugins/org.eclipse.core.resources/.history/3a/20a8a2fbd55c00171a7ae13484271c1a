@@ -1,0 +1,11 @@
+package Model;
+
+import GUI.PrijavljivanjeDijalog;
+
+public class Aplikacija {
+	
+	public Aplikacija() {
+		PrijavljivanjeDijalog prijava = new PrijavljivanjeDijalog();
+	}
+
+}

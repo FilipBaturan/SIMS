@@ -1,0 +1,18 @@
+package Model;
+
+import java.util.ArrayList;
+
+import javax.swing.JFrame;
+
+import GUI.PrijavljivanjeDijalog;
+
+public class Main {
+	
+	ArrayList<Igrac>
+
+	public static void main(String[] args) {
+		new Aplikacija();
+		
+	}
+
+}
