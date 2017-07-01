@@ -6,7 +6,19 @@
 <fullyQualifiedTypeName name="java.util.Date"/>
 <fullyQualifiedTypeName name="Model.Pokusaj"/>
 <fullyQualifiedTypeName name="Model.IzgubljenaLoptaIgraca"/>
+<<<<<<< HEAD
+<fullyQualifiedTypeName name="java.awt.Graphics"/>
+<fullyQualifiedTypeName name="javax.swing.JButton"/>
+<fullyQualifiedTypeName name="GUI.PanelSlika"/>
+<fullyQualifiedTypeName name="java.awt.BorderLayout"/>
+<fullyQualifiedTypeName name="java.awt.Dimension"/>
+<fullyQualifiedTypeName name="java.awt.Point"/>
+<fullyQualifiedTypeName name="javax.swing.JPanel"/>
+<fullyQualifiedTypeName name="javax.swing.BoxLayout"/>
+<fullyQualifiedTypeName name="javax.swing.Box"/>
+=======
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="Model.VrstaIzgubljeneLopteIgraca"/>
 <fullyQualifiedTypeName name="Model.VrstaIzgubljeneLopteTima"/>
+>>>>>>> 992c461453f53874c4b50818b4d866c8207723a3
 </qualifiedTypeNameHistroy>
