@@ -6,10 +6,10 @@ import GUI.PrijavljivanjeDijalog;
 
 public class Aplikacija {
 	
-	static ArrayList<Korisnik> listaKorisnika = new ArrayList<Korisnik>(); 
-	static ArrayList<Mesto> listaMesta = new ArrayList<Mesto>();
-	static ArrayList<Klub> listaKlubova = new ArrayList<Klub>();
-	static ArrayList<Sala> listaSala = new ArrayList<Sala>();
+	public static ArrayList<Korisnik> listaKorisnika = new ArrayList<Korisnik>(); 
+	public static ArrayList<Mesto> listaMesta = new ArrayList<Mesto>();
+	public static ArrayList<Klub> listaKlubova = new ArrayList<Klub>();
+	public static ArrayList<Sala> listaSala = new ArrayList<Sala>();
 	
 	public Aplikacija() {
 		new PrijavljivanjeDijalog();
