@@ -94,6 +94,16 @@ public class Aplikacija {
 		return listaKlubova.contains(klub);
 	}
 	
+	public static Klub pronadjiKlub(String naziv)
+	{
+		for (Klub klub : listaKlubova) {
+			if ( (klub.getNaziv().compareTo(naziv)) == 0)
+				return klub;
+		}
+		
+		return new Klub("", -1);
+	}
+	
 	public static boolean pronadjiKlub(int id){
 		for(Klub klub:listaKlubova){
 			if(klub.getId() == id){
