@@ -3,6 +3,7 @@ package Model;
 public class Sala {
 	private String nazivSale;
 	private int id;
+	public Mesto mesto;
 
 	public Sala() {
 	}
