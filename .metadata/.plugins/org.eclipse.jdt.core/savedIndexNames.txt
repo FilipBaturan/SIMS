@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 INDEX VERSION 1.130+C:\Users\TheManiac\Documents\Specifikacija i modelovanje softvera\SIMS\.metadata\.plugins\org.eclipse.jdt.core
 148409970.index
 2470519452.index
@@ -18,3 +19,7 @@ INDEX VERSION 1.130+C:\Users\TheManiac\Documents\Specifikacija i modelovanje sof
 559129880.index
 2709225165.index
 922380862.index
+=======
+INDEX VERSION 1.130+D:\FTN-SIIT\SIMS\projekat_kosarka\SIMS\.metadata\.plugins\org.eclipse.jdt.core
+213988931.index
+>>>>>>> 45da7c05ca6c5824dc7b9bacca45553a8a97137a

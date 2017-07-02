@@ -1,0 +1,10 @@
+package Model;
+
+import java.util.ArrayList;
+
+public class StatistikaKluba {
+	private int brojNapada;
+	public ArrayList<VrstaIzgubljeneLopte> izgubljeneLopteIgraca;
+	public ArrayList<VrstaIzgubljeneLopte> izgubljeneLopteTrenera;
+	public ArrayList<Izmena> izmene;
+}
