@@ -1,25 +1,2 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="java.util.ArrayList"/>
-<fullyQualifiedTypeName name="Model.Igrac"/>
-<fullyQualifiedTypeName name="Model.Trener"/>
-<fullyQualifiedTypeName name="GUI.GlavniProzor"/>
-<fullyQualifiedTypeName name="java.io.LineNumberInputStream"/>
-<fullyQualifiedTypeName name="java.lang.Object"/>
-<fullyQualifiedTypeName name="GUI.DodavanjeUtakmiceDijalog"/>
-<fullyQualifiedTypeName name="java.awt.FlowLayout"/>
-<fullyQualifiedTypeName name="javax.swing.BoxLayout"/>
-<fullyQualifiedTypeName name="javax.swing.JLabel"/>
-<fullyQualifiedTypeName name="java.awt.Font"/>
-<fullyQualifiedTypeName name="javax.swing.JPanel"/>
-<fullyQualifiedTypeName name="javax.swing.JComboBox"/>
-<fullyQualifiedTypeName name="javax.swing.JButton"/>
-<<<<<<< HEAD
-<fullyQualifiedTypeName name="java.awt.event.ActionListener"/>
-<fullyQualifiedTypeName name="Model.Utakmica"/>
-<fullyQualifiedTypeName name="Model.Klub"/>
-<fullyQualifiedTypeName name="Model.Aplikacija"/>
-=======
-<fullyQualifiedTypeName name="Model.StatistikaKluba"/>
->>>>>>> 45da7c05ca6c5824dc7b9bacca45553a8a97137a
-</qualifiedTypeNameHistroy>
+<qualifiedTypeNameHistroy/>
