@@ -1,23 +1,23 @@
 package Model;
 
 public class Mesto {
-	private int postanskiBroj;
+	private String postanskiBroj;
 	private String naziv;
 
 	public Mesto() {
 	}
 
-	public Mesto(int postanskiBroj, String naziv) {
+	public Mesto(String postanskiBroj, String naziv) {
 		super();
 		this.postanskiBroj = postanskiBroj;
 		this.naziv = naziv;
 	}
 
-	public int getPostanskiBroj() {
+	public String getPostanskiBroj() {
 		return postanskiBroj;
 	}
 
-	public void setPostanskiBroj(int postanskiBroj) {
+	public void setPostanskiBroj(String postanskiBroj) {
 		this.postanskiBroj = postanskiBroj;
 	}
 

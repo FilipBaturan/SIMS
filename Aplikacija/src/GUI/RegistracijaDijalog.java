@@ -8,7 +8,11 @@ import java.awt.Insets;
 import java.awt.Label;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+<<<<<<< HEAD
 import Model.Aplikacija;
+=======
+import java.io.LineNumberInputStream;
+>>>>>>> 96174eabdc510ccd6d22d9873caef273ed3c5713
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -16,6 +20,8 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+
+import Model.Aplikacija;
 
 public class RegistracijaDijalog extends JFrame {
 
@@ -114,14 +120,19 @@ public class RegistracijaDijalog extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 
-				String korisnickoImeTekst = ime.getText();
+				String korisnickoImeTekst = poljeZaIme.getText();
 				String lozinkaTekst = poljeLozinke.getText();
 				String potvrdaTekst = poljePotvrdeLozinke.getText();
 
+<<<<<<< HEAD
 				if (Aplikacija.pronadjiKorisnika(korisnickoImeTekst, lozinkaTekst)) {
+=======
+				if (!Aplikacija.pronadjiKorisnika(korisnickoImeTekst, lozinkaTekst)) {
+>>>>>>> 96174eabdc510ccd6d22d9873caef273ed3c5713
 					if (lozinkaTekst.compareTo(potvrdaTekst) == 0) {
 						Aplikacija.dodajKorisnika(korisnickoImeTekst, lozinkaTekst);
 						dispose();
+						System.out.println(Aplikacija.listaKorisnika.size());
 					} else {
 						JOptionPane.showMessageDialog(null, "Vase lozinke se ne poklapaju", "Razlicite lozinke",
 								JOptionPane.INFORMATION_MESSAGE);
