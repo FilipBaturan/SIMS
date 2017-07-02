@@ -7,9 +7,9 @@ import java.awt.GridLayout;
 import java.awt.Insets;
 import java.awt.Label;
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;<<<<<<<HEAD
-import Model.Aplikacija;=======
-import java.io.LineNumberInputStream;>>>>>>>96174ea bdc510ccd6d22d9873caef273ed3c5713
+import java.awt.event.ActionListener;
+import Model.Aplikacija;
+import java.io.LineNumberInputStream;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
