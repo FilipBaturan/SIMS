@@ -1,6 +1,6 @@
 package Model;
 
-public enum VrstaIzgubljeneLopteIgraca {
+public enum VrstaIzgubljeneLopte {
 	koraci,
 	dupla,
 	loseDodavanje,
@@ -11,5 +11,8 @@ public enum VrstaIzgubljeneLopteIgraca {
 	tehnickaGreska,
 	tucaNaTerenu,
 	loseVodjenjeLopte,
-	izgubljenaLoptaZbogTrenera;
+	izgubljenaLoptaZbogTrenera,
+	prekoPola,
+	istekaoNapad,
+	izAuta;
 }

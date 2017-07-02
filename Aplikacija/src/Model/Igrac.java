@@ -4,12 +4,12 @@ import java.util.Date;
 
 public class Igrac extends Osoba {
 	String brojDresa;
-	double visina;
+	int visina;
 	
 	public Igrac(){}
 
 	public Igrac(int id, String ime, String prezime, Date datumRodjenja,
-			String brojDresa,double visina) {
+			String brojDresa,int visina) {
 		super(id, ime, prezime, datumRodjenja);
 		this.brojDresa = brojDresa;
 		this.visina = visina;
@@ -23,11 +23,11 @@ public class Igrac extends Osoba {
 		this.brojDresa = brojDresa;
 	}
 
-	public double getVisina() {
+	public int getVisina() {
 		return visina;
 	}
 
-	public void setVisina(double visina) {
+	public void setVisina(int visina) {
 		this.visina = visina;
 	}
 	

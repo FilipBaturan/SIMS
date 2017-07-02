@@ -44,8 +44,15 @@ public class Aplikacija {
 		return false;
 	}
 	
-	public static void dodajKorisnika(String korisnickoIme, String lozinka){
-		listaKorisnika.add(new Korisnik(korisnickoIme, lozinka));
+	
+	public static boolean dodajKorisnika(String korisnickoIme, String lozinka){
+		if (!pronadjiKorisnika(korisnickoIme, lozinka)){
+			listaKorisnika.add(new Korisnik(korisnickoIme, lozinka));
+			return true;
+		}
+		else{
+			return false;
+		}
 	}
 	
 	public static boolean obrisiKorisnika(Korisnik korisnik){
@@ -84,6 +91,12 @@ public class Aplikacija {
 	
 	public static void dodajMesto(String postanski, String naziv){
 		listaMesta.add(new Mesto(postanski, naziv));
+	}
+	
+	public static void dodajKlub(Klub klub){
+		if (!pronadjiKlub(klub)){
+			listaKlubova.add(klub);
+		}
 	}
 	
 	public static void dodajKlub(String naziv){
@@ -140,7 +153,9 @@ public class Aplikacija {
 	}
 
 	public static void dodajSalu(String naziv){
-		listaSala.add(new Sala(naziv,generisiKluc('S')));
+		if (!pronadjiSalu(naziv)){
+			listaSala.add(new Sala(naziv,generisiKluc('S')));
+		}
 	}
 	
 	public static boolean pronadjiSalu(int id){
@@ -150,7 +165,7 @@ public class Aplikacija {
 		return false;
 	}
 	
-	public static boolean prodnajiSalu(String naziv){
+	public static boolean pronadjiSalu(String naziv){
 		for(Sala sala:listaSala){
 			if(sala.getNazivSale().compareTo(naziv)==0)
 				return true;
@@ -189,7 +204,8 @@ public class Aplikacija {
 	}
 	
 	public static void dodajIgraca(String ime, String prezime, Date datumRodjenja,
-			String brojDresa,double visina){
+			String brojDresa,int visina){
+		
 		listaIgraca.add(new Igrac(generisiKluc('O'), ime, prezime, datumRodjenja,
 				brojDresa, visina));
 	}
