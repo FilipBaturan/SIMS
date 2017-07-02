@@ -15,8 +15,13 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import Model.Aplikacija;
+import Model.Klub;
+import Model.Utakmica;
 
 public class DodavanjeUtakmiceDijalog extends JFrame {
+	
+	String nazivDomacina = "";
+	String nazivGosta = "";
 	
 	public DodavanjeUtakmiceDijalog()
 	{
@@ -42,7 +47,7 @@ public class DodavanjeUtakmiceDijalog extends JFrame {
 		panel1.add(new Label("Izaberite domacina utakmice "));
 		panel1.add(comboBox);
 		
-		JLabel prikazDomacina = new JLabel();
+		JLabel prikazDomacina = new JLabel("Domacin koga ste izabrali je ");
 		prikazDomacina.setFont(new Font("Serif", Font.PLAIN, 19));
 		prikazDomacina.setForeground(Color.RED);
 		JPanel panel2 = new JPanel();
@@ -54,7 +59,7 @@ public class DodavanjeUtakmiceDijalog extends JFrame {
 		panel3.add(comboBox2);
 		
 		
-		JLabel prikazGosta = new JLabel();
+		JLabel prikazGosta = new JLabel("Gost koga ste izabrali je ");
 		prikazGosta.setFont(new Font("Serif", Font.PLAIN, 19));
 		prikazGosta.setForeground(Color.BLUE);
 		JPanel panel4 = new JPanel();
@@ -72,11 +77,13 @@ public class DodavanjeUtakmiceDijalog extends JFrame {
 		glavniPanel.add(potvrda);
 		glavniPanel.add(Box.createVerticalStrut(25));
 		
+		
+		
 		comboBox.addActionListener(new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				String nazivDomacina = listaKlubova[comboBox.getSelectedIndex()];
+				nazivDomacina = listaKlubova[comboBox.getSelectedIndex()];
 				
 				prikazDomacina.setText("Domacin koga ste izabrali je " + nazivDomacina);
 				
@@ -87,9 +94,21 @@ public class DodavanjeUtakmiceDijalog extends JFrame {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				String nazivGosta = listaKlubova[comboBox2.getSelectedIndex()];
+				nazivGosta = listaKlubova[comboBox2.getSelectedIndex()];
 				
 				prikazGosta.setText("Gost koga ste izabrali je " + nazivGosta);
+				
+			}
+		});
+		
+		potvrda.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				Klub domacin = Aplikacija.pronadjiKlub(nazivDomacina);
+				Klub gost = Aplikacija.pronadjiKlub(nazivGosta);
+				Utakmica u = new Utakmica(domacin, gost);
+				//Aplikacija.dodajutakmicu(u);
 				
 			}
 		});
