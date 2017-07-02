@@ -11,8 +11,6 @@ public class Aplikacija {
 	public static ArrayList<Mesto> listaMesta = new ArrayList<Mesto>();
 	public static ArrayList<Klub> listaKlubova = new ArrayList<Klub>();
 	public static ArrayList<Sala> listaSala = new ArrayList<Sala>();
-<<<<<<< HEAD
-=======
 	public static ArrayList<Igrac> listaIgraca = new ArrayList<Igrac>();
 	public static ArrayList<Trener> listaTrenera = new ArrayList<Trener>();
 	
@@ -28,7 +26,6 @@ public class Aplikacija {
 		else return -1;
 		
 	}
->>>>>>> 96174eabdc510ccd6d22d9873caef273ed3c5713
 	
 	public Aplikacija() {
 		new PrijavljivanjeDijalog();
