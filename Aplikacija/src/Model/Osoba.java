@@ -15,6 +15,16 @@ public class Osoba {
 	
 	
 
+	public Osoba(int id, String ime, String prezime, Date datumRodjenja) {
+		super();
+		this.id = id;
+		this.ime = ime;
+		this.prezime = prezime;
+		this.datumRodjenja = datumRodjenja;
+	}
+
+
+
 	public int getId() {
 		return id;
 	}

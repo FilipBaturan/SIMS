@@ -15,6 +15,8 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+import Model.Aplikacija;
+
 public class PrijavljivanjeDijalog extends JFrame {
 
 	public PrijavljivanjeDijalog() {
@@ -96,10 +98,11 @@ public class PrijavljivanjeDijalog extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				String korisnickoImeTekst = ime.getText();
-				String lozinkaTekst = lozinka.getText();
+				
+				String korisnickoImeTekst = poljeZaIme.getText();
+				String lozinkaTekst = poljeLozinke.getText();
 
-				if (true/* pronadjiKorisnika(korisnickoImeTekst, lozinkaTekst */) {
+				if (Aplikacija.pronadjiKorisnika(korisnickoImeTekst, lozinkaTekst)) {
 					dispose();
 					new GlavniProzor();
 				} else {
