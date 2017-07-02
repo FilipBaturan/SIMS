@@ -3,6 +3,8 @@ package GUI;
 import java.awt.Dimension;
 import java.awt.Image;
 import java.awt.Point;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
 
@@ -19,8 +21,8 @@ public class GlavniProzor extends JFrame{
 		
 		this.setTitle("Glavni prozor");
 		this.setVisible(true);
-		this.setLocation(470, 200);
-		this.setSize(400, 300);
+		this.setLocation(420, 180);
+		this.setSize(500, 350);
 		PanelSlika glavniPanel = new PanelSlika();
 		this.setResizable(false);
 		this.setImage(glavniPanel);
@@ -33,18 +35,35 @@ public class GlavniProzor extends JFrame{
 		
 		glavniPanel.setLayout(new BoxLayout(glavniPanel, 2));
 		
-		JButton dugme1 = new JButton("Dodavanje utakmice");
+		JButton dodavanjeDugme = new JButton("Dodavanje utakmice");
+		glavniPanel.add(Box.createHorizontalStrut(15));
+		glavniPanel.add(dodavanjeDugme);
+		
+		JButton izvestajiDugme = new JButton("Izvestaji");
 		glavniPanel.add(Box.createHorizontalStrut(25));
-		glavniPanel.add(dugme1);
-		JButton dugme2 = new JButton("Izvestaji");
-		glavniPanel.add(Box.createHorizontalStrut(75));
-		glavniPanel.add(dugme2);
+		glavniPanel.add(izvestajiDugme);
+		
+		JButton azuriranjeDugme = new JButton("Azuriranje baze podataka");
+		glavniPanel.add(Box.createHorizontalStrut(25));
+		glavniPanel.add(azuriranjeDugme);
+		
+		
+		
+		dodavanjeDugme.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				new DodavanjeUtakmiceDijalog();
+				
+			}
+		});
+		
+
 		
 	}
 
 	private void setImage(PanelSlika glavniPanel) {
 		try {
-			//BufferedImage slika =;
 			Image slika = ImageIO.read(new File("./slike/Kosarka.jpg"));
 			glavniPanel.postaviPozadinu(slika);
 			

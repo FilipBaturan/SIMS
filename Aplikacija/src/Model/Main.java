@@ -16,6 +16,11 @@ public class Main {
 		Aplikacija.dodajKorisnika("bb", "bb");
 		Aplikacija.dodajKorisnika("cc", "cc");
 		
+		Aplikacija.dodajKlub("KLUB1");
+		Aplikacija.dodajKlub("KLUB2");
+		Aplikacija.dodajKlub("KLUB3");
+		Aplikacija.dodajKlub("KLUB4");
+		
 		
 	}
 

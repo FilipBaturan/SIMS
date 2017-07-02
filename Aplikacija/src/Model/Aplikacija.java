@@ -119,6 +119,26 @@ public class Aplikacija {
 		return false;
 	}
 	
+	
+	public static String[] preuzmiKlubove()
+	{
+		int brojKlubova = brojKlubova(listaKlubova);
+		String[] klubovi = new String[brojKlubova];
+		int brojac = -1;
+		for (Klub klub : listaKlubova) 
+			klubovi[++brojac] = klub.getNaziv();
+		
+		return klubovi;
+	}
+	
+	private static int brojKlubova(ArrayList<Klub> listaKlubova) {
+		int i = 0;
+		for (Klub klub: listaKlubova) {
+			i++;
+		}
+		return i;
+	}
+
 	public static void dodajSalu(String naziv){
 		listaSala.add(new Sala(naziv,generisiKluc('S')));
 	}
