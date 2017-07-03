@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
+<<<<<<< HEAD
 <fullyQualifiedTypeName name="GUI.SelekcijaIgracaDijalog"/>
+=======
+>>>>>>> cc56cc9d982ee2615412bac1a212454ed1c39fb6
 <fullyQualifiedTypeName name="Model.Igrac"/>
 <fullyQualifiedTypeName name="java.util.Date"/>
 <fullyQualifiedTypeName name="javax.swing.JPanel"/>
@@ -10,4 +13,11 @@
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="javax.swing.event.ListSelectionListener"/>
 <fullyQualifiedTypeName name="java.awt.event.ActionListener"/>
+<<<<<<< HEAD
+=======
+<fullyQualifiedTypeName name="javax.swing.JButton"/>
+<fullyQualifiedTypeName name="Model.StatistikaKluba"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="Model.Utakmica"/>
+>>>>>>> cc56cc9d982ee2615412bac1a212454ed1c39fb6
 </qualifiedTypeNameHistroy>

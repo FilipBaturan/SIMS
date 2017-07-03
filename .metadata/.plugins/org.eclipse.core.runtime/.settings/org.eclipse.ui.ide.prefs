@@ -1,8 +1,15 @@
 =\=\=\=\=\=\=
 <<<<<<<=HEAD
+<<<<<<< HEAD
 >>>>>>>=85071d4aad13d08df86e0725ba12f2d76fa9a036
 PROBLEMS_FILTERS_MIGRATE=true
 eclipse.preferences.version=1
 platformState=1460151310820
+=======
+>>>>>>>=45da7c05ca6c5824dc7b9bacca45553a8a97137a
+PROBLEMS_FILTERS_MIGRATE=true
+eclipse.preferences.version=1
+platformState=1498148849412
+>>>>>>> cc56cc9d982ee2615412bac1a212454ed1c39fb6
 quickStart=false
 tipsAndTricks=true
