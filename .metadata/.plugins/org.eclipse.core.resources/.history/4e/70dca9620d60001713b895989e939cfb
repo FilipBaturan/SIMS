@@ -1,0 +1,158 @@
+package GUI;
+
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.GridBagLayout;
+import java.awt.Label;
+import java.util.ArrayList;
+
+import javax.swing.BoxLayout;
+import javax.swing.DefaultListModel;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JList;
+import javax.swing.JPanel;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
+
+import Model.Igrac;
+import Model.Klub;
+
+public class SelekcijaIgracaDijalog extends JFrame {
+	
+	
+	JLabel prikazDomacina = new JLabel();
+	JLabel prikazGosta = new JLabel();
+	
+	public SelekcijaIgracaDijalog(Klub domacin, Klub gost)
+	{
+		this.setTitle("Selektovanje Igraca");
+		this.setVisible(true);
+		this.setLocation(350, 150);
+		this.setSize(700, 500);
+		JPanel glavniPanel = new JPanel();
+		this.postaviElemente(glavniPanel, domacin, gost);
+		this.setContentPane(glavniPanel);
+	}
+
+	private void postaviElemente(JPanel glavniPanel, Klub domacin, Klub gost) {
+		glavniPanel.setLayout(new BoxLayout(glavniPanel, BoxLayout.X_AXIS));
+		JPanel panel1 = new JPanel();
+		
+		//preuzimanje svih igraca i smestanje njihovih ime u niz
+		ArrayList<Igrac> listaIgracaDomacina = domacin.preuzmiIgrace();
+		ArrayList<Igrac> listaIgracaGostiju = gost.preuzmiIgrace();
+		
+		DefaultListModel<String> modelDomacina = new DefaultListModel();
+		DefaultListModel<String> modelGosta = new DefaultListModel();
+		
+		String[] listaImenaDomacina= new String[listaIgracaDomacina.size()];
+		int indeks = -1;
+		for (Igrac igrac : listaIgracaDomacina) {
+			listaImenaDomacina[++indeks] = igrac.getIme() + " " + igrac.getPrezime();
+			modelDomacina.addElement(igrac.getIme() + " " + igrac.getPrezime());
+		}
+		
+		String[] listaImenaGosta= new String[listaIgracaGostiju.size()];
+		indeks = -1;
+		for (Igrac igrac : listaIgracaGostiju) {
+			listaImenaGosta[++indeks] = igrac.getIme() + " " + igrac.getPrezime();
+			modelGosta.addElement(igrac.getIme() + " " + igrac.getPrezime());
+		}
+		//
+		
+		JList<String> listaZaPrikaz = new JList<String>() ;
+		listaZaPrikaz.setVisible(true);
+		listaZaPrikaz.setVisibleRowCount(5);
+		//DefaultListModel<String> model = modelDomacina;
+		listaZaPrikaz.setModel(modelDomacina);
+		
+		
+		JComboBox<String> comboBox = new JComboBox<String>(listaImenaDomacina);
+		panel1.add(new Label("Izaberite 5 igraca domaceg tima "));
+		panel1.add(listaZaPrikaz);
+		
+		prikazDomacina.setText("Izabrani igraci domacina su ");
+		prikazDomacina.setFont(new Font("Serif", Font.PLAIN, 19));
+		prikazDomacina.setForeground(Color.RED);
+		prikazDomacina.setAlignmentX(CENTER_ALIGNMENT);
+		
+		
+		JPanel panel2 = new JPanel();
+		JPanel panel21 = new JPanel();
+		panel2.setLayout(new GridBagLayout());
+		panel21.setLayout(new GridBagLayout());
+		panel2.add(prikazDomacina);
+		//panel21.add(listaZaPrikaz);
+		
+		JList<String> listaZaPrikaz2 = new JList<String>() ;
+		listaZaPrikaz2.setVisible(true);
+		listaZaPrikaz2.setVisibleRowCount(5);
+		//DefaultListModel<String> model = modelDomacina;
+		listaZaPrikaz2.setModel(modelGosta);
+		
+		JPanel panel3 = new JPanel();
+		panel3.add(new Label("Izaberite 5 igraca gostujuceg tima  "));
+		JComboBox<String> comboBox2 =  new JComboBox<String>(listaImenaGosta);
+		panel3.add(listaZaPrikaz2);
+		
+		
+		prikazGosta.setText("Izabrani igraci gosta su ");
+		prikazGosta.setFont(new Font("Serif", Font.PLAIN, 19));
+		prikazGosta.setForeground(Color.BLUE);
+		
+		
+		
+		JPanel panel4 = new JPanel();
+		JPanel panel41 = new JPanel();
+		panel4.setLayout(new GridBagLayout());
+		panel41.setLayout(new GridBagLayout());
+		panel4.add(prikazGosta);
+		//panel41.add(listaZaPrikaz2);
+		
+		JPanel leviPanel = new JPanel();
+		JPanel desniPanel = new JPanel();
+		
+		desniPanel.setLayout(new BoxLayout(desniPanel, BoxLayout.Y_AXIS));
+		leviPanel.setLayout(new BoxLayout(leviPanel, BoxLayout.Y_AXIS));
+		
+		leviPanel.add(panel1);
+		//leviPanel.add(Box.createVerticalStrut(25));
+		leviPanel.add(panel2);
+		leviPanel.add(panel21);
+		//leviPanel.add(Box.createVerticalStrut(100));
+		//glavniPanel.add(Box.createVerticalStrut(25));
+		desniPanel.add(panel3);
+		//desniPanel.add(Box.createVerticalStrut(25));
+		desniPanel.add(panel4);
+		desniPanel.add(panel41);
+		//glavniPanel.add(Box.createVerticalStrut(25));
+		JButton potvrda = new JButton("Potvrda");
+		desniPanel.add(potvrda);
+		//glavniPanel.add(Box.createVerticalStrut(25));
+		glavniPanel.add(leviPanel);
+		glavniPanel.add(desniPanel);
+		
+		listaZaPrikaz.addListSelectionListener(new ListSelectionListener() {
+			
+			@Override
+			public void valueChanged(ListSelectionEvent e) {
+				
+				if (!e.getValueIsAdjusting()) {                                   //This line prevents double events
+				
+					//cuvanje izmena
+					String noviIgrac = listaZaPrikaz.getSelectedValue();
+					String nesto = prikazDomacina.getText();
+					String noviTekst = ( + "\n" + noviIgrac);
+					prikazDomacina.setText(noviTekst);
+					
+					
+				}
+			}
+		});
+		
+		
+	}
+}

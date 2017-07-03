@@ -13,6 +13,7 @@ public class Aplikacija {
 	public static ArrayList<Sala> listaSala = new ArrayList<Sala>();
 	public static ArrayList<Igrac> listaIgraca = new ArrayList<Igrac>();
 	public static ArrayList<Trener> listaTrenera = new ArrayList<Trener>();
+	public static ArrayList<Utakmica> listaUtakmica = new ArrayList<Utakmica>(); 
 	
 	
 	private static int idKlub = 0;
@@ -271,6 +272,16 @@ public class Aplikacija {
 			return true;
 		}
 		return false;
+	}
+	
+	public static void dodajUtakmicu(Utakmica u)
+	{
+		if (true/*!pretraziUtakmicu(u)*/)
+			listaUtakmica.add(u);
+		else
+		{
+			//generisanje greske - bacanje exceptiona svj
+		}
 	}
 			
 }

@@ -1,0 +1,25 @@
+package Model;
+
+import java.util.Date;
+
+public class Main {
+
+	public static void main(String[] args) {
+		new Aplikacija();
+		Aplikacija.dodajKorisnika("aa","aa");
+		Aplikacija.dodajKorisnika("bb", "bb");
+		Aplikacija.dodajKorisnika("cc", "cc");
+		
+		Klub k1 = new Klub("Klub1", 1);
+		k1.dodajIgraca(new Igrac(1, "Ime1", "Prezime1", new Date(1998-01-01), "2", 198));
+		k1.dodajIgraca(new Igrac(2, "Ime2", "Prezime2", new Date(1998-02-01), "24", 198));
+		
+		Aplikacija.dodajKlub("KLUB1");
+		Aplikacija.dodajKlub("KLUB2");
+		Aplikacija.dodajKlub("KLUB3");
+		Aplikacija.dodajKlub("KLUB4");
+		
+		
+	}
+
+}
