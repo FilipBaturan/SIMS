@@ -108,7 +108,6 @@ public class DodavanjeUtakmiceDijalog extends JFrame {
 				Klub domacin = Aplikacija.pronadjiKlub(nazivDomacina);
 				Klub gost = Aplikacija.pronadjiKlub(nazivGosta);
 				
-<<<<<<< HEAD
 				if( !(nazivDomacina.compareTo(nazivGosta) == 0) )
 				{
 					Utakmica u = new Utakmica(domacin, gost);
@@ -116,10 +115,9 @@ public class DodavanjeUtakmiceDijalog extends JFrame {
 					dispose();
 					new SelekcijaIgracaDijalog(domacin, gost);
 				}
-=======
 				//Utakmica u = new Utakmica(domacin, gost);
 				//Aplikacija.dodajutakmicu(u);
->>>>>>> cc56cc9d982ee2615412bac1a212454ed1c39fb6
+
 				
 			}
 		});

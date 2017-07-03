@@ -82,9 +82,3 @@ public class Utakmica {
 	}
 }
 
-<<<<<<< HEAD
-=======
-	
-
-
->>>>>>> cc56cc9d982ee2615412bac1a212454ed1c39fb6

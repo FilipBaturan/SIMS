@@ -13,12 +13,8 @@ public class Aplikacija {
 	public static ArrayList<Sala> listaSala = new ArrayList<Sala>();
 	public static ArrayList<Igrac> listaIgraca = new ArrayList<Igrac>();
 	public static ArrayList<Trener> listaTrenera = new ArrayList<Trener>();
-<<<<<<< HEAD
-	public static ArrayList<Utakmica> listaUtakmica = new ArrayList<Utakmica>(); 
-=======
 	public static ArrayList<Osoba> listaSudija = new ArrayList<Osoba>();
 	public static ArrayList<Utakmica> listaUtakmica = new ArrayList<Utakmica>();
->>>>>>> cc56cc9d982ee2615412bac1a212454ed1c39fb6
 	
 	
 	private static int idKlub = 0;
