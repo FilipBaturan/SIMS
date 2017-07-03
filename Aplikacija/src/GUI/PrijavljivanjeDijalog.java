@@ -102,13 +102,13 @@ public class PrijavljivanjeDijalog extends JFrame {
 				String korisnickoImeTekst = poljeZaIme.getText();
 				String lozinkaTekst = poljeLozinke.getText();
 
-				if (Aplikacija.pronadjiKorisnika(korisnickoImeTekst, lozinkaTekst)) {
-					dispose();
+				/*if (Aplikacija.pronadjiKorisnika(korisnickoImeTekst, lozinkaTekst)) {
+					dispose();*/
 					new GlavniProzor();
-				} else {
+				/*} else {
 					JOptionPane.showMessageDialog(null, "Uneti korinisk ne postoji", "Nepostojeci Korosnik",
 							JOptionPane.INFORMATION_MESSAGE);
-				}
+				}*/
 			}
 		});
 

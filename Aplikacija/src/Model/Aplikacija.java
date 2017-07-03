@@ -344,5 +344,15 @@ public class Aplikacija {
 		}
 		return false;
 	}
+	
+	public static void dodajUtakmicu(Utakmica u)
+	{
+		if (true/*!pretraziUtakmicu(u)*/)
+			listaUtakmica.add(u);
+		else
+		{
+			//generisanje greske - bacanje exceptiona svj
+		}
+	}
 			
 }

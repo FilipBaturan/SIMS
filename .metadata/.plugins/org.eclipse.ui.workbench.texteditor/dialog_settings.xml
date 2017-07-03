@@ -2,14 +2,18 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="" key="selection"/>
+		<item value="create" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+<<<<<<< HEAD
+			<item value="create"/>
+=======
 			<item value="brojKlubova"/>
 			<item value="klub"/>
+>>>>>>> cc56cc9d982ee2615412bac1a212454ed1c39fb6
 			<item value="Syste"/>
 		</list>
 		<list key="replacehistory">

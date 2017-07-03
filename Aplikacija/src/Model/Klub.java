@@ -16,6 +16,7 @@ public class Klub {
 	public Klub(String naziv, int id) {
 		this.naziv = naziv;
 		this.id = id;
+		igraci = new ArrayList<Igrac>();
 	}
 	
 	public Klub(String naziv, int id,Mesto mestoOsnivanja) {
@@ -44,5 +45,32 @@ public class Klub {
 		return mestoOsnivanja;
 	}
 
+<<<<<<< HEAD
+=======
+	public void dodajIgraca(Igrac i) {
+		igraci.add(i);
+	}
+	
+	public int brojIgraca()
+	{
+		int broj = 0;
+		for (Igrac igrac : igraci) {
+			broj++;
+		}
+		
+		return broj;
+	}
+	
+	public ArrayList<Igrac> preuzmiIgrace()
+	{
+		ArrayList<Igrac> listaIgraca = new ArrayList<Igrac>();
+		int indeks = -1;
+		for (Igrac igrac : igraci) {
+			listaIgraca.add(igrac);
+		}
+		
+		return listaIgraca;
+	}
+>>>>>>> ae55ecf52fb700202de25e76c1d716c722d16749
 
 }

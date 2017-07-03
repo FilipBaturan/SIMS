@@ -29,6 +29,12 @@ public class Utakmica {
 		this.id = id;
 	}
 
+	public Utakmica(Klub d, Klub g)
+	{
+		domacin = d;
+		gost = g;
+	}
+	
 	public Stanje getTrenutnoStanje() {
 		return trenutnoStanje;
 	}
@@ -75,7 +81,4 @@ public class Utakmica {
 
 	}
 }
-
-	
-
 

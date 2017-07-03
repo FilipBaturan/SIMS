@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
+<<<<<<< HEAD
+<fullyQualifiedTypeName name="GUI.SelekcijaIgracaDijalog"/>
+=======
+>>>>>>> cc56cc9d982ee2615412bac1a212454ed1c39fb6
 <fullyQualifiedTypeName name="Model.Igrac"/>
+<<<<<<< HEAD
 <fullyQualifiedTypeName name="Model.Trener"/>
 <fullyQualifiedTypeName name="GUI.GlavniProzor"/>
 <fullyQualifiedTypeName name="java.io.LineNumberInputStream"/>
@@ -10,13 +15,26 @@
 <fullyQualifiedTypeName name="javax.swing.BoxLayout"/>
 <fullyQualifiedTypeName name="javax.swing.JLabel"/>
 <fullyQualifiedTypeName name="java.awt.Font"/>
+=======
+<fullyQualifiedTypeName name="java.util.Date"/>
+>>>>>>> ae55ecf52fb700202de25e76c1d716c722d16749
 <fullyQualifiedTypeName name="javax.swing.JPanel"/>
-<fullyQualifiedTypeName name="javax.swing.JComboBox"/>
+<fullyQualifiedTypeName name="java.awt.GridLayout"/>
+<fullyQualifiedTypeName name="javax.swing.JLabel"/>
+<fullyQualifiedTypeName name="javax.swing.JTextArea"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="javax.swing.event.ListSelectionListener"/>
 <fullyQualifiedTypeName name="java.awt.event.ActionListener"/>
+<<<<<<< HEAD
+=======
 <fullyQualifiedTypeName name="javax.swing.JButton"/>
 <fullyQualifiedTypeName name="Model.StatistikaKluba"/>
 <fullyQualifiedTypeName name="Model.Utakmica"/>
+<<<<<<< HEAD
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="Model.UcinakIgraca"/>
 <fullyQualifiedTypeName name="Model.Aplikacija"/>
+=======
+>>>>>>> cc56cc9d982ee2615412bac1a212454ed1c39fb6
+>>>>>>> ae55ecf52fb700202de25e76c1d716c722d16749
 </qualifiedTypeNameHistroy>
