@@ -3,6 +3,7 @@ package Model;
 public class Korisnik {
 	private String korisnickoIme;
 	private String lozinka;
+	public Osoba osoba;
 
 	public Korisnik() {
 	}

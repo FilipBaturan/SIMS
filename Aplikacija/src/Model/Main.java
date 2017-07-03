@@ -1,13 +1,5 @@
 package Model;
 
-import java.applet.Applet;
-
-import javax.swing.JFrame;
-
-import GUI.PrijavljivanjeDijalog;
-
-import Model.Aplikacija;
-
 public class Main {
 
 	public static void main(String[] args) {
@@ -15,6 +7,10 @@ public class Main {
 		Aplikacija.dodajKorisnika("aa","aa");
 		Aplikacija.dodajKorisnika("bb", "bb");
 		Aplikacija.dodajKorisnika("cc", "cc");
+		
+		Aplikacija.dodajMesto("11000", "Beogra");
+		Aplikacija.dodajMesto("11070", "Novi Beograd");
+		Aplikacija.dodajMesto("26300", "Vrsac");
 		
 		Aplikacija.dodajKlub("KLUB1");
 		Aplikacija.dodajKlub("KLUB2");

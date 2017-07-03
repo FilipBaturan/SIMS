@@ -1,10 +1,13 @@
 package Model;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 public class Igrac extends Osoba {
-	String brojDresa;
-	int visina;
+	private String brojDresa;
+	private int visina;
+	public Klub klub;
+	public ArrayList<UcinakIgraca> ucinak;
 	
 	public Igrac(){}
 
@@ -15,6 +18,14 @@ public class Igrac extends Osoba {
 		this.visina = visina;
 	}
 
+	public Igrac(int id, String ime, String prezime, Date datumRodjenja,
+			String brojDresa,int visina,Klub klub) {
+		super(id, ime, prezime, datumRodjenja);
+		this.brojDresa = brojDresa;
+		this.visina = visina;
+		this.klub = klub;
+	}
+	
 	public String getBrojDresa() {
 		return brojDresa;
 	}

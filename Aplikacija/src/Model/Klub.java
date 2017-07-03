@@ -17,6 +17,12 @@ public class Klub {
 		this.naziv = naziv;
 		this.id = id;
 	}
+	
+	public Klub(String naziv, int id,Mesto mestoOsnivanja) {
+		this.naziv = naziv;
+		this.id = id;
+		this.mestoOsnivanja = mestoOsnivanja;
+	}
 
 	public String getNaziv() {
 		return naziv;
@@ -38,8 +44,5 @@ public class Klub {
 		return mestoOsnivanja;
 	}
 
-	public void dodajIgraca(Igrac i) {
-		igraci.add(i);
-	}
 
 }

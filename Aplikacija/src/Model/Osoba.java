@@ -8,7 +8,7 @@ public class Osoba {
 	private String ime;
 	private String prezime;
 	private Date datumRodjenja;
-	
+	public Korisnik korisnik;
 	
 	
 	public Osoba() {}
