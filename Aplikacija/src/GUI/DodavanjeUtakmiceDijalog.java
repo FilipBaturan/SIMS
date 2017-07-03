@@ -107,7 +107,8 @@ public class DodavanjeUtakmiceDijalog extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				Klub domacin = Aplikacija.pronadjiKlub(nazivDomacina);
 				Klub gost = Aplikacija.pronadjiKlub(nazivGosta);
-				Utakmica u = new Utakmica(domacin, gost);
+				
+				//Utakmica u = new Utakmica(domacin, gost);
 				//Aplikacija.dodajutakmicu(u);
 				
 			}

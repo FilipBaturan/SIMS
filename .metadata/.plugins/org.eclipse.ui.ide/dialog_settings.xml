@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+		<item value="C:\Users\TheManiac\Documents\Specifikacija i modelovanje softvera\SIMS"/>
 		<item value="D:\FTN-SIIT\SIMS\projekat_kosarka\SIMS\Aplikacija"/>
 	</list>
 	<section name="ExternalProjectImportWizard">
@@ -8,8 +9,8 @@
 		<item value="false" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
 		<item value="false" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
-			<item value="D:\Faks\Semestar IV\SIMS\Projekat\SIMS"/>
 			<item value="C:\Users\TheManiac\Documents\Specifikacija i modelovanje softvera\SIMS"/>
+			<item value="D:\Faks\Semestar IV\SIMS\Projekat\SIMS"/>
 		</list>
 		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
 			<item value=""/>
