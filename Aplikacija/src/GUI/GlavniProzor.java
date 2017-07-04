@@ -13,7 +13,10 @@ import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+
+import Model.Aplikacija;
 
 public class GlavniProzor extends JFrame{
 
@@ -53,7 +56,13 @@ public class GlavniProzor extends JFrame{
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				if(Aplikacija.proveriBazu()){
 				new DodavanjeUtakmiceDijalog();
+				}
+				else{
+					JOptionPane.showMessageDialog(null, Aplikacija.prikaziGresku(), "Nedovoljno podataka",
+							JOptionPane.INFORMATION_MESSAGE);
+				}
 				
 			}
 		});

@@ -178,9 +178,9 @@ public class Aplikacija {
 		return i;
 	}*/
 
-	public static boolean dodajSalu(String naziv){
+	public static boolean dodajSalu(String naziv,Mesto mesto){
 		if (pronadjiSalu(naziv) == null){
-			listaSala.add(new Sala(naziv,generisiKluc('S')));
+			listaSala.add(new Sala(naziv,generisiKluc('S'),mesto));
 			return true;
 		}
 		return false;
@@ -323,6 +323,10 @@ public class Aplikacija {
 		listaUtakmica.add(new Utakmica(generisiKluc('U'),domacin,gost));
 	}
 	
+	public static void dodajUtakmicu(Klub domacin,Klub gost,Sala sala){
+		listaUtakmica.add(new Utakmica(generisiKluc('U'), domacin, gost, sala));
+	}
+	
 	public static Utakmica pronadjiUtamicu(int id){
 		for(Utakmica utakmica:listaUtakmica){
 			if(utakmica.getId()== id){
@@ -346,16 +350,36 @@ public class Aplikacija {
 		return false;
 	}
 	
-	public static void dodajUtakmicu(Utakmica u)
+	public static boolean dodajUtakmicu(Utakmica u)
 	{
-		if (true/*!pretraziUtakmicu(u)*/)
+		if (!listaUtakmica.contains(u)){
 			listaUtakmica.add(u);
-		else
-		{
-			//generisanje greske - bacanje exceptiona svj
+			return true;
 		}
+		return false;
+		
 	}
 
 	
+	
+	public static boolean proveriBazu(){
+		return listaKlubova.size()>=2 && listaSala.size()>=1;
+	}
+	
+	public static boolean proveriBazu(Klub klub){
+		return klub.igraci.size()>=5;
+	}
+	
+	public static String prikaziGresku(){
+		return "U bazi ne postoje dva kluba i jedna sala";
+	}
+	
+	public static String prikaziGresku(Klub klub){
+		return "Selektovani klub " + klub.getNaziv() + " nema pet igraca" ; 
+	}
+	
+	public static String prikaziGresku(Klub gost,Klub domacin){
+		return "Seletkovani klubovi nemaju po pet igraca";
+	}
 			
 }

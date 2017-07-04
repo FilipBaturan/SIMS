@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Klub {
 	private String naziv;
 	private int id;
-	public StatistikaKluba statistikaKluba;
+	public ArrayList<StatistikaKluba> statistikaKluba;
 	public Mesto mestoOsnivanja;
 	public Trener trener;
 	public ArrayList<Igrac> igraci;
@@ -24,6 +24,7 @@ public class Klub {
 		this.id = id;
 		this.mestoOsnivanja = mestoOsnivanja;
 		igraci = new ArrayList<Igrac>();
+		statistikaKluba = new ArrayList<StatistikaKluba>();
 	}
 
 	public String getNaziv() {

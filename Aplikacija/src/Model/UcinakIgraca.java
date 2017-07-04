@@ -12,11 +12,15 @@ public class UcinakIgraca {
 	private int poeni;
 	private int indeks;
 	private Date vreme;
-	public ArrayList<LicnaGreska> licneGreske;
+	public ArrayList<VrstaLicneGreske> licneGreske;
 	public ArrayList<Pokusaj> pokusaji;
 	public ArrayList<VrstaIzgubljeneLopte> izgubljeneLopteIgraca;
+	public Utakmica utakmica;
 
 	public UcinakIgraca() {
+		licneGreske = new ArrayList<VrstaLicneGreske>();
+		pokusaji = new ArrayList<Pokusaj>();
+		izgubljeneLopteIgraca = new ArrayList<VrstaIzgubljeneLopte>();
 	}
 
 	public int getSkokoviUNapadu() {

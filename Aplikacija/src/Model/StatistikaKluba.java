@@ -4,11 +4,14 @@ import java.util.ArrayList;
 
 public class StatistikaKluba {
 	private int brojNapada;
-	public ArrayList<VrstaIzgubljeneLopte> izgubljeneLopteIgraca;
-	public ArrayList<VrstaIzgubljeneLopte> izgubljeneLopteTrenera;
+	public ArrayList<VrstaIzgubljeneLopte> izgubljeneLopte;
+	public ArrayList<VrstaLicneGreske> licneGreske;
 	public ArrayList<Izmena> izmene;
+	public Utakmica utakmica;
 
 	public StatistikaKluba() {
+		izgubljeneLopte = new ArrayList<VrstaIzgubljeneLopte>();
+		licneGreske = new ArrayList<VrstaLicneGreske>();
 	}
 
 	public int getBrojNapada() {

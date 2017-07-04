@@ -13,6 +13,13 @@ public class Sala {
 		this.id = id;
 	}
 
+	public Sala(String nazivSale, int id, Mesto mesto) {
+		super();
+		this.nazivSale = nazivSale;
+		this.id = id;
+		this.mesto = mesto;
+	}
+
 	public String getNazivSale() {
 		return nazivSale;
 	}

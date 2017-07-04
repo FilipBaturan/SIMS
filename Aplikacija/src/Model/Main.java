@@ -19,6 +19,11 @@ public class Main {
 		Aplikacija.listaMesta.add(mesto2);
 		Aplikacija.listaMesta.add(mesto3);
 		
+		Sala sala1 = new Sala("sala1",1,mesto1);
+		Sala sala2 = new Sala("sala2",2,mesto2);
+		Aplikacija.listaSala.add(sala1);
+		Aplikacija.listaSala.add(sala2);
+		
 		Klub k1 = new Klub("Klub1", 1,mesto1);
 		Igrac igrac1 = new Igrac(1, "Ime1", "Prezime1", new Date(1998-01-01), "2", 198);
 		Igrac igrac2 = new Igrac(2, "Ime2", "Prezime2", new Date(1998-02-01), "22", 198); 
