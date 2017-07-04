@@ -18,13 +18,7 @@ public class Igrac extends Osoba {
 		this.visina = visina;
 	}
 
-	public Igrac(int id, String ime, String prezime, Date datumRodjenja,
-			String brojDresa,int visina,Klub klub) {
-		super(id, ime, prezime, datumRodjenja);
-		this.brojDresa = brojDresa;
-		this.visina = visina;
-		this.klub = klub;
-	}
+	
 	
 	public String getBrojDresa() {
 		return brojDresa;

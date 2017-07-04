@@ -50,8 +50,11 @@ public class SelekcijaIgracaDijalog extends JFrame {
 		JPanel panel1 = new JPanel();
 		
 		//preuzimanje svih igraca i smestanje njihovih ime u niz
-		ArrayList<Igrac> listaIgracaDomacina = domacin.preuzmiIgrace();
-		ArrayList<Igrac> listaIgracaGostiju = gost.preuzmiIgrace();
+		
+		//ArrayList<Igrac> listaIgracaDomacina = domacin.preuzmiIgrace();
+		//ArrayList<Igrac> listaIgracaGostiju = gost.preuzmiIgrace();
+		ArrayList<Igrac> listaIgracaDomacina = new ArrayList<Igrac>(domacin.igraci);
+		ArrayList<Igrac> listaIgracaGostiju = new ArrayList<>(gost.igraci);
 		
 		DefaultListModel<String> modelDomacina = new DefaultListModel();
 		DefaultListModel<String> modelGosta = new DefaultListModel();

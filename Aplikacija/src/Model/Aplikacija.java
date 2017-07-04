@@ -102,6 +102,7 @@ public class Aplikacija {
 		return false;
 	}
 	
+	
 	public static boolean dodajKlub(Klub klub){
 		if (!pronadjiKlub(klub)){
 			listaKlubova.add(klub);
@@ -354,5 +355,7 @@ public class Aplikacija {
 			//generisanje greske - bacanje exceptiona svj
 		}
 	}
+
+	
 			
 }

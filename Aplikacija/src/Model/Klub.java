@@ -18,11 +18,12 @@ public class Klub {
 		this.id = id;
 		igraci = new ArrayList<Igrac>();
 	}
-	
-	public Klub(String naziv, int id,Mesto mestoOsnivanja) {
+
+	public Klub(String naziv, int id, Mesto mestoOsnivanja) {
 		this.naziv = naziv;
 		this.id = id;
 		this.mestoOsnivanja = mestoOsnivanja;
+		igraci = new ArrayList<Igrac>();
 	}
 
 	public String getNaziv() {
@@ -45,32 +46,32 @@ public class Klub {
 		return mestoOsnivanja;
 	}
 
-<<<<<<< HEAD
-=======
-	public void dodajIgraca(Igrac i) {
-		igraci.add(i);
-	}
-	
-	public int brojIgraca()
-	{
-		int broj = 0;
-		for (Igrac igrac : igraci) {
-			broj++;
+	// ako igrac vec postoji u ovom klubu vraca -1
+	// ako igrac vec postoji u nekom drugom klubu vraca -2
+	public int dodajIgraca(Igrac igrac) {
+		if (igrac.klub != null) {
+			return -2;
 		}
+			for (Igrac it : igraci) {
+				if (it.getId() == igrac.getId()) {
+					return -1;
+				}
+			}
 		
-		return broj;
+		igraci.add(igrac);
+		igrac.klub = this;
+		return 0;
 	}
+
 	
-	public ArrayList<Igrac> preuzmiIgrace()
-	{
+	//OVO TI NE TREBA IZMENIO SAM TI U DIJALOGU
+	/*public ArrayList<Igrac> preuzmiIgrace() {
 		ArrayList<Igrac> listaIgraca = new ArrayList<Igrac>();
-		int indeks = -1;
 		for (Igrac igrac : igraci) {
 			listaIgraca.add(igrac);
 		}
-		
+
 		return listaIgraca;
-	}
->>>>>>> ae55ecf52fb700202de25e76c1d716c722d16749
+	}*/
 
 }

@@ -15,10 +15,6 @@ public class Trener extends Osoba {
 		
 	}
 	
-	public Trener(int id, String ime, String prezime, Date datumRodjenja,Klub klub) {
-		super(id, ime, prezime, datumRodjenja);
-		this.klub = klub;
-	}
 	
 	
 }
