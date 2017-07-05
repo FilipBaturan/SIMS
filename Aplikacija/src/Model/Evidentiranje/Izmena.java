@@ -1,4 +1,6 @@
-package Model;
+package Model.Evidentiranje;
+
+import Model.Igrac;
 
 public class Izmena {
 	public Igrac ulazi;

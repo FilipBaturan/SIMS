@@ -8,8 +8,6 @@ import java.awt.Insets;
 import java.awt.Label;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import Model.Aplikacija;
-import java.io.LineNumberInputStream;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -20,6 +18,7 @@ import javax.swing.JTextField;
 
 import Model.Aplikacija;
 
+@SuppressWarnings("serial")
 public class RegistracijaDijalog extends JFrame {
 
 	public RegistracijaDijalog() {

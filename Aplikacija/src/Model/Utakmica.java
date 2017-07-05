@@ -2,6 +2,12 @@ package Model;
 
 import java.util.ArrayList;
 
+import Model.Enumeracije.VrstaLicneGreske;
+import Model.Evidentiranje.Izmena;
+import Model.Evidentiranje.StatistikaKluba;
+import Model.StanjeUtakmice.Odigravanje;
+import Model.StanjeUtakmice.Stanje;
+
 public class Utakmica {
 	private int id;
 	private Stanje trenutnoStanje;
@@ -17,11 +23,12 @@ public class Utakmica {
 		aktivni = new ArrayList<Igrac>();
 	}
 	
-	public Utakmica(int id,Klub d, Klub g)
+	public Utakmica(int id,Klub domacin, Klub gost)
 	{
 		this.id = id;
-		domacin = d;
-		gost = g;
+		this.domacin = domacin;
+		this.gost = gost;
+		vreme = 0;
 		aktivni = new ArrayList<Igrac>();
 	}
 	
@@ -60,7 +67,6 @@ public class Utakmica {
 	public void promeniStanje(Stanje stanje) {
 		trenutnoStanje = stanje;
 		stanje.entry();
-		
 	}
 
 	private void otkucavanjeVremena() {

@@ -1,4 +1,4 @@
-package Model;
+package Model.Evidentiranje;
 
 public class Pokusaj {
 	private boolean pogodjen;

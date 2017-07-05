@@ -3,6 +3,8 @@ package Model;
 import java.util.ArrayList;
 import java.util.Date;
 
+import Model.Evidentiranje.UcinakIgraca;
+
 public class Igrac extends Osoba {
 	private String brojDresa;
 	private int visina;

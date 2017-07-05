@@ -3,6 +3,8 @@ package Model;
 import java.util.ArrayList;
 import java.util.Date;
 
+import Model.Evidentiranje.UcinakTrenera;
+
 public class Trener extends Osoba {
 	
 	public Klub klub;

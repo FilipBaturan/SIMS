@@ -1,6 +1,10 @@
-package Model;
+package Model.Evidentiranje;
 
 import java.util.ArrayList;
+
+import Model.Utakmica;
+import Model.Enumeracije.VrstaIzgubljeneLopte;
+import Model.Enumeracije.VrstaLicneGreske;
 
 public class StatistikaKluba {
 	private int brojNapada;

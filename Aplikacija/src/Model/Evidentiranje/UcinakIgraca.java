@@ -1,6 +1,11 @@
-package Model;
+package Model.Evidentiranje;
 
 import java.util.Date;
+
+import Model.Utakmica;
+import Model.Enumeracije.VrstaIzgubljeneLopte;
+import Model.Enumeracije.VrstaLicneGreske;
+
 import java.util.ArrayList;
 
 public class UcinakIgraca {

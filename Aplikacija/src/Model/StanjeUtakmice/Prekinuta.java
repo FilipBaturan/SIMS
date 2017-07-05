@@ -1,67 +1,71 @@
-package Model;
+package Model.StanjeUtakmice;
+
+import Model.Igrac;
+import Model.Klub;
+import Model.Osoba;
 
 public class Prekinuta extends Stanje {
 
 	public Prekinuta() {}
 	
 	@Override
-	protected void entry() {
+	public void entry() {
 		utakmica.zaustaviVreme();
 		
 	}
 
 	@Override
-	protected void tuca() {
+	public void tuca() {
 		utakmica.tuca();
 		utakmica.promeniStanje(new Zavrsena());
 		
 	}
 
 	@Override
-	protected void nastavak() {
+	public void nastavak() {
 		utakmica.pokreniVreme();
 		utakmica.promeniStanje(new Odigravanje());
 		
 	}
 
 	@Override
-	protected void prekid() {
+	public void prekid() {
 		
 		
 	}
 
 	@Override
-	protected void zavrsetak() {
+	public void zavrsetak() {
 		
 		
 	}
 
 	@Override
-	protected void dijalog(Osoba osoba) {
+	public void dijalog(Osoba osoba) {
 		
 		
 	}
 
 	@Override
-	protected void dijalog(Klub klub) {
+	public void dijalog(Klub klub) {
 		
 		
 	}
 
 	@Override
-	protected void selektcija(Igrac igrac) {
+	public void selektcija(Igrac igrac) {
 		
 		
 	}
 
 	@Override
-	protected void azuriranje(Osoba osoba, int tip, int vrednost) {
+	public void azuriranje(Osoba osoba, int tip, int vrednost) {
 		
 		
 	}
 
 	@Override
-	protected void azuriranje(Klub klub, int tip, int vrednost) {
+	public void azuriranje(Klub klub, int tip, int vrednost) {
 		
 		
 	}

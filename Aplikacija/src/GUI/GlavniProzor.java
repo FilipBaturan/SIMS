@@ -1,8 +1,6 @@
 package GUI;
 
-import java.awt.Dimension;
 import java.awt.Image;
-import java.awt.Point;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
@@ -18,6 +16,7 @@ import javax.swing.JPanel;
 
 import Model.Aplikacija;
 
+@SuppressWarnings("serial")
 public class GlavniProzor extends JFrame{
 
 	public GlavniProzor() {

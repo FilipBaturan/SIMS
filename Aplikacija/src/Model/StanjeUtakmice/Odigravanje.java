@@ -1,4 +1,8 @@
-package Model;
+package Model.StanjeUtakmice;
+
+import Model.Igrac;
+import Model.Klub;
+import Model.Osoba;
 
 public class Odigravanje extends Stanje {
 	public Osoba selektovanaOsoba;
@@ -7,49 +11,49 @@ public class Odigravanje extends Stanje {
 	public Odigravanje(){}
 	
 	@Override
-	protected void entry() {
+	public void entry() {
 		utakmica.prikazTerena();
 		
 	}
 
 	@Override
-	protected void tuca() {
+	public void tuca() {
 		
 		
 	}
 
 	@Override
-	protected void nastavak() {
+	public void nastavak() {
 		
 		
 	}
 
 	@Override
-	protected void prekid() {
+	public void prekid() {
 		utakmica.promeniStanje(new Prekinuta());
 		
 	}
 
 	@Override
-	protected void zavrsetak() {
+	public void zavrsetak() {
 		utakmica.promeniStanje(new Zavrsena());
 		
 	}
 
 	@Override
-	protected void dijalog(Osoba osoba) {
+	public void dijalog(Osoba osoba) {
 		utakmica.prikazDijaloga(osoba);
 		
 	}
 
 	@Override
-	protected void dijalog(Klub klub) {
+	public void dijalog(Klub klub) {
 		utakmica.prikazDijaloga(klub);
 		
 	}
 
 	@Override
-	protected void selektcija(Igrac igrac) {
+	public void selektcija(Igrac igrac) {
 		if(izlazni == null){
 			izlazni = igrac;
 		}
@@ -63,13 +67,13 @@ public class Odigravanje extends Stanje {
 	}
 
 	@Override
-	protected void azuriranje(Osoba osoba, int tip, int vrednost) {
+	public void azuriranje(Osoba osoba, int tip, int vrednost) {
 		utakmica.azuriranje(osoba, tip, vrednost);
 		
 	}
 
 	@Override
-	protected void azuriranje(Klub klub, int tip, int vrednost) {
+	public void azuriranje(Klub klub, int tip, int vrednost) {
 		utakmica.azuriranje(klub, tip, vrednost);
 		
 	}

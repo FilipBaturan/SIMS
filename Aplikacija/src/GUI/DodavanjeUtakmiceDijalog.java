@@ -17,8 +17,8 @@ import javax.swing.JPanel;
 
 import Model.Aplikacija;
 import Model.Klub;
-import Model.Utakmica;
 
+@SuppressWarnings("serial")
 public class DodavanjeUtakmiceDijalog extends JFrame {
 
 	String nazivDomacina = "";

@@ -3,11 +3,15 @@
 <fullyQualifiedTypeName name="Model.TimeOut"/>
 <fullyQualifiedTypeName name="Model.Pokusaj"/>
 <fullyQualifiedTypeName name="Model.VrstaIzgubljeneLopte"/>
-<fullyQualifiedTypeName name="Model.Zavrsena"/>
 <fullyQualifiedTypeName name="Model.VrstaLicneGreske"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="Model.Utakmica"/>
 <fullyQualifiedTypeName name="Model.Aplikacija"/>
 <fullyQualifiedTypeName name="Model.StatistikaKluba"/>
 <fullyQualifiedTypeName name="Model.Izmena"/>
+<fullyQualifiedTypeName name="Model.Prekinuta"/>
+<fullyQualifiedTypeName name="Model.Zavrsena"/>
+<fullyQualifiedTypeName name="Model.Odigravanje"/>
+<fullyQualifiedTypeName name="Model.Enumeracije.TimeOut"/>
+<fullyQualifiedTypeName name="Model.Evidentiranje.TimeOut"/>
 </qualifiedTypeNameHistroy>

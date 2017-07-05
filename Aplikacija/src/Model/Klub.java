@@ -2,6 +2,8 @@ package Model;
 
 import java.util.ArrayList;
 
+import Model.Evidentiranje.StatistikaKluba;
+
 public class Klub {
 	private String naziv;
 	private int id;

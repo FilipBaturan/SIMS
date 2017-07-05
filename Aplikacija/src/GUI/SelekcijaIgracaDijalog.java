@@ -11,9 +11,7 @@ import java.util.ArrayList;
 import javax.swing.BoxLayout;
 import javax.swing.DefaultListModel;
 import javax.swing.JButton;
-import javax.swing.JComboBox;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
@@ -23,6 +21,7 @@ import javax.swing.event.ListSelectionListener;
 import Model.Igrac;
 import Model.Klub;
 
+@SuppressWarnings("serial")
 public class SelekcijaIgracaDijalog extends JFrame {
 	
 	
@@ -56,8 +55,8 @@ public class SelekcijaIgracaDijalog extends JFrame {
 		ArrayList<Igrac> listaIgracaDomacina = new ArrayList<Igrac>(domacin.igraci);
 		ArrayList<Igrac> listaIgracaGostiju = new ArrayList<>(gost.igraci);
 		
-		DefaultListModel<String> modelDomacina = new DefaultListModel();
-		DefaultListModel<String> modelGosta = new DefaultListModel();
+		DefaultListModel<String> modelDomacina = new DefaultListModel<String>();
+		DefaultListModel<String> modelGosta = new DefaultListModel<String>();
 		
 		String[] listaImenaDomacina= new String[listaIgracaDomacina.size()];
 		int indeks = -1;
@@ -81,7 +80,7 @@ public class SelekcijaIgracaDijalog extends JFrame {
 		listaZaPrikaz.setModel(modelDomacina);
 		
 		
-		JComboBox<String> comboBox = new JComboBox<String>(listaImenaDomacina);
+		//JComboBox<String> comboBox = new JComboBox<String>(listaImenaDomacina);
 		panel1.add(new Label("Izaberite 5 igraca domaceg tima "));
 		panel1.add(listaZaPrikaz);
 		
@@ -106,7 +105,7 @@ public class SelekcijaIgracaDijalog extends JFrame {
 		
 		JPanel panel3 = new JPanel();
 		panel3.add(new Label("Izaberite 5 igraca gostujuceg tima  "));
-		JComboBox<String> comboBox2 =  new JComboBox<String>(listaImenaGosta);
+		//JComboBox<String> comboBox2 =  new JComboBox<String>(listaImenaGosta);
 		panel3.add(listaZaPrikaz2);
 		
 		
