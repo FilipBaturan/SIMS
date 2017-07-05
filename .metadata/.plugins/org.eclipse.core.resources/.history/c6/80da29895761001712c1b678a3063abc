@@ -1,0 +1,16 @@
+package GUI;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+
+@SuppressWarnings("serial")
+public class Test extends JFrame {
+	
+	public Test(){
+	this.setTitle("Selektovanje Igraca");
+	this.setVisible(true);
+	this.setLocation(350, 150);
+	this.setSize(700, 400);
+	JPanel glavniPanel = new JPanel();
+	}
+}
