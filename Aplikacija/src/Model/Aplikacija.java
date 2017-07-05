@@ -214,7 +214,7 @@ public class Aplikacija {
 	}
 	
 	public static void dodajIgraca(String ime, String prezime, Date datumRodjenja,
-			String brojDresa,int visina){
+			int brojDresa,int visina){
 		
 		listaIgraca.add(new Igrac(generisiKluc('O'), ime, prezime, datumRodjenja,
 				brojDresa, visina));

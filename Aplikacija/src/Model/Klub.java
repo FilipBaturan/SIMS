@@ -2,6 +2,8 @@ package Model;
 
 import java.util.ArrayList;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class Klub {
 	private String naziv;
 	private int id;
@@ -21,7 +23,8 @@ public class Klub {
 	public String getNaziv() {
 		return naziv;
 	}
-
+	
+	@JsonProperty("naziv")
 	public void setNaziv(String naziv) {
 		this.naziv = naziv;
 	}
@@ -29,7 +32,8 @@ public class Klub {
 	public int getId() {
 		return id;
 	}
-
+	
+	@JsonProperty("id")
 	public void setId(int id) {
 		this.id = id;
 	}

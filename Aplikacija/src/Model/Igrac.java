@@ -2,24 +2,28 @@ package Model;
 
 import java.util.Date;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+
 public class Igrac extends Osoba {
-	String brojDresa;
+	int brojDresa;
 	int visina;
 	
 	public Igrac(){}
 
 	public Igrac(int id, String ime, String prezime, Date datumRodjenja,
-			String brojDresa,int visina) {
+			int brojDresa,int visina) {
 		super(id, ime, prezime, datumRodjenja);
 		this.brojDresa = brojDresa;
 		this.visina = visina;
 	}
-
-	public String getBrojDresa() {
+	
+	public int getBrojDresa() {
 		return brojDresa;
 	}
 
-	public void setBrojDresa(String brojDresa) {
+	@JsonProperty("brojDresa")
+	public void setBrojDresa(int brojDresa) {
 		this.brojDresa = brojDresa;
 	}
 
@@ -27,6 +31,7 @@ public class Igrac extends Osoba {
 		return visina;
 	}
 
+	@JsonProperty("visina")
 	public void setVisina(int visina) {
 		this.visina = visina;
 	}

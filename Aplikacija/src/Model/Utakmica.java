@@ -2,7 +2,6 @@ package Model;
 
 public class Utakmica {
 	private Stanje trenutnoStanje;
-<<<<<<< HEAD
 	private int vreme;
 	public Sala sala;
 	public StatistikaKluba statistikaDomacegKluba;
@@ -11,6 +10,12 @@ public class Utakmica {
 	public Klub gost;
 
 	public Utakmica() {
+	}
+	
+	public Utakmica(Klub d, Klub g)
+	{
+		domacin = d;
+		gost = g;
 	}
 
 	public Stanje getTrenutnoStanje() {
@@ -58,21 +63,6 @@ public class Utakmica {
 	public void izmena(Igrac ulazi, Igrac izlazi) {
 
 	}
-}
-=======
-	private Klub domacin;
-	private Klub gost;
-
-
-	public Utakmica()
-	{
-		
-	}
 	
-	public Utakmica(Klub d, Klub g)
-	{
-		domacin = d;
-		gost = g;
-	}
+	
 }
->>>>>>> b34f6c0d569d6cf9390c3e391503f31b802667fd

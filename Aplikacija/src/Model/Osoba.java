@@ -2,6 +2,8 @@ package Model;
 
 import java.util.Date;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class Osoba {
 	
 	private int id;
@@ -29,6 +31,7 @@ public class Osoba {
 		return id;
 	}
 
+	@JsonProperty("id")
 	public void setId(int id) {
 		this.id = id;
 	}
@@ -36,7 +39,8 @@ public class Osoba {
 	public String getIme() {
 		return ime;
 	}
-
+	
+	@JsonProperty("ime")
 	public void setIme(String ime) {
 		this.ime = ime;
 	}
@@ -44,7 +48,8 @@ public class Osoba {
 	public String getPrezime() {
 		return prezime;
 	}
-
+	
+	@JsonProperty("prezime")
 	public void setPrezime(String prezime) {
 		this.prezime = prezime;
 	}
@@ -53,6 +58,7 @@ public class Osoba {
 		return datumRodjenja;
 	}
 
+	@JsonProperty("datumRodjenja")
 	public void setDatumRodjenja(Date datumRodjenja) {
 		this.datumRodjenja = datumRodjenja;
 	}

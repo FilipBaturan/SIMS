@@ -1,5 +1,7 @@
 package Model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class Korisnik {
 	private String korisnickoIme;
 	private String lozinka;
@@ -16,6 +18,7 @@ public class Korisnik {
 		return korisnickoIme;
 	}
 
+	@JsonProperty("korisnickoIme")
 	public void setKorisnickoIme(String korisnickoIme) {
 		this.korisnickoIme = korisnickoIme;
 	}
@@ -24,8 +27,8 @@ public class Korisnik {
 		return lozinka;
 	}
 
+	@JsonProperty("lozinka")
 	public void setLozinka(String lozinka) {
 		this.lozinka = lozinka;
 	}
-
 }
