@@ -36,6 +36,7 @@ public class Odigravanje extends Stanje {
 
 	@Override
 	public void zavrsetak() {
+		
 		utakmica.promeniStanje(new Zavrsena());
 		
 	}

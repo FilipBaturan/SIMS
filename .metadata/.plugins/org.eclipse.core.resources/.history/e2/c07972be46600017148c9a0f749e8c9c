@@ -1,0 +1,46 @@
+package Model;
+
+
+import java.util.Date;
+
+
+public class Main {
+
+	public static void main(String[] args) {
+		new Aplikacija();
+		Aplikacija.dodajKorisnika("aa","aa");
+		Aplikacija.dodajKorisnika("bb", "bb");
+		Aplikacija.dodajKorisnika("cc", "cc");
+		
+		Mesto mesto1 = new Mesto("11000", "Beogra");
+		Mesto mesto2 = new Mesto("11070", "Novi Beograd");
+		Mesto mesto3 = new Mesto("26300", "Vrsac");
+		Aplikacija.listaMesta.add(mesto1);
+		Aplikacija.listaMesta.add(mesto2);
+		Aplikacija.listaMesta.add(mesto3);
+		
+		Klub k1 = new Klub("Klub1", 1,mesto1);
+		Igrac igrac1 = new Igrac(1, "Ime1", "Prezime1", new Date(1998-01-01), "2", 198);
+		Igrac igrac2 = new Igrac(2, "Ime2", "Prezime2", new Date(1998-02-01), "24", 198); 
+		Igrac igrac3 = new Igrac(3, "Ime3", "Prezime3", new Date(1998-01-01), "23", 198); 
+		k1.igraci.add();
+		k1.igraci.add();
+		
+		Klub k2 = new Klub("Klub2", 2,mesto2);
+		k2.igraci.add();
+		k2.igraci.add(new Igrac(4, "Ime4", "Prezime4", new Date(1998-02-01), "12", 198));
+		
+		Klub k3 = new Klub("Klub3", 3,mesto3);
+		k3.igraci.add(new Igrac(5, "Ime5", "Prezime5", new Date(1998-03-01), "7", 198));
+		k3.igraci.add(new Igrac(6, "Ime6", "Prezime6", new Date(1998-04-01), "99", 198));
+		
+		Aplikacija.dodajKlub(k1);
+		Aplikacija.dodajKlub(k2);
+		Aplikacija.dodajKlub(k3);
+		//Aplikacija.dodajKlub(k4);
+
+		
+		
+	}
+
+}

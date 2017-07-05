@@ -1,0 +1,6 @@
+package Model.Enumeracije;
+
+public enum TimeOut {
+	veliki,
+	mali;
+}

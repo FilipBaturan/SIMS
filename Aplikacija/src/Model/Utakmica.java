@@ -78,6 +78,15 @@ public class Utakmica {
 	public void setVreme(int vreme) {
 		this.vreme = vreme;
 	}
+	
+
+	public Timer getTimer() {
+		return timer;
+	}
+
+	public void setTimer(Timer timer) {
+		this.timer = timer;
+	}
 
 	private void postaviOtkucavanje(int vreme){
 		timer.schedule(new TimerTask() {
@@ -90,7 +99,7 @@ public class Utakmica {
 		},0, vreme);
 	}
 	//pocni sa otkucavanjem vremena
-	public void pocekat(){
+	public void pocetak(){
 		postaviOtkucavanje(1000);
 	}
 	
@@ -172,6 +181,7 @@ public class Utakmica {
 	}
 	
 	public void tuca(){
+		timer.cancel();
 		for(StatistikaKluba it:domacin.statistikaKluba){
 			if(it.utakmica == this){
 				it.licneGreske.add(VrstaLicneGreske.tuca);

@@ -1,0 +1,44 @@
+package Model.Evidentiranje;
+
+public class TimeOut {
+	TimeOut tip;
+	int vreme;
+	int cetvrtina;
+	
+	public TimeOut(){
+		
+	}
+
+	public TimeOut(TimeOut tip, int vreme, int cetvrtina) {
+		super();
+		this.tip = tip;
+		this.vreme = vreme;
+		this.cetvrtina = cetvrtina;
+	}
+
+	public TimeOut getTip() {
+		return tip;
+	}
+
+	public void setTip(TimeOut tip) {
+		this.tip = tip;
+	}
+
+	public int getVreme() {
+		return vreme;
+	}
+
+	public void setVreme(int vreme) {
+		this.vreme = vreme;
+	}
+
+	public int getCetvrtina() {
+		return cetvrtina;
+	}
+
+	public void setCetvrtina(int cetvrtina) {
+		this.cetvrtina = cetvrtina;
+	}
+	
+	
+}

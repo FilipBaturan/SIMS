@@ -1,0 +1,24 @@
+package Model.Enumeracije;
+
+public enum VrstaIzgubljeneLopte {
+	koraci(0),
+	dupla,
+	loseDodavanje,
+	loseHvatanje,
+	triSekunde,
+	faulUNapaduSaLoptom,
+	faulUNapaduBezLopte,
+	tehnickaGreska,
+	tucaNaTerenu,
+	loseVodjenjeLopte,
+	izgubljenaLoptaZbogTrenera,
+	prekoPola,
+	istekaoNapad,
+	izAuta;
+	
+	VrstaIzgubljeneLopte() {
+	}
+	VrstaIzgubljeneLopte(int vrednost){
+		
+	}
+}

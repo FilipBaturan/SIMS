@@ -1,0 +1,77 @@
+package Model;
+
+import java.util.ArrayList;
+
+public class Klub {
+	private String naziv;
+	private int id;
+	public ArrayList<StatistikaKluba> statistikaKluba;
+	public Mesto mestoOsnivanja;
+	public Trener trener;
+	public ArrayList<Igrac> igraci;
+
+	public Klub() {
+	}
+
+	public Klub(String naziv, int id) {
+		this.naziv = naziv;
+		this.id = id;
+		igraci = new ArrayList<Igrac>();
+	}
+
+	public Klub(String naziv, int id, Mesto mestoOsnivanja) {
+		this.naziv = naziv;
+		this.id = id;
+		this.mestoOsnivanja = mestoOsnivanja;
+		igraci = new ArrayList<Igrac>();
+	}
+
+	public String getNaziv() {
+		return naziv;
+	}
+
+	public void setNaziv(String naziv) {
+		this.naziv = naziv;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public Mesto getMestoOsnivanja() {
+		return mestoOsnivanja;
+	}
+
+	// ako igrac vec postoji u ovom klubu vraca -1
+	// ako igrac vec postoji u nekom drugom klubu vraca -2
+	public int dodajIgraca(Igrac igrac) {
+		if (igrac.klub != null) {
+			return -2;
+		}
+			for (Igrac it : igraci) {
+				if (it.getId() == igrac.getId()) {
+					return -1;
+				}
+			}
+		
+		igraci.add(igrac);
+		igrac.klub = this;
+		return 0;
+	}
+
+	
+	//OVO TI NE TREBA IZMENIO SAM TI U DIJALOGU
+	/*public ArrayList<Igrac> preuzmiIgrace() {
+		ArrayList<Igrac> listaIgraca = new ArrayList<Igrac>();
+		for (Igrac igrac : igraci) {
+			listaIgraca.add(igrac);
+		}
+
+		return listaIgraca;
+	}*/
+
+}

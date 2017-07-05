@@ -13,6 +13,7 @@ public class Zavrsena extends Stanje {
 	public void entry() {
 		utakmica.prikazStatistike();
 		
+		
 	}
 
 	@Override
