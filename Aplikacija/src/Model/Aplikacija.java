@@ -227,15 +227,11 @@ public class Aplikacija {
 		return false;
 	}
 	
-<<<<<<< HEAD
-	public static void dodajIgraca(String ime, String prezime, Date datumRodjenja,
-			int brojDresa,int visina){
-		
-=======
+
 	public static boolean dodajIgraca(String ime, String prezime, Date datumRodjenja,
-			String brojDresa,int visina){
+			int brojDresa,double visina){
 		if(pronadjiIgraca(brojDresa)== null){
->>>>>>> 17c4d1099af0f7868f51324d98664c5c755a1822
+
 		listaIgraca.add(new Igrac(generisiKluc('O'), ime, prezime, datumRodjenja,
 				brojDresa, visina));
 			return true;
@@ -265,9 +261,9 @@ public class Aplikacija {
 		return null;
 	}
 	
-	public static Igrac pronadjiIgraca(String brojDresa){
+	public static Igrac pronadjiIgraca(double brojDresa){
 		for(Igrac igrac:listaIgraca){
-			if(igrac.getBrojDresa().compareTo(brojDresa) == 0) return igrac;
+			if(igrac.getBrojDresa() == brojDresa) return igrac;
 		}
 		return null;
 	}

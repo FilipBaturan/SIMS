@@ -21,6 +21,7 @@ public class KluboviUI {
 
 		}
 
+		@SuppressWarnings("unused")
 		public ArrayList<Klub> getKlubovi() {
 			return klubovi;
 		}

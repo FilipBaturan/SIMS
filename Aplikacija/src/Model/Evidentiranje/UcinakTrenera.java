@@ -3,8 +3,8 @@ package Model.Evidentiranje;
 import java.util.ArrayList;
 
 import Model.Utakmica;
-import Model.Enumeracije.TipTimeOut;
-import Model.Enumeracije.VrstaLicneGreske;
+import Model.Evidentiranje.Enumeracije.TipTimeOut;
+import Model.Evidentiranje.Enumeracije.VrstaLicneGreske;
 
 public class UcinakTrenera {
 	private int brojIzgubljenihLopti;

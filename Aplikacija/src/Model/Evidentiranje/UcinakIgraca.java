@@ -1,12 +1,10 @@
 package Model.Evidentiranje;
 
-import java.util.Date;
+import java.util.ArrayList;
 
 import Model.Utakmica;
-import Model.Enumeracije.VrstaIzgubljeneLopte;
-import Model.Enumeracije.VrstaLicneGreske;
-
-import java.util.ArrayList;
+import Model.Evidentiranje.Enumeracije.VrstaIzgubljeneLopte;
+import Model.Evidentiranje.Enumeracije.VrstaLicneGreske;
 
 public class UcinakIgraca {
 	private int skokoviUNapadu;
@@ -16,7 +14,7 @@ public class UcinakIgraca {
 	private int blokade;
 	private int poeni;
 	private int indeks;
-	private Date vreme;
+	private int vreme;
 	public ArrayList<VrstaLicneGreske> licneGreske;
 	public ArrayList<Pokusaj> pokusaji;
 	public ArrayList<VrstaIzgubljeneLopte> izgubljeneLopteIgraca;
@@ -84,11 +82,11 @@ public class UcinakIgraca {
 		this.indeks = indeks;
 	}
 
-	public Date getVreme() {
+	public int getVreme() {
 		return vreme;
 	}
 
-	public void setVreme(Date vreme) {
+	public void setVreme(int vreme) {
 		this.vreme = vreme;
 	}
 	

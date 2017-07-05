@@ -2,13 +2,13 @@ package Model;
 
 import java.util.ArrayList;
 import java.util.Timer;
+import java.util.TimerTask;
 
-import Model.Enumeracije.VrstaIzgubljeneLopte;
-import Model.Enumeracije.VrstaLicneGreske;
 import Model.Evidentiranje.Izmena;
 import Model.Evidentiranje.StatistikaKluba;
 import Model.Evidentiranje.UcinakIgraca;
 import Model.Evidentiranje.UcinakTrenera;
+import Model.Evidentiranje.Enumeracije.VrstaLicneGreske;
 import Model.StanjeUtakmice.Stanje;
 
 public class Utakmica {
@@ -24,6 +24,7 @@ public class Utakmica {
 
 	public Utakmica() {
 		aktivni = new ArrayList<Igrac>();
+		timer = new Timer();
 	}
 	
 	public Utakmica(int id,Klub domacin, Klub gost)
@@ -34,6 +35,7 @@ public class Utakmica {
 		vreme = 0;
 		pokrenut = false;
 		aktivni = new ArrayList<Igrac>();
+		timer = new Timer();
 	}
 	
 	public Utakmica(int id,Klub domacin,Klub gost,Sala sala){
@@ -43,6 +45,7 @@ public class Utakmica {
 		this.sala = sala;
 		pokrenut = false;
 		aktivni = new ArrayList<Igrac>();
+		timer = new Timer();
 	}
 	
 	public int getId() {
@@ -76,6 +79,21 @@ public class Utakmica {
 		this.vreme = vreme;
 	}
 
+	private void postaviOtkucavanje(int vreme){
+		timer.schedule(new TimerTask() {
+			
+			@Override
+			public void run() {
+				otkucavanjeVremena();
+				
+			}
+		},0, vreme);
+	}
+	//pocni sa otkucavanjem vremena
+	public void pocekat(){
+		postaviOtkucavanje(1000);
+	}
+	
 	public int izracunaCetvrtinu(){
 		if(getVreme() <=10) return 1;
 		else if(getVreme() >10
@@ -91,12 +109,23 @@ public class Utakmica {
 	}
 	//TREBA I AKTIVNIM IGRACIMA DA UCECAVA VREME
 	private void otkucavanjeVremena() {
-		while(pokrenut){
-			
+		if(pokrenut){
+			vreme++;
+			//uvecaj vreme svim aktinvim igracima
+			for(Igrac igrac:aktivni){
+				for(UcinakIgraca ucinak: igrac.ucinak){
+					if(ucinak.utakmica == this){
+						ucinak.setVreme(ucinak.getVreme()+1);
+						break;
+					}
+				}
+			}
 		}
+		System.out.println(vreme);
 	}
 
-	public void postaviStartere() {
+	public void postaviStartere(ArrayList<Igrac> igraci) {
+		aktivni = igraci;
 	}
 
 	public void zaustaviVreme() {
@@ -122,11 +151,7 @@ public class Utakmica {
 	public void prikazDijaloga(Klub klub){
 		
 	}
-<<<<<<< HEAD
-	
-	
-}
-=======
+
 
 	public void izmena(Igrac ulazi, Igrac izlazi) {
 		Klub klub = ulazi.klub;
@@ -137,7 +162,7 @@ public class Utakmica {
 				break;
 			}
 		}
-		//izvrsi izemnu
+		//izvrsi izmenu
 		for(Igrac igrac:aktivni){
 			if(igrac == izlazi){
 				igrac = ulazi;
@@ -191,4 +216,4 @@ public class Utakmica {
 	}
 }
 
->>>>>>> 17c4d1099af0f7868f51324d98664c5c755a1822
+

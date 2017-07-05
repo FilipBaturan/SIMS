@@ -2,11 +2,11 @@ package Model;
 
 import java.util.ArrayList;
 
-<<<<<<< HEAD
+
 import com.fasterxml.jackson.annotation.JsonProperty;
-=======
+
 import Model.Evidentiranje.StatistikaKluba;
->>>>>>> 17c4d1099af0f7868f51324d98664c5c755a1822
+
 
 public class Klub {
 	private String naziv;

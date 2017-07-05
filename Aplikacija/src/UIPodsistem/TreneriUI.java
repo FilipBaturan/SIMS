@@ -16,10 +16,10 @@ public class TreneriUI {
 	private static class Treneri {
 		private ArrayList<Trener> treneri;
 
-		@SuppressWarnings("unused")
 		public Treneri() {
 		}
 
+		@SuppressWarnings("unused")
 		public ArrayList<Trener> getT() {
 			return treneri;
 		}
