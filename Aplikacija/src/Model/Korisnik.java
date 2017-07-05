@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class Korisnik {
 	private String korisnickoIme;
 	private String lozinka;
+	public Osoba osoba;
 
 	public Korisnik() {
 	}

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
+<<<<<<< HEAD
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="Model.Trener"/>
 <fullyQualifiedTypeName name="GUI.GlavniProzor"/>
@@ -26,4 +27,29 @@
 <fullyQualifiedTypeName name="com.fasterxml.jackson.databind.ObjectMapper"/>
 <fullyQualifiedTypeName name="Model.Korisnik"/>
 <fullyQualifiedTypeName name="UIPodsistem.KorisnikUI"/>
+=======
+<fullyQualifiedTypeName name="Model.TimeOut"/>
+<fullyQualifiedTypeName name="Model.Pokusaj"/>
+<fullyQualifiedTypeName name="Model.VrstaIzgubljeneLopte"/>
+<fullyQualifiedTypeName name="Model.VrstaLicneGreske"/>
+<fullyQualifiedTypeName name="Model.Utakmica"/>
+<fullyQualifiedTypeName name="Model.Aplikacija"/>
+<fullyQualifiedTypeName name="Model.StatistikaKluba"/>
+<fullyQualifiedTypeName name="Model.Izmena"/>
+<fullyQualifiedTypeName name="Model.Prekinuta"/>
+<fullyQualifiedTypeName name="Model.Zavrsena"/>
+<fullyQualifiedTypeName name="Model.Odigravanje"/>
+<fullyQualifiedTypeName name="Model.Enumeracije.TimeOut"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="java.util.Timer"/>
+<fullyQualifiedTypeName name="Model.Evidentiranje.UcinakIgraca"/>
+<fullyQualifiedTypeName name="Model.Evidentiranje.Pokusaj"/>
+<fullyQualifiedTypeName name="java.io.LineNumberInputStream"/>
+<fullyQualifiedTypeName name="Model.Evidentiranje.TimeOut"/>
+<fullyQualifiedTypeName name="Model.Enumeracije.TipTimeOut"/>
+<fullyQualifiedTypeName name="Model.Evidentiranje.StatistikaKluba"/>
+<fullyQualifiedTypeName name="Model.Evidentiranje.UcinakTrenera"/>
+<fullyQualifiedTypeName name="Model.Enumeracije.VrstaIzgubljeneLopte"/>
+<fullyQualifiedTypeName name="Model.Enumeracije.VrstaLicneGreske"/>
+>>>>>>> 17c4d1099af0f7868f51324d98664c5c755a1822
 </qualifiedTypeNameHistroy>

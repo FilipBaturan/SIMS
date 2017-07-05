@@ -1,8 +1,6 @@
 package GUI;
 
-import java.awt.Dimension;
 import java.awt.Image;
-import java.awt.Point;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
@@ -13,8 +11,12 @@ import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
+import Model.Aplikacija;
+
+@SuppressWarnings("serial")
 public class GlavniProzor extends JFrame{
 
 	public GlavniProzor() {
@@ -53,7 +55,13 @@ public class GlavniProzor extends JFrame{
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				if(Aplikacija.proveriBazu()){
 				new DodavanjeUtakmiceDijalog();
+				}
+				else{
+					JOptionPane.showMessageDialog(null, Aplikacija.prikaziGresku(), "Nedovoljno podataka",
+							JOptionPane.INFORMATION_MESSAGE);
+				}
 				
 			}
 		});

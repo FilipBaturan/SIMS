@@ -13,16 +13,20 @@ public class Aplikacija {
 	public static ArrayList<Sala> listaSala = new ArrayList<Sala>();
 	public static ArrayList<Igrac> listaIgraca = new ArrayList<Igrac>();
 	public static ArrayList<Trener> listaTrenera = new ArrayList<Trener>();
+	public static ArrayList<Osoba> listaSudija = new ArrayList<Osoba>();
+	public static ArrayList<Utakmica> listaUtakmica = new ArrayList<Utakmica>();
 	
 	
 	private static int idKlub = 0;
 	private static int idSala = 0;
 	private static int idOsoba = 0;
+	private static int idUtakmica = 0;
 	
 	public static int generisiKluc(char tip){
 		if(tip == 'K') {return ++idKlub;}
 		else if(tip == 'S') {return ++idSala;}
 		else if(tip == 'O') {return ++idOsoba;}
+		else if(tip == 'U') {return ++idUtakmica;}
 		else return -1;
 		
 	}
@@ -56,51 +60,64 @@ public class Aplikacija {
 	}
 	
 	public static boolean obrisiKorisnika(Korisnik korisnik){
-		return listaKorisnika.remove(korisnik);
+		if(listaIgraca.contains(korisnik))
+			return listaKorisnika.remove(korisnik);
+		return false;
 	}
 	
 	public static boolean pronadjiMesto(Mesto mesto){
 		return listaMesta.contains(mesto);
 	}
 	
-	public static boolean pronadjiMesto(String naziv){
+	public static Mesto pronadjiMesto(String naziv){
 		for(Mesto mesto:listaMesta){
 			if(mesto.getNaziv().compareTo(naziv) == 0)
+				return mesto;
+		}
+		return null;
+	}
+	
+	public static boolean obrisiMesto(Mesto mesto){
+		if(listaMesta.contains(mesto))
+			return listaMesta.remove(mesto);
+		return false;
+	}
+	
+	public static boolean obrisiMesto(String naziv){
+		
+		for(int i = 0; i< listaMesta.size();i++){
+			if(listaMesta.get(i).getNaziv().compareTo(naziv)==0){
+				listaMesta.remove(i);
 				return true;
+			}
 		}
 		return false;
 	}
 	
-	public static boolean obrisiMesto(Mesto mesto){
-		return listaMesta.remove(mesto);
-	}
-	
-	public static boolean obrisiMesto(String naziv){
-		int i = 0;
-		for(; i< listaMesta.size();i++){
-			if(listaMesta.get(i).getNaziv().compareTo(naziv)==0){
-				break;
-			}
-		}
-		if(i != listaMesta.size()){
-			listaMesta.remove(i);
+	public static boolean dodajMesto(String postanski, String naziv){
+		if(pronadjiMesto(naziv) == null){
+			listaMesta.add(new Mesto(postanski, naziv));
 			return true;
 		}
 		return false;
 	}
 	
-	public static void dodajMesto(String postanski, String naziv){
-		listaMesta.add(new Mesto(postanski, naziv));
-	}
 	
-	public static void dodajKlub(Klub klub){
+	public static boolean dodajKlub(Klub klub){
 		if (!pronadjiKlub(klub)){
 			listaKlubova.add(klub);
+			return true;
 		}
+		return false;
 	}
 	
-	public static void dodajKlub(String naziv){
-		listaKlubova.add(new Klub(naziv, generisiKluc('K')));
+	public static boolean dodajKlub(String naziv){
+		if(pronadjiKlub(naziv) == null){
+			listaKlubova.add(new Klub(naziv, generisiKluc('K')));
+			return true;
+		}
+		return false;
+		
 	}
 	
 	public static boolean pronadjiKlub(Klub klub){
@@ -114,16 +131,16 @@ public class Aplikacija {
 				return klub;
 		}
 		
-		return new Klub("", -1);
+		return null;
 	}
 	
-	public static boolean pronadjiKlub(int id){
+	public static Klub pronadjiKlub(int id){
 		for(Klub klub:listaKlubova){
 			if(klub.getId() == id){
-				return true;
+				return klub;
 			}
 		}
-		return false;
+		return null;
 	}
 	
 	public static boolean obrisiKlub(Klub klub){
@@ -131,13 +148,12 @@ public class Aplikacija {
 	}
 	
 	public static boolean obrisiKlub(int id){
-		int i = 0;
-		for(;i<listaKlubova.size();i++){
-			if(listaKlubova.get(i).getId() == id) break;
-		}
-		if(i != listaKlubova.size()){
-			listaKlubova.remove(i);
-			return true;
+		
+		for(int i = 0;i<listaKlubova.size();i++){
+			if(listaKlubova.get(i).getId() == id){
+				listaKlubova.remove(i);
+				return true;
+			}
 		}
 		return false;
 	}
@@ -145,7 +161,7 @@ public class Aplikacija {
 	
 	public static String[] preuzmiKlubove()
 	{
-		int brojKlubova = brojKlubova(listaKlubova);
+		int brojKlubova = listaKlubova.size();
 		String[] klubovi = new String[brojKlubova];
 		int brojac = -1;
 		for (Klub klub : listaKlubova) 
@@ -154,33 +170,35 @@ public class Aplikacija {
 		return klubovi;
 	}
 	
-	private static int brojKlubova(ArrayList<Klub> listaKlubova) {
+	/*private static int brojKlubova(ArrayList<Klub> listaKlubova) {
 		int i = 0;
 		for (Klub klub: listaKlubova) {
 			i++;
 		}
 		return i;
-	}
+	}*/
 
-	public static void dodajSalu(String naziv){
-		if (!pronadjiSalu(naziv)){
-			listaSala.add(new Sala(naziv,generisiKluc('S')));
-		}
-	}
-	
-	public static boolean pronadjiSalu(int id){
-		for(Sala sala:listaSala){
-			if(sala.getId() == id) return true;
+	public static boolean dodajSalu(String naziv,Mesto mesto){
+		if (pronadjiSalu(naziv) == null){
+			listaSala.add(new Sala(naziv,generisiKluc('S'),mesto));
+			return true;
 		}
 		return false;
 	}
 	
-	public static boolean pronadjiSalu(String naziv){
+	public static Sala pronadjiSalu(int id){
+		for(Sala sala:listaSala){
+			if(sala.getId() == id) return sala;
+		}
+		return null;
+	}
+	
+	public static Sala pronadjiSalu(String naziv){
 		for(Sala sala:listaSala){
 			if(sala.getNazivSale().compareTo(naziv)==0)
-				return true;
+				return sala;
 		}
-		return false;
+		return null;
 	}
 	
 	public static boolean obrisiSalu(Sala sala){
@@ -188,36 +206,41 @@ public class Aplikacija {
 	}
 	
 	public static boolean obrisiSalu(String naziv){
-		int i = 0;
-		for(;i <listaSala.size();i++){
-			if(listaSala.get(i).getNazivSale().compareTo(naziv)==0)
-				break;
+		
+		for(int i = 0;i <listaSala.size();i++){
+			if(listaSala.get(i).getNazivSale().compareTo(naziv)==0){
+				listaSala.remove(i);
+				return true;}
 		}
-		if(i != listaSala.size()){
-			listaSala.remove(i);
-			return true;
-		}
+		
 		return false;
 	}
 	
 	public static boolean obrisiSalu(int id){
-		int i = 0;
-		for(;i <listaSala.size();i++){
-			if(listaSala.get(i).getId() == id)
-				break;
-		}
-		if(i != listaSala.size()){
-			listaSala.remove(i);
-			return true;
+		
+		for(int i = 0;i <listaSala.size();i++){
+			if(listaSala.get(i).getId() == id){
+				listaSala.remove(i);
+				return true;
+			}
 		}
 		return false;
 	}
 	
+<<<<<<< HEAD
 	public static void dodajIgraca(String ime, String prezime, Date datumRodjenja,
 			int brojDresa,int visina){
 		
+=======
+	public static boolean dodajIgraca(String ime, String prezime, Date datumRodjenja,
+			String brojDresa,int visina){
+		if(pronadjiIgraca(brojDresa)== null){
+>>>>>>> 17c4d1099af0f7868f51324d98664c5c755a1822
 		listaIgraca.add(new Igrac(generisiKluc('O'), ime, prezime, datumRodjenja,
 				brojDresa, visina));
+			return true;
+		}
+		return false;
 	}
 	
 	public static boolean obrisiIgraca(Igrac igrac){
@@ -225,23 +248,28 @@ public class Aplikacija {
 	}
 	
 	public static boolean obirisiIgraca(int id){
-		int i = 0;
-		for(; i<listaIgraca.size();i++){
-			if(listaIgraca.get(i).getId() == id)
-				break;
-		}
-		if(i!= listaIgraca.size()){
-			listaIgraca.remove(i);
-			return true;
+		
+		for(int i = 0; i<listaIgraca.size();i++){
+			if(listaIgraca.get(i).getId() == id){
+				listaIgraca.remove(i);
+				return true;
+			}
 		}
 		return false;
 	}
 	
-	public static boolean pronadjiIgraca(int id){
+	public static Igrac pronadjiIgraca(int id){
 		for(Igrac igrac:listaIgraca){
-			if(igrac.getId()==id) return true;
+			if(igrac.getId()==id) return igrac;
 		}
-		return false;
+		return null;
+	}
+	
+	public static Igrac pronadjiIgraca(String brojDresa){
+		for(Igrac igrac:listaIgraca){
+			if(igrac.getBrojDresa().compareTo(brojDresa) == 0) return igrac;
+		}
+		return null;
 	}
 	
 	public static void dodajTrenera(String ime, String prezime,
@@ -250,11 +278,11 @@ public class Aplikacija {
 				datumRodjenja));
 	}
 	
-	public static boolean pronadjiTrenera(int id){
+	public static Trener pronadjiTrenera(int id){
 		for(Trener trener:listaTrenera){
-			if(trener.getId() == id) return true;
+			if(trener.getId() == id) return trener;
 		}
-		return false;
+		return null;
 	}
 	
 	public static boolean obrisiTrenera(Trener trener){
@@ -262,15 +290,102 @@ public class Aplikacija {
 	}
 	
 	public static boolean obrisiTrenera(int id){
-		int i = 0;
-		for(;i<listaTrenera.size();i++){
-			if(listaTrenera.get(i).getId()==id)break;
+		
+		for(int i = 0;i<listaTrenera.size();i++){
+			if(listaTrenera.get(i).getId()==id){
+				listaTrenera.remove(i);
+				return true;
+			}
 		}
-		if(i != listaTrenera.size()){
-			listaTrenera.remove(i);
+		return false;
+	}
+	
+	public static void dodajSudiju( String ime, String prezime, Date datumRodjenja){
+		listaSudija.add(new Osoba(generisiKluc('O'),ime,prezime,datumRodjenja));
+	}
+	
+	public static Osoba pronadjiSudiju(int id){
+		for(Osoba osoba:listaSudija){
+			if(osoba.getId()== id) return osoba;
+		}
+		return null;
+	}
+	
+	public static boolean obrisiSudiju(Osoba sudija){
+		return listaSudija.remove(sudija);
+	}
+	
+	public static boolean obrisiSudiju(int id){
+		for(Osoba sudija:listaSudija){
+			if(sudija.getId() == id){
+				listaSudija.remove(sudija);
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	public static void dodajUtakmicu(Klub domacin,Klub gost){
+		listaUtakmica.add(new Utakmica(generisiKluc('U'),domacin,gost));
+	}
+	
+	public static void dodajUtakmicu(Klub domacin,Klub gost,Sala sala){
+		listaUtakmica.add(new Utakmica(generisiKluc('U'), domacin, gost, sala));
+	}
+	
+	public static Utakmica pronadjiUtamicu(int id){
+		for(Utakmica utakmica:listaUtakmica){
+			if(utakmica.getId()== id){
+				return utakmica;
+			}
+		}
+		return null;
+	}
+	
+	public static boolean obrisiUtakmicu(Utakmica utakmica){
+		return listaUtakmica.remove(utakmica);
+	}
+	
+	public static boolean obrisiUtakmicu(int id){
+		for(Utakmica utakmica:listaUtakmica){
+			if(utakmica.getId() == id){
+				listaUtakmica.remove(utakmica);
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	public static boolean dodajUtakmicu(Utakmica u)
+	{
+		if (!listaUtakmica.contains(u)){
+			listaUtakmica.add(u);
 			return true;
 		}
 		return false;
+		
+	}
+
+	
+	
+	public static boolean proveriBazu(){
+		return listaKlubova.size()>=2 && listaSala.size()>=1;
+	}
+	
+	public static boolean proveriBazu(Klub klub){
+		return klub.igraci.size()>=5;
+	}
+	
+	public static String prikaziGresku(){
+		return "U bazi ne postoje dva kluba i jedna sala";
+	}
+	
+	public static String prikaziGresku(Klub klub){
+		return "Selektovani klub " + klub.getNaziv() + " nema pet igraca" ; 
+	}
+	
+	public static String prikaziGresku(Klub gost,Klub domacin){
+		return "Seletkovani klubovi nemaju po pet igraca";
 	}
 			
 }
