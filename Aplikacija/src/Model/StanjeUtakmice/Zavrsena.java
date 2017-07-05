@@ -58,7 +58,7 @@ public class Zavrsena extends Stanje {
 	}
 
 	@Override
-	public void azuriranje(Osoba osoba, int tip, int vrednost) {
+	public void azuriranje(Osoba osoba, int tip, int vrednost,int zona) {
 		
 		
 	}

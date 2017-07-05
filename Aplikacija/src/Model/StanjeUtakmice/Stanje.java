@@ -15,7 +15,7 @@ public abstract class Stanje {
 	public abstract void dijalog(Osoba osoba);
 	public abstract void dijalog(Klub klub);
 	public abstract void selektcija(Igrac igrac);
-	public abstract void azuriranje(Osoba osoba,int tip,int vrednost);
+	public abstract void azuriranje(Osoba osoba,int tip,int vrednost,int zona);
 	public abstract void azuriranje(Klub klub,int tip,int vrednost);
 	
 }

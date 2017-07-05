@@ -67,8 +67,8 @@ public class Odigravanje extends Stanje {
 	}
 
 	@Override
-	public void azuriranje(Osoba osoba, int tip, int vrednost) {
-		utakmica.azuriranje(osoba, tip, vrednost);
+	public void azuriranje(Osoba osoba, int tip, int vrednost,int zona) {
+		utakmica.azuriranje(osoba, tip, vrednost,zona);
 		
 	}
 

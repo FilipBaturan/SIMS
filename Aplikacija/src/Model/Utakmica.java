@@ -1,20 +1,23 @@
 package Model;
 
 import java.util.ArrayList;
+import java.util.Timer;
 
+import Model.Enumeracije.VrstaIzgubljeneLopte;
 import Model.Enumeracije.VrstaLicneGreske;
 import Model.Evidentiranje.Izmena;
 import Model.Evidentiranje.StatistikaKluba;
-import Model.StanjeUtakmice.Odigravanje;
+import Model.Evidentiranje.UcinakIgraca;
+import Model.Evidentiranje.UcinakTrenera;
 import Model.StanjeUtakmice.Stanje;
 
 public class Utakmica {
 	private int id;
 	private Stanje trenutnoStanje;
 	private int vreme;
+	private boolean pokrenut;
+	private Timer timer;
 	public Sala sala;
-	//public StatistikaKluba statistikaDomacegKluba;
-	//public StatistikaKluba statistikaGostujucegKluba;
 	public Klub domacin;
 	public Klub gost;
 	public ArrayList<Igrac> aktivni;
@@ -29,6 +32,7 @@ public class Utakmica {
 		this.domacin = domacin;
 		this.gost = gost;
 		vreme = 0;
+		pokrenut = false;
 		aktivni = new ArrayList<Igrac>();
 	}
 	
@@ -37,6 +41,8 @@ public class Utakmica {
 		this.domacin = domacin;
 		this.gost = gost;
 		this.sala = sala;
+		pokrenut = false;
+		aktivni = new ArrayList<Igrac>();
 	}
 	
 	public int getId() {
@@ -64,23 +70,35 @@ public class Utakmica {
 		this.vreme = vreme;
 	}
 
+	public int izracunaCetvrtinu(){
+		if(getVreme() <=10) return 1;
+		else if(getVreme() >10
+				&& getVreme() <=20) return 2;
+		else if(getVreme() >20
+				&& getVreme() <=30) return 3;
+		else return 4;
+	}
+	
 	public void promeniStanje(Stanje stanje) {
 		trenutnoStanje = stanje;
 		stanje.entry();
 	}
-
+	//TREBA I AKTIVNIM IGRACIMA DA UCECAVA VREME
 	private void otkucavanjeVremena() {
+		while(pokrenut){
+			
+		}
 	}
 
 	public void postaviStartere() {
 	}
 
 	public void zaustaviVreme() {
-
+		pokrenut = false;
 	}
 
 	public void pokreniVreme() {
-
+		pokrenut = true;
 	}
 
 	public void prikazStatistike() {
@@ -132,25 +150,33 @@ public class Utakmica {
 		}
 	}
 	
-	public void azuriranje(Osoba osoba,int tip,int vrednost){
+	public void azuriranje(Osoba osoba,int tip,int vrednost,int zona){
 		if(osoba instanceof Igrac){
-			switch (tip) {
-			case 0:
-				
-				break;
-			case 1:
-				break;
-			default:
-				break;
+			//pronadji utakmicu koja se trenutno azurira
+			for(UcinakIgraca ucinak:((Igrac)osoba).ucinak){
+				if(ucinak.utakmica == this){
+					ucinak.azuriranje(tip, vrednost, zona);
+					break;
+				}
 			}
 		}
 		else if(osoba instanceof Trener){
-			
+			for(UcinakTrenera ucinak:((Trener)osoba).ucinak){
+				if(ucinak.utakmica == this){
+					ucinak.azuriranje(tip);
+					break;
+				}
+			}
 		}
 	}
 	
 	public void azuriranje(Klub klub,int tip,int vrednost){
-		
+		for(StatistikaKluba statistika:klub.statistikaKluba){
+			if(statistika.utakmica == this){
+				statistika.azuriranje(tip, vrednost);
+				break;
+			}
+		}
 	}
 }
 

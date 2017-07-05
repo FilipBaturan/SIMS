@@ -1,6 +1,9 @@
 package Model.Enumeracije;
 
 public enum TipTimeOut {
-	veliki,
-	mali;
+	veliki(0),
+	mali(1);
+	
+	TipTimeOut() {}
+	TipTimeOut(int vrednost){}
 }

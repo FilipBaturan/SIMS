@@ -25,5 +25,19 @@ public class StatistikaKluba {
 	public void setBrojNapada(int brojNapada) {
 		this.brojNapada = brojNapada;
 	}
-
+	
+	public void azuriranje(int tip,int vrednost){
+		switch (tip) {
+		case 0:
+			setBrojNapada(getBrojNapada()+1);
+			break;
+		case 1:
+			izgubljeneLopte.add(VrstaIzgubljeneLopte.values()[vrednost]);
+			break;
+		case 2:
+			licneGreske.add(VrstaLicneGreske.tuca);
+		default:
+			break;
+		}
+	}
 }
