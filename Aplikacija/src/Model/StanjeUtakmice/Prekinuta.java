@@ -3,10 +3,15 @@ package Model.StanjeUtakmice;
 import Model.Igrac;
 import Model.Klub;
 import Model.Osoba;
+import Model.Utakmica;
 
 public class Prekinuta extends Stanje {
 
 	public Prekinuta() {}
+	
+	public Prekinuta(Utakmica utakmica){
+		this.utakmica = utakmica;
+	}
 	
 	@Override
 	public void entry() {
@@ -17,14 +22,14 @@ public class Prekinuta extends Stanje {
 	@Override
 	public void tuca() {
 		utakmica.tuca();
-		utakmica.promeniStanje(new Zavrsena());
+		utakmica.promeniStanje(new Zavrsena(utakmica));
 		
 	}
 
 	@Override
 	public void nastavak() {
 		utakmica.pokreniVreme();
-		utakmica.promeniStanje(new Odigravanje());
+		utakmica.promeniStanje(new Odigravanje(utakmica));
 		
 	}
 
@@ -66,6 +71,12 @@ public class Prekinuta extends Stanje {
 
 	@Override
 	public void azuriranje(Klub klub, int tip, int vrednost) {
+		
+		
+	}
+
+	@Override
+	public void do_() {
 		
 		
 	}

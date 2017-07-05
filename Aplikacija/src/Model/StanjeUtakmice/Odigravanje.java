@@ -1,14 +1,25 @@
 package Model.StanjeUtakmice;
 
+import java.util.Timer;
+import java.util.TimerTask;
+
 import Model.Igrac;
 import Model.Klub;
 import Model.Osoba;
+import Model.Utakmica;
+import Model.Evidentiranje.UcinakIgraca;
 
 public class Odigravanje extends Stanje {
 	public Osoba selektovanaOsoba;
 	public Igrac ulazni,izlazni;
+
 	
-	public Odigravanje(){}
+	public Odigravanje(){
+		
+	}
+	public Odigravanje(Utakmica utakmica){
+		this.utakmica = utakmica;
+	}
 	
 	@Override
 	public void entry() {
@@ -16,6 +27,45 @@ public class Odigravanje extends Stanje {
 		
 	}
 
+	@Override
+	public void do_() {
+		Timer timer = new Timer();
+		timer.schedule(new TimerTask() {
+			
+			@Override
+			public void run() {
+				if(utakmica.isPokrenut() && utakmica.getVreme() <40){
+					utakmica.setVreme(utakmica.getVreme()+1);;
+					//uvecaj vreme svim aktinvim igracima
+					for(Igrac igrac:utakmica.aktivni){
+						for(UcinakIgraca ucinak: igrac.ucinak){
+							if(ucinak.utakmica == utakmica){
+								ucinak.setVreme(ucinak.getVreme()+1);
+								break;
+							}
+						}
+					}
+				}
+				else if( utakmica.isPokrenut() && utakmica.getVreme() >=40){
+					System.out.println("Usao u if");
+					timer.cancel();
+					timer.purge();
+					zavrsetak();
+					return;
+				}
+				else {
+					timer.cancel();
+					timer.purge();
+					return;
+				}
+				System.out.println(utakmica.getVreme());
+				
+			}
+		}, 0, 1000);
+		
+	}
+	
+	
 	@Override
 	public void tuca() {
 		
@@ -30,14 +80,14 @@ public class Odigravanje extends Stanje {
 
 	@Override
 	public void prekid() {
-		utakmica.promeniStanje(new Prekinuta());
+		utakmica.promeniStanje(new Prekinuta(utakmica));
 		
 	}
 
 	@Override
 	public void zavrsetak() {
 		
-		utakmica.promeniStanje(new Zavrsena());
+		utakmica.promeniStanje(new Zavrsena(utakmica));
 		
 	}
 
@@ -78,5 +128,7 @@ public class Odigravanje extends Stanje {
 		utakmica.azuriranje(klub, tip, vrednost);
 		
 	}
+
+	
 	
 }

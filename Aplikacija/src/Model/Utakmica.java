@@ -1,14 +1,13 @@
 package Model;
 
 import java.util.ArrayList;
-import java.util.Timer;
-import java.util.TimerTask;
 
 import Model.Evidentiranje.Izmena;
 import Model.Evidentiranje.StatistikaKluba;
 import Model.Evidentiranje.UcinakIgraca;
 import Model.Evidentiranje.UcinakTrenera;
 import Model.Evidentiranje.Enumeracije.VrstaLicneGreske;
+import Model.StanjeUtakmice.Odigravanje;
 import Model.StanjeUtakmice.Stanje;
 
 public class Utakmica {
@@ -16,15 +15,16 @@ public class Utakmica {
 	private Stanje trenutnoStanje;
 	private int vreme;
 	private boolean pokrenut;
-	private Timer timer;
+	//private Timer timer;
 	public Sala sala;
 	public Klub domacin;
 	public Klub gost;
 	public ArrayList<Igrac> aktivni;
 
 	public Utakmica() {
+		pokrenut = false;
 		aktivni = new ArrayList<Igrac>();
-		timer = new Timer();
+		//timer = new Timer();
 	}
 	
 	public Utakmica(int id,Klub domacin, Klub gost)
@@ -35,7 +35,7 @@ public class Utakmica {
 		vreme = 0;
 		pokrenut = false;
 		aktivni = new ArrayList<Igrac>();
-		timer = new Timer();
+		//timer = new Timer();
 	}
 	
 	public Utakmica(int id,Klub domacin,Klub gost,Sala sala){
@@ -45,7 +45,7 @@ public class Utakmica {
 		this.sala = sala;
 		pokrenut = false;
 		aktivni = new ArrayList<Igrac>();
-		timer = new Timer();
+		//timer = new Timer();
 	}
 	
 	public int getId() {
@@ -78,17 +78,12 @@ public class Utakmica {
 	public void setVreme(int vreme) {
 		this.vreme = vreme;
 	}
-	
 
-	public Timer getTimer() {
-		return timer;
+	public boolean isPokrenut() {
+		return pokrenut;
 	}
 
-	public void setTimer(Timer timer) {
-		this.timer = timer;
-	}
-
-	private void postaviOtkucavanje(int vreme){
+	/*private void postaviOtkucavanje(int vreme){
 		timer.schedule(new TimerTask() {
 			
 			@Override
@@ -97,10 +92,12 @@ public class Utakmica {
 				
 			}
 		},0, vreme);
-	}
+	}*/
 	//pocni sa otkucavanjem vremena
 	public void pocetak(){
-		postaviOtkucavanje(1000);
+		pokreniVreme();
+		promeniStanje(new Odigravanje(this));
+		//postaviOtkucavanje(1000);
 	}
 	
 	public int izracunaCetvrtinu(){
@@ -115,10 +112,11 @@ public class Utakmica {
 	public void promeniStanje(Stanje stanje) {
 		trenutnoStanje = stanje;
 		stanje.entry();
+		stanje.do_();
 	}
 	//TREBA I AKTIVNIM IGRACIMA DA UCECAVA VREME
-	private void otkucavanjeVremena() {
-		if(pokrenut){
+	/*private void otkucavanjeVremena() {
+		/*if(pokrenut && vreme <40){
 			vreme++;
 			//uvecaj vreme svim aktinvim igracima
 			for(Igrac igrac:aktivni){
@@ -130,8 +128,11 @@ public class Utakmica {
 				}
 			}
 		}
+		else{
+			
+		}
 		System.out.println(vreme);
-	}
+	}*/
 
 	public void postaviStartere(ArrayList<Igrac> igraci) {
 		aktivni = igraci;
@@ -146,11 +147,11 @@ public class Utakmica {
 	}
 
 	public void prikazStatistike() {
-
+		System.out.println("Prikaz statistike");
 	}
 
 	public void prikazTerena() {
-
+		
 	}
 	
 	public void prikazDijaloga(Osoba osoba){
@@ -181,7 +182,7 @@ public class Utakmica {
 	}
 	
 	public void tuca(){
-		timer.cancel();
+		//timer.cancel();
 		for(StatistikaKluba it:domacin.statistikaKluba){
 			if(it.utakmica == this){
 				it.licneGreske.add(VrstaLicneGreske.tuca);

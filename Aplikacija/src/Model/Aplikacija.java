@@ -230,13 +230,13 @@ public class Aplikacija {
 
 	public static boolean dodajIgraca(String ime, String prezime, Date datumRodjenja,
 			int brojDresa,double visina){
-		if(pronadjiIgraca(brojDresa)== null){
+		//if(pronadjiIgraca(brojDresa)== null){
 
 		listaIgraca.add(new Igrac(generisiKluc('O'), ime, prezime, datumRodjenja,
 				brojDresa, visina));
 			return true;
-		}
-		return false;
+		/*}
+		return false;*/
 	}
 	
 	public static boolean obrisiIgraca(Igrac igrac){
@@ -261,12 +261,12 @@ public class Aplikacija {
 		return null;
 	}
 	
-	public static Igrac pronadjiIgraca(double brojDresa){
+	/*public static Igrac pronadjiIgraca(double brojDresa){
 		for(Igrac igrac:listaIgraca){
 			if(igrac.getBrojDresa() == brojDresa) return igrac;
 		}
 		return null;
-	}
+	}*/
 	
 	public static void dodajTrenera(String ime, String prezime,
 			Date datumRodjenja){

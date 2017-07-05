@@ -9,6 +9,7 @@ public abstract class Stanje {
 	public Utakmica utakmica;
 	public abstract void entry();
 	public abstract void tuca();
+	public abstract void do_();
 	public abstract void nastavak();
 	public abstract void prekid();
 	public abstract void zavrsetak();

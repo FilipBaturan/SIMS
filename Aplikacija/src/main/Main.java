@@ -4,6 +4,7 @@ package main;
 
 import java.util.Date;
 
+import GUI.Test;
 import Model.Aplikacija;
 import Model.Igrac;
 import Model.Klub;
@@ -86,9 +87,11 @@ public class Main {
 		//Aplikacija.dodajKlub(k4);
 
 		
+		
 		Utakmica u = new Utakmica(0, k1, k2, sala1);
-		u.pocetak(); u.pokreniVreme();
-		//while(u.getVreme()<10){}
+		Test t = new Test(u);
+		u.pocetak();
+		
 		
 	}
 

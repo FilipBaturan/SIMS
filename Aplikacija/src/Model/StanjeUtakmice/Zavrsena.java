@@ -3,11 +3,16 @@ package Model.StanjeUtakmice;
 import Model.Igrac;
 import Model.Klub;
 import Model.Osoba;
+import Model.Utakmica;
 
 public class Zavrsena extends Stanje {
 	
 
 	public Zavrsena() {}
+	
+	public Zavrsena(Utakmica utakmica){
+		this.utakmica = utakmica;
+	}
 	
 	@Override
 	public void entry() {
@@ -67,6 +72,12 @@ public class Zavrsena extends Stanje {
 	@Override
 	public void azuriranje(Klub klub, int tip, int vrednost) {
 		
+		
+	}
+
+	@Override
+	public void do_() {
+		// TODO Auto-generated method stub
 		
 	}
 
