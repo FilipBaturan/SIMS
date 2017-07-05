@@ -1,0 +1,12 @@
+package UIPodsistem;
+
+import Model.Sala;
+
+public class SaleUI {
+	
+	public SaleUI(){}
+	
+	public void upisiSalu(Sala s){
+		
+	}
+}

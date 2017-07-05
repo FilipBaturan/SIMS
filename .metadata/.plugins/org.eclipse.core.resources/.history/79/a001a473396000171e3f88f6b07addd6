@@ -1,0 +1,12 @@
+package UIPodsistem;
+
+public class KorisnikUI {
+
+	public KorisnikUI() {}
+	
+	public void upisiKorisnika() {
+		ObjectMapper mapper = new ObjectMappre();
+	}
+	
+	
+}

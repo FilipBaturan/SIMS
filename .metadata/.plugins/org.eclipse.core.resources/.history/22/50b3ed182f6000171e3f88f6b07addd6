@@ -1,0 +1,42 @@
+package Model;
+
+import java.util.Date;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+
+public class Igrac extends Osoba {
+	int brojDresa;
+	int visina;
+	
+	public Igrac(){}
+
+	public Igrac(int id, String ime, String prezime, Date datumRodjenja,
+			int brojDresa,int visina) {
+		super(id, ime, prezime, datumRodjenja);
+		this.brojDresa = brojDresa;
+		this.visina = visina;
+	}
+	
+	public String getBrojDresa() {
+		return brojDresa;
+	}
+
+	@JsonProperty("brojDresa")
+	public void setBrojDresa(String brojDresa) {
+		this.brojDresa = brojDresa;
+	}
+
+	public int getVisina() {
+		return visina;
+	}
+
+	@JsonProperty("visina")
+	public void setVisina(int visina) {
+		this.visina = visina;
+	}
+	
+	
+	
+	
+}

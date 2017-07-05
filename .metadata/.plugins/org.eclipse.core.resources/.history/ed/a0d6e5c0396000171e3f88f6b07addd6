@@ -1,0 +1,13 @@
+package UIPodsistem;
+
+import Model.Mesto;
+
+public class MestaUI {
+	
+	public MestaUI(){}
+	
+	public void upisiMesto(Mesto m){
+		ObjectMapper mapper = new ObjectMapper();
+	}
+
+}

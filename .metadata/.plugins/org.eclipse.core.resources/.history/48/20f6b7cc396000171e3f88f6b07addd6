@@ -1,0 +1,6 @@
+package UIPodsistem;
+
+public class SaleUI {
+	
+	public SaleUI(){}
+}

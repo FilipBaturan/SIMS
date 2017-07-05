@@ -1,0 +1,12 @@
+package UIPodsistem;
+
+import Model.Trener;
+
+public class TreneriUI {
+
+	public TreneriUI() {}
+	
+	public void upisiTrenera(Trener t){
+		ObjectMapper mapper = new ObjectMapper();
+	}
+}

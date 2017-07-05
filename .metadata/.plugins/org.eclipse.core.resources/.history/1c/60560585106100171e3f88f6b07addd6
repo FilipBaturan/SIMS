@@ -1,0 +1,32 @@
+package UIPodsistem;
+
+import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
+
+import com.fasterxml.jackson.core.JsonGenerationException;
+import com.fasterxml.jackson.databind.JsonMappingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import Model.Aplikacija;
+import Model.Igrac;
+
+public class IgraciUI {
+	public class PomocnaIgraci{
+		private ArrayList<Igrac> igraci;
+		
+		public PomocnaIgraci(){
+			igraci = Aplikacija.listaIgraca;
+		}
+	}
+	private static PomocnaIgraci igr;
+	
+	public IgraciUI(){
+		igr = new PomocnaIgraci();
+	}
+
+	public static void upisiIgraca() throws JsonGenerationException, JsonMappingException, IOException{
+		ObjectMapper mapper = new ObjectMapper();
+		mapper.writeValue(new File("Igraci.json"), IgraciUI.igr);
+	}
+}

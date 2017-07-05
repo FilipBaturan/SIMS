@@ -1,0 +1,10 @@
+package UIPodsistem;
+
+public class TreneriUI {
+
+	public TreneriUI() {}
+	
+	public void upisiTrenera(Trener t){
+		
+	}
+}

@@ -1,0 +1,11 @@
+package UIPodsistem;
+
+public class MestaUI {
+	
+	public MestaUI(){}
+	
+	public void upisiMesto(Mesto m){
+		
+	}
+
+}

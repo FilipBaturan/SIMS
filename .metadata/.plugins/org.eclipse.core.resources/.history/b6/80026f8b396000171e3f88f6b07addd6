@@ -1,0 +1,15 @@
+package UIPodsistem;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+public class KorisnikUI {
+
+	public KorisnikUI() {}
+	
+	public void upisiKorisnika(Korisnik k) {
+		ObjectMapper mapper = new ObjectMapper();
+		mapper.writeValue(new File("Korisnici.json"), value);;
+	}
+	
+	
+}

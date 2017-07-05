@@ -1,0 +1,41 @@
+package UIPodsistem;
+
+import java.io.IOException;
+import java.util.ArrayList;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.core.JsonGenerationException;
+import com.fasterxml.jackson.databind.JsonMappingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import Model.Trener;
+
+public class TreneriUI {
+	private static class Treneri {
+		private ArrayList<Trener> treneri;
+
+		@SuppressWarnings("unused")
+		public Treneri(ArrayList<Trener> t) {
+			this.treneri = t;
+		}
+
+		public ArrayList<Trener> getT() {
+			return t;
+		}
+
+		@JsonProperty("t")
+		public void setT(ArrayList<Trener> t) {
+			this.t = t;
+		}
+
+	}
+
+	public TreneriUI() {
+		
+	}
+
+	public void upisiTrenere() throws JsonGenerationException, JsonMappingException, IOException {
+		ObjectMapper mapper = new ObjectMapper();
+
+	}
+}

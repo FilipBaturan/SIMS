@@ -1,0 +1,17 @@
+package UIPodsistem;
+
+import java.io.File;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import Model.Trener;
+
+public class TreneriUI {
+
+	public TreneriUI() {}
+	
+	public void upisiTrenera(Trener t){
+		ObjectMapper mapper = new ObjectMapper();
+		mapper.writeValue(new File("Treneri.json"), t);
+	}
+}

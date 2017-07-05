@@ -1,0 +1,11 @@
+package UIPodsistem;
+
+public class KluboviUI {
+
+	public KluboviUI() {}
+	
+	public void upisiKlub(Klub k){
+		ObjectMapper mapper = new ObjectMapper();
+		
+	}
+}
