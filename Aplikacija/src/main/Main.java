@@ -90,7 +90,7 @@ public class Main {
 		
 		Utakmica u = new Utakmica(0, k1, k2, sala1);
 		Test t = new Test(u);
-		u.pocetak();
+		//u.pocetak();
 		
 		
 	}
