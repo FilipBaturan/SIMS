@@ -17,6 +17,12 @@ public class StatistikaKluba {
 		izgubljeneLopte = new ArrayList<VrstaIzgubljeneLopte>();
 		licneGreske = new ArrayList<VrstaLicneGreske>();
 	}
+	
+	public StatistikaKluba(Utakmica utakmica){
+		this.utakmica = utakmica;
+		izgubljeneLopte = new ArrayList<VrstaIzgubljeneLopte>();
+		licneGreske = new ArrayList<VrstaLicneGreske>();
+	}
 
 	public int getBrojNapada() {
 		return brojNapada;

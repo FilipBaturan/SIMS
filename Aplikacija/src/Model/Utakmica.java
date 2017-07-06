@@ -6,7 +6,6 @@ import Model.Evidentiranje.Izmena;
 import Model.Evidentiranje.StatistikaKluba;
 import Model.Evidentiranje.UcinakIgraca;
 import Model.Evidentiranje.UcinakTrenera;
-import Model.Evidentiranje.Enumeracije.VrstaLicneGreske;
 import Model.StanjeUtakmice.Odigravanje;
 import Model.StanjeUtakmice.Stanje;
 
@@ -24,7 +23,7 @@ public class Utakmica {
 	public Utakmica() {
 		pokrenut = false;
 		aktivni = new ArrayList<Igrac>();
-		//timer = new Timer();
+		
 	}
 	
 	public Utakmica(int id,Klub domacin, Klub gost)
@@ -35,7 +34,7 @@ public class Utakmica {
 		vreme = 0;
 		pokrenut = false;
 		aktivni = new ArrayList<Igrac>();
-		//timer = new Timer();
+		
 	}
 	
 	public Utakmica(int id,Klub domacin,Klub gost,Sala sala){
@@ -45,7 +44,7 @@ public class Utakmica {
 		this.sala = sala;
 		pokrenut = false;
 		aktivni = new ArrayList<Igrac>();
-		//timer = new Timer();
+		
 	}
 	
 	public int getId() {
@@ -82,22 +81,31 @@ public class Utakmica {
 	public boolean isPokrenut() {
 		return pokrenut;
 	}
+	
+	public void setPokrenut(boolean pokrenut) {
+		this.pokrenut = pokrenut;
+	}
 
-	/*private void postaviOtkucavanje(int vreme){
-		timer.schedule(new TimerTask() {
-			
-			@Override
-			public void run() {
-				otkucavanjeVremena();
-				
-			}
-		},0, vreme);
-	}*/
-	//pocni sa otkucavanjem vremena
+	
+	void postaviUcinke(){
+		domacin.statistikaKluba.add(new StatistikaKluba(this));
+		gost.statistikaKluba.add(new StatistikaKluba(this));
+		for(Igrac igrac : domacin.igraci){
+			igrac.ucinak.add(new UcinakIgraca(this));
+		}
+		domacin.trener.ucinak.add(new UcinakTrenera(this));
+		
+		for(Igrac igrac : gost.igraci){
+			igrac.ucinak.add(new UcinakIgraca(this));
+		}
+		gost.trener.ucinak.add(new UcinakTrenera(this));
+		
+	}
+	
 	public void pocetak(){
-		pokreniVreme();
+		postaviUcinke();
+		pokrenut = true;
 		promeniStanje(new Odigravanje(this));
-		//postaviOtkucavanje(1000);
 	}
 	
 	public int izracunaCetvrtinu(){
@@ -114,54 +122,32 @@ public class Utakmica {
 		stanje.entry();
 		stanje.do_();
 	}
-	//TREBA I AKTIVNIM IGRACIMA DA UCECAVA VREME
-	/*private void otkucavanjeVremena() {
-		/*if(pokrenut && vreme <40){
-			vreme++;
-			//uvecaj vreme svim aktinvim igracima
-			for(Igrac igrac:aktivni){
-				for(UcinakIgraca ucinak: igrac.ucinak){
-					if(ucinak.utakmica == this){
-						ucinak.setVreme(ucinak.getVreme()+1);
-						break;
-					}
-				}
-			}
-		}
-		else{
-			
-		}
-		System.out.println(vreme);
-	}*/
+	
 
 	public void postaviStartere(ArrayList<Igrac> igraci) {
 		aktivni = igraci;
 	}
 
-	public void zaustaviVreme() {
-		pokrenut = false;
+	public void prekid() {
+		trenutnoStanje.prekid();
 	}
 
-	public void pokreniVreme() {
-		pokrenut = true;
+	public void nastavak() {
+		trenutnoStanje.nastavak();
 	}
 
-	public void prikazStatistike() {
-		System.out.println("Prikaz statistike");
-	}
-
-	public void prikazTerena() {
-		
-	}
 	
 	public void prikazDijaloga(Osoba osoba){
-		
+		trenutnoStanje.dijalog(osoba);
 	}
 	
 	public void prikazDijaloga(Klub klub){
-		
+		trenutnoStanje.dijalog(klub);
 	}
 
+	public void selekcija(Igrac igrac){
+		trenutnoStanje.selektcija(igrac);
+	}
 
 	public void izmena(Igrac ulazi, Igrac izlazi) {
 		Klub klub = ulazi.klub;
@@ -182,48 +168,15 @@ public class Utakmica {
 	}
 	
 	public void tuca(){
-		//timer.cancel();
-		for(StatistikaKluba it:domacin.statistikaKluba){
-			if(it.utakmica == this){
-				it.licneGreske.add(VrstaLicneGreske.tuca);
-				break;
-			}
-		}
-		for(StatistikaKluba it:gost.statistikaKluba){
-			if(it.utakmica == this){
-				it.licneGreske.add(VrstaLicneGreske.tuca);
-				break;
-			}
-		}
+		trenutnoStanje.tuca();
 	}
 	
-	public void azuriranje(Osoba osoba,int tip,int vrednost,int zona){
-		if(osoba instanceof Igrac){
-			//pronadji utakmicu koja se trenutno azurira
-			for(UcinakIgraca ucinak:((Igrac)osoba).ucinak){
-				if(ucinak.utakmica == this){
-					ucinak.azuriranje(tip, vrednost, zona);
-					break;
-				}
-			}
-		}
-		else if(osoba instanceof Trener){
-			for(UcinakTrenera ucinak:((Trener)osoba).ucinak){
-				if(ucinak.utakmica == this){
-					ucinak.azuriranje(tip);
-					break;
-				}
-			}
-		}
+	public void azuriranje(int tip,int vrednost,int zona){
+		trenutnoStanje.azuriranje(tip, vrednost, zona);
 	}
 	
-	public void azuriranje(Klub klub,int tip,int vrednost){
-		for(StatistikaKluba statistika:klub.statistikaKluba){
-			if(statistika.utakmica == this){
-				statistika.azuriranje(tip, vrednost);
-				break;
-			}
-		}
+	public void azuriranje(int tip,int vrednost){
+		trenutnoStanje.azuriranje( tip, vrednost);
 	}
 }
 

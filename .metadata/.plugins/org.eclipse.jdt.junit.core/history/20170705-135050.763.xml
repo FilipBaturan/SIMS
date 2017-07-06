@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><testrun name="AzurianjeIgracaKlubova" project="Aplikacija" tests="3" started="3" failures="0" errors="0" ignored="0">
-  <testsuite name="JUnit.AzurianjeIgracaKlubova" time="0.0">
-    <testcase name="brisanjeIgracaIzPrazneListeTest" classname="JUnit.AzurianjeIgracaKlubova" time="0.0"/>
-    <testcase name="brisanjeNepostojecegIgraca" classname="JUnit.AzurianjeIgracaKlubova" time="0.0"/>
-    <testcase name="dodavanjeIgracaTest" classname="JUnit.AzurianjeIgracaKlubova" time="0.0"/>
-  </testsuite>
-</testrun>

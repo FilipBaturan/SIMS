@@ -25,6 +25,13 @@ public class UcinakIgraca {
 		pokusaji = new ArrayList<Pokusaj>();
 		izgubljeneLopteIgraca = new ArrayList<VrstaIzgubljeneLopte>();
 	}
+	
+	public UcinakIgraca(Utakmica utakmica){
+		this.utakmica = utakmica;
+		licneGreske = new ArrayList<VrstaLicneGreske>();
+		pokusaji = new ArrayList<Pokusaj>();
+		izgubljeneLopteIgraca = new ArrayList<VrstaIzgubljeneLopte>();
+	}
 
 	public int getSkokoviUNapadu() {
 		return skokoviUNapadu;

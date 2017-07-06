@@ -16,6 +16,12 @@ public class UcinakTrenera {
 		timeOuti = new ArrayList<TimeOut>();
 		licneGreske = new ArrayList<VrstaLicneGreske>();
 	}
+	
+	public UcinakTrenera(Utakmica utakmica){
+		this.utakmica = utakmica;
+		timeOuti = new ArrayList<TimeOut>();
+		licneGreske = new ArrayList<VrstaLicneGreske>();
+	}
 
 	public int getBrojIzgubljenihLopti() {
 		return brojIzgubljenihLopti;

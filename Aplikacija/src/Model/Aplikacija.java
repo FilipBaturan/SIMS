@@ -338,6 +338,8 @@ public class Aplikacija {
 		return null;
 	}
 	
+	
+	
 	public static boolean obrisiUtakmicu(Utakmica utakmica){
 		return listaUtakmica.remove(utakmica);
 	}

@@ -16,7 +16,7 @@ public class Zavrsena extends Stanje {
 	
 	@Override
 	public void entry() {
-		utakmica.prikazStatistike();
+		System.out.println("Prikaz statistike");
 		
 		
 	}
@@ -64,20 +64,20 @@ public class Zavrsena extends Stanje {
 	}
 
 	@Override
-	public void azuriranje(Osoba osoba, int tip, int vrednost,int zona) {
+	public void azuriranje( int tip, int vrednost,int zona) {
 		
 		
 	}
 
 	@Override
-	public void azuriranje(Klub klub, int tip, int vrednost) {
+	public void azuriranje( int tip, int vrednost) {
 		
 		
 	}
 
 	@Override
 	public void do_() {
-		// TODO Auto-generated method stub
+		
 		
 	}
 
