@@ -8,12 +8,12 @@ import Model.Enumeracije.VrstaLicneGreske;
 
 public class UcinakTrenera {
 	private int brojIzgubljenihLopti;
-	public ArrayList<TimeOut> timeOuti;
+	public ArrayList<TipTimeOut> timeOuti;
 	public ArrayList<VrstaLicneGreske> licneGreske;
 	public Utakmica utakmica;
 
 	public UcinakTrenera() {
-		timeOuti = new ArrayList<TimeOut>();
+		timeOuti = new ArrayList<TipTimeOut>();
 		licneGreske = new ArrayList<VrstaLicneGreske>();
 	}
 
