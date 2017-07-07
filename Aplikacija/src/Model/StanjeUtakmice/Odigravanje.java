@@ -1,21 +1,75 @@
 package Model.StanjeUtakmice;
 
+import java.util.Timer;
+import java.util.TimerTask;
+
 import Model.Igrac;
 import Model.Klub;
 import Model.Osoba;
+import Model.Trener;
+import Model.Utakmica;
+import Model.Evidentiranje.StatistikaKluba;
+import Model.Evidentiranje.UcinakIgraca;
+import Model.Evidentiranje.UcinakTrenera;
 
 public class Odigravanje extends Stanje {
 	public Osoba selektovanaOsoba;
+	public Klub selektovanKlub;
 	public Igrac ulazni,izlazni;
+
 	
-	public Odigravanje(){}
+	public Odigravanje(){
+		
+	}
+	public Odigravanje(Utakmica utakmica){
+		this.utakmica = utakmica;
+	}
 	
 	@Override
 	public void entry() {
-		utakmica.prikazTerena();
+		System.out.println("Prikaz terena");
 		
 	}
 
+	@Override
+	public void do_() {
+		Timer timer = new Timer();
+		timer.schedule(new TimerTask() {
+			
+			@Override
+			public void run() {
+				if(utakmica.isPokrenut() && utakmica.getVreme() <40){
+					utakmica.setVreme(utakmica.getVreme()+1);;
+					//uvecaj vreme svim aktinvim igracima
+					for(Igrac igrac:utakmica.aktivni){
+						for(UcinakIgraca ucinak: igrac.ucinak){
+							if(ucinak.utakmica == utakmica){
+								ucinak.setVreme(ucinak.getVreme()+1);
+								break;
+							}
+						}
+					}
+				}
+				else if( utakmica.isPokrenut() && utakmica.getVreme() >=40){
+					System.out.println("Usao u if");
+					timer.cancel();
+					timer.purge();
+					zavrsetak();
+					return;
+				}
+				else {
+					timer.cancel();
+					timer.purge();
+					return;
+				}
+				System.out.println(utakmica.getVreme());
+				
+			}
+		}, 0, 1000);
+		
+	}
+	
+	
 	@Override
 	public void tuca() {
 		
@@ -30,25 +84,28 @@ public class Odigravanje extends Stanje {
 
 	@Override
 	public void prekid() {
-		utakmica.promeniStanje(new Prekinuta());
+		utakmica.promeniStanje(new Prekinuta(utakmica));
 		
 	}
 
 	@Override
 	public void zavrsetak() {
-		utakmica.promeniStanje(new Zavrsena());
+		
+		utakmica.promeniStanje(new Zavrsena(utakmica));
 		
 	}
 
 	@Override
 	public void dijalog(Osoba osoba) {
-		utakmica.prikazDijaloga(osoba);
+		selektovanaOsoba = osoba;
+		System.out.println(osoba.getId() + " " + osoba.getIme());
 		
 	}
 
 	@Override
 	public void dijalog(Klub klub) {
-		utakmica.prikazDijaloga(klub);
+		selektovanKlub = klub;
+		System.out.println(klub.getId() + " " + klub.getNaziv());
 		
 	}
 
@@ -67,15 +124,38 @@ public class Odigravanje extends Stanje {
 	}
 
 	@Override
-	public void azuriranje(Osoba osoba, int tip, int vrednost,int zona) {
-		utakmica.azuriranje(osoba, tip, vrednost,zona);
+	public void azuriranje(int tip, int vrednost,int zona) {
+		if(selektovanaOsoba instanceof Igrac){
+			//pronadji utakmicu koja se trenutno azurira
+			for(UcinakIgraca ucinak:((Igrac)selektovanaOsoba).ucinak){
+				if(ucinak.utakmica == utakmica){
+					ucinak.azuriranje(tip, vrednost, zona);
+					break;
+				}
+			}
+		}
+		else if(selektovanaOsoba instanceof Trener){
+			for(UcinakTrenera ucinak:((Trener)selektovanaOsoba).ucinak){
+				if(ucinak.utakmica == utakmica){
+					ucinak.azuriranje(tip);
+					break;
+				}
+			}
+		}
 		
 	}
 
 	@Override
-	public void azuriranje(Klub klub, int tip, int vrednost) {
-		utakmica.azuriranje(klub, tip, vrednost);
+	public void azuriranje(int tip, int vrednost) {
+		for(StatistikaKluba statistika:selektovanKlub.statistikaKluba){
+			if(statistika.utakmica == utakmica){
+				statistika.azuriranje(tip, vrednost);
+				break;
+			}
+		}
 		
 	}
+
+	
 	
 }

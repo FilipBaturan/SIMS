@@ -1,0 +1,67 @@
+package Model;
+
+public class Odigravanje extends Stanje {
+	public Osoba selektovanaOsoba;
+	public Igrac ulazni,izlazni;
+	
+	@Override
+	protected void entry() {
+		utakmica.prikazTerena();
+		
+	}
+
+	@Override
+	protected void tuca() {
+		
+		
+	}
+
+	@Override
+	protected void nastavak() {
+		
+		
+	}
+
+	@Override
+	protected void prekid() {
+		utakmica.promeniStanje(new Prekinuta());
+		
+	}
+
+	@Override
+	protected void zavrsetak() {
+		utakmica.promeniStanje(new Zavrsena());
+		
+	}
+
+	@Override
+	protected void dijalog(Osoba osoba) {
+		
+		
+	}
+
+	@Override
+	protected void dijalog(Klub klub) {
+		
+		
+	}
+
+	@Override
+	protected void selektcija(Igrac igrac) {
+		
+		
+	}
+
+	@Override
+	protected void azuriranje(Osoba osoba, int tip, int vrednost) {
+		
+		
+	}
+
+	@Override
+	protected void azuriranje(Klub klub, int tip, int vrednost) {
+		
+		
+	}
+	
+}

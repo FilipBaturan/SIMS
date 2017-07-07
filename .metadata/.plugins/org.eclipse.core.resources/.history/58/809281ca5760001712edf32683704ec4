@@ -1,0 +1,86 @@
+package Model;
+
+import java.util.Date;
+import java.util.ArrayList;
+
+public class UcinakIgraca {
+	private int skokoviUNapadu;
+	private int skokoviUOdbrani;
+	private int asistencije;
+	private int osvojeneLopte;
+	private int blokade;
+	private int poeni;
+	private int indeks;
+	private Date vreme;
+	public ArrayList<LicnaGreska> licneGreske;
+	public ArrayList<Pokusaj> pokusaji;
+	public ArrayList<VrstaIzgubljeneLopte> izgubljeneLopteIgraca;
+
+	public UcinakIgraca() {
+	}
+
+	public int getSkokoviUNapadu() {
+		return skokoviUNapadu;
+	}
+
+	public void setSkokoviUNapadu(int skokoviUNapadu) {
+		this.skokoviUNapadu = skokoviUNapadu;
+	}
+
+	public int getSkokoviUOdbrani() {
+		return skokoviUOdbrani;
+	}
+
+	public void setSkokoviUOdbrani(int skokoviUOdbrani) {
+		this.skokoviUOdbrani = skokoviUOdbrani;
+	}
+
+	public int getAsistencije() {
+		return asistencije;
+	}
+
+	public void setAsistencije(int asistencije) {
+		this.asistencije = asistencije;
+	}
+
+	public int getOsvojeneLopte() {
+		return osvojeneLopte;
+	}
+
+	public void setOsvojeneLopte(int osvojeneLopte) {
+		this.osvojeneLopte = osvojeneLopte;
+	}
+
+	public int getBlokade() {
+		return blokade;
+	}
+
+	public void setBlokade(int blokade) {
+		this.blokade = blokade;
+	}
+
+	public int getPoeni() {
+		return poeni;
+	}
+
+	public void setPoeni(int poeni) {
+		this.poeni = poeni;
+	}
+
+	public int getIndeks() {
+		return indeks;
+	}
+
+	public void setIndeks(int indeks) {
+		this.indeks = indeks;
+	}
+
+	public Date getVreme() {
+		return vreme;
+	}
+
+	public void setVreme(Date vreme) {
+		this.vreme = vreme;
+	}
+
+}

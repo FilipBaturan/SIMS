@@ -21,6 +21,7 @@ public class KorisnikUI {
 
 		}
 
+		@SuppressWarnings("unused")
 		public ArrayList<Korisnik> getKorisnici() {
 			return korisnici;
 		}

@@ -3,8 +3,8 @@ package Model.Evidentiranje;
 import java.util.ArrayList;
 
 import Model.Utakmica;
-import Model.Enumeracije.VrstaIzgubljeneLopte;
-import Model.Enumeracije.VrstaLicneGreske;
+import Model.Evidentiranje.Enumeracije.VrstaIzgubljeneLopte;
+import Model.Evidentiranje.Enumeracije.VrstaLicneGreske;
 
 public class StatistikaKluba {
 	private int brojNapada;
@@ -14,6 +14,12 @@ public class StatistikaKluba {
 	public Utakmica utakmica;
 
 	public StatistikaKluba() {
+		izgubljeneLopte = new ArrayList<VrstaIzgubljeneLopte>();
+		licneGreske = new ArrayList<VrstaLicneGreske>();
+	}
+	
+	public StatistikaKluba(Utakmica utakmica){
+		this.utakmica = utakmica;
 		izgubljeneLopte = new ArrayList<VrstaIzgubljeneLopte>();
 		licneGreske = new ArrayList<VrstaLicneGreske>();
 	}

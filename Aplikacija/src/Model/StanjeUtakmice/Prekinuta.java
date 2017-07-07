@@ -3,28 +3,47 @@ package Model.StanjeUtakmice;
 import Model.Igrac;
 import Model.Klub;
 import Model.Osoba;
+import Model.Utakmica;
+import Model.Evidentiranje.StatistikaKluba;
+import Model.Evidentiranje.Enumeracije.VrstaLicneGreske;
 
 public class Prekinuta extends Stanje {
 
 	public Prekinuta() {}
 	
+	public Prekinuta(Utakmica utakmica){
+		this.utakmica = utakmica;
+	}
+	
 	@Override
 	public void entry() {
-		utakmica.zaustaviVreme();
+		utakmica.setPokrenut(false);
 		
 	}
 
 	@Override
 	public void tuca() {
-		utakmica.tuca();
-		utakmica.promeniStanje(new Zavrsena());
+		for(StatistikaKluba it:utakmica.domacin.statistikaKluba){
+			if(it.utakmica == utakmica){
+				it.licneGreske.add(VrstaLicneGreske.tuca);
+				break;
+			}
+		}
+		for(StatistikaKluba it:utakmica.gost.statistikaKluba){
+			if(it.utakmica == utakmica){
+				it.licneGreske.add(VrstaLicneGreske.tuca);
+				break;
+			}
+		}
+		//utakmica.tuca();
+		utakmica.promeniStanje(new Zavrsena(utakmica));
 		
 	}
 
 	@Override
 	public void nastavak() {
-		utakmica.pokreniVreme();
-		utakmica.promeniStanje(new Odigravanje());
+		utakmica.setPokrenut(true);
+		utakmica.promeniStanje(new Odigravanje(utakmica));
 		
 	}
 
@@ -59,13 +78,19 @@ public class Prekinuta extends Stanje {
 	}
 
 	@Override
-	public void azuriranje(Osoba osoba, int tip, int vrednost,int zona) {
+	public void azuriranje( int tip, int vrednost,int zona) {
 		
 		
 	}
 
 	@Override
-	public void azuriranje(Klub klub, int tip, int vrednost) {
+	public void azuriranje( int tip, int vrednost) {
+		
+		
+	}
+
+	@Override
+	public void do_() {
 		
 		
 	}

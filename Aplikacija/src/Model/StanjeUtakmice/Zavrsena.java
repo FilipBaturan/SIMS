@@ -3,15 +3,21 @@ package Model.StanjeUtakmice;
 import Model.Igrac;
 import Model.Klub;
 import Model.Osoba;
+import Model.Utakmica;
 
 public class Zavrsena extends Stanje {
 	
 
 	public Zavrsena() {}
 	
+	public Zavrsena(Utakmica utakmica){
+		this.utakmica = utakmica;
+	}
+	
 	@Override
 	public void entry() {
-		utakmica.prikazStatistike();
+		System.out.println("Prikaz statistike");
+		
 		
 	}
 
@@ -58,13 +64,19 @@ public class Zavrsena extends Stanje {
 	}
 
 	@Override
-	public void azuriranje(Osoba osoba, int tip, int vrednost,int zona) {
+	public void azuriranje( int tip, int vrednost,int zona) {
 		
 		
 	}
 
 	@Override
-	public void azuriranje(Klub klub, int tip, int vrednost) {
+	public void azuriranje( int tip, int vrednost) {
+		
+		
+	}
+
+	@Override
+	public void do_() {
 		
 		
 	}

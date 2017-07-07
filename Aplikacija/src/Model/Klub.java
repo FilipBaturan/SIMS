@@ -2,11 +2,11 @@ package Model;
 
 import java.util.ArrayList;
 
-<<<<<<< HEAD
+
 import com.fasterxml.jackson.annotation.JsonProperty;
-=======
+
 import Model.Evidentiranje.StatistikaKluba;
->>>>>>> 17c4d1099af0f7868f51324d98664c5c755a1822
+
 
 public class Klub {
 	private String naziv;
@@ -15,6 +15,7 @@ public class Klub {
 	public Mesto mestoOsnivanja;
 	public Trener trener;
 	public ArrayList<Igrac> igraci;
+	public ArrayList<Igrac> startnaPostava;
 
 	public Klub() {
 	}
@@ -23,6 +24,7 @@ public class Klub {
 		this.naziv = naziv;
 		this.id = id;
 		igraci = new ArrayList<Igrac>();
+		startnaPostava = new ArrayList<>();
 	}
 
 	public Klub(String naziv, int id, Mesto mestoOsnivanja) {
@@ -31,6 +33,7 @@ public class Klub {
 		this.mestoOsnivanja = mestoOsnivanja;
 		igraci = new ArrayList<Igrac>();
 		statistikaKluba = new ArrayList<StatistikaKluba>();
+		startnaPostava = new ArrayList<>();
 	}
 
 	public String getNaziv() {
@@ -57,13 +60,17 @@ public class Klub {
 
 	// ako igrac vec postoji u ovom klubu vraca -1
 	// ako igrac vec postoji u nekom drugom klubu vraca -2
+	// ako igrac ima isti broj dresa sa nekim igracem u klubu -3
 	public int dodajIgraca(Igrac igrac) {
-		if (igrac.klub != null) {
+		if (igrac.klub != null && igrac.klub != this) {
 			return -2;
 		}
 			for (Igrac it : igraci) {
 				if (it.getId() == igrac.getId()) {
 					return -1;
+				}
+				else if(it.getBrojDresa() == igrac.getBrojDresa()){
+					return -3;
 				}
 			}
 		
@@ -72,6 +79,9 @@ public class Klub {
 		return 0;
 	}
 
+	public boolean obrisiIgraca(Igrac igrac){
+		return igraci.remove(igrac);
+	}
 	
 	//OVO TI NE TREBA IZMENIO SAM TI U DIJALOGU
 	/*public ArrayList<Igrac> preuzmiIgrace() {

@@ -1,14 +1,12 @@
 package Model;
 
 import java.util.ArrayList;
-import java.util.Timer;
 
-import Model.Enumeracije.VrstaIzgubljeneLopte;
-import Model.Enumeracije.VrstaLicneGreske;
 import Model.Evidentiranje.Izmena;
 import Model.Evidentiranje.StatistikaKluba;
 import Model.Evidentiranje.UcinakIgraca;
 import Model.Evidentiranje.UcinakTrenera;
+import Model.StanjeUtakmice.Odigravanje;
 import Model.StanjeUtakmice.Stanje;
 
 public class Utakmica {
@@ -16,14 +14,16 @@ public class Utakmica {
 	private Stanje trenutnoStanje;
 	private int vreme;
 	private boolean pokrenut;
-	private Timer timer;
+	//private Timer timer;
 	public Sala sala;
 	public Klub domacin;
 	public Klub gost;
 	public ArrayList<Igrac> aktivni;
 
 	public Utakmica() {
+		pokrenut = false;
 		aktivni = new ArrayList<Igrac>();
+		
 	}
 	
 	public Utakmica(int id,Klub domacin, Klub gost)
@@ -34,6 +34,7 @@ public class Utakmica {
 		vreme = 0;
 		pokrenut = false;
 		aktivni = new ArrayList<Igrac>();
+		
 	}
 	
 	public Utakmica(int id,Klub domacin,Klub gost,Sala sala){
@@ -43,6 +44,7 @@ public class Utakmica {
 		this.sala = sala;
 		pokrenut = false;
 		aktivni = new ArrayList<Igrac>();
+		
 	}
 	
 	public int getId() {
@@ -76,6 +78,36 @@ public class Utakmica {
 		this.vreme = vreme;
 	}
 
+	public boolean isPokrenut() {
+		return pokrenut;
+	}
+	
+	public void setPokrenut(boolean pokrenut) {
+		this.pokrenut = pokrenut;
+	}
+
+	
+	void postaviUcinke(){
+		domacin.statistikaKluba.add(new StatistikaKluba(this));
+		gost.statistikaKluba.add(new StatistikaKluba(this));
+		for(Igrac igrac : domacin.igraci){
+			igrac.ucinak.add(new UcinakIgraca(this));
+		}
+		domacin.trener.ucinak.add(new UcinakTrenera(this));
+		
+		for(Igrac igrac : gost.igraci){
+			igrac.ucinak.add(new UcinakIgraca(this));
+		}
+		gost.trener.ucinak.add(new UcinakTrenera(this));
+		
+	}
+	
+	public void pocetak(){
+		//postaviUcinke();
+		pokrenut = true;
+		promeniStanje(new Odigravanje(this));
+	}
+	
 	public int izracunaCetvrtinu(){
 		if(getVreme() <=10) return 1;
 		else if(getVreme() >10
@@ -88,45 +120,34 @@ public class Utakmica {
 	public void promeniStanje(Stanje stanje) {
 		trenutnoStanje = stanje;
 		stanje.entry();
-	}
-	//TREBA I AKTIVNIM IGRACIMA DA UCECAVA VREME
-	private void otkucavanjeVremena() {
-		while(pokrenut){
-			
-		}
-	}
-
-	public void postaviStartere() {
-	}
-
-	public void zaustaviVreme() {
-		pokrenut = false;
-	}
-
-	public void pokreniVreme() {
-		pokrenut = true;
-	}
-
-	public void prikazStatistike() {
-
-	}
-
-	public void prikazTerena() {
-
+		stanje.do_();
 	}
 	
+
+	public void postaviStartere(ArrayList<Igrac> igraci) {
+		aktivni = igraci;
+	}
+
+	public void prekid() {
+		trenutnoStanje.prekid();
+	}
+
+	public void nastavak() {
+		trenutnoStanje.nastavak();
+	}
+
+	
 	public void prikazDijaloga(Osoba osoba){
-		
+		trenutnoStanje.dijalog(osoba);
 	}
 	
 	public void prikazDijaloga(Klub klub){
-		
+		trenutnoStanje.dijalog(klub);
 	}
-<<<<<<< HEAD
-	
-	
-}
-=======
+
+	public void selekcija(Igrac igrac){
+		trenutnoStanje.selektcija(igrac);
+	}
 
 	public void izmena(Igrac ulazi, Igrac izlazi) {
 		Klub klub = ulazi.klub;
@@ -137,7 +158,7 @@ public class Utakmica {
 				break;
 			}
 		}
-		//izvrsi izemnu
+		//izvrsi izmenu
 		for(Igrac igrac:aktivni){
 			if(igrac == izlazi){
 				igrac = ulazi;
@@ -147,48 +168,16 @@ public class Utakmica {
 	}
 	
 	public void tuca(){
-		for(StatistikaKluba it:domacin.statistikaKluba){
-			if(it.utakmica == this){
-				it.licneGreske.add(VrstaLicneGreske.tuca);
-				break;
-			}
-		}
-		for(StatistikaKluba it:gost.statistikaKluba){
-			if(it.utakmica == this){
-				it.licneGreske.add(VrstaLicneGreske.tuca);
-				break;
-			}
-		}
+		trenutnoStanje.tuca();
 	}
 	
-	public void azuriranje(Osoba osoba,int tip,int vrednost,int zona){
-		if(osoba instanceof Igrac){
-			//pronadji utakmicu koja se trenutno azurira
-			for(UcinakIgraca ucinak:((Igrac)osoba).ucinak){
-				if(ucinak.utakmica == this){
-					ucinak.azuriranje(tip, vrednost, zona);
-					break;
-				}
-			}
-		}
-		else if(osoba instanceof Trener){
-			for(UcinakTrenera ucinak:((Trener)osoba).ucinak){
-				if(ucinak.utakmica == this){
-					ucinak.azuriranje(tip);
-					break;
-				}
-			}
-		}
+	public void azuriranje(int tip,int vrednost,int zona){
+		trenutnoStanje.azuriranje(tip, vrednost, zona);
 	}
 	
-	public void azuriranje(Klub klub,int tip,int vrednost){
-		for(StatistikaKluba statistika:klub.statistikaKluba){
-			if(statistika.utakmica == this){
-				statistika.azuriranje(tip, vrednost);
-				break;
-			}
-		}
+	public void azuriranje(int tip,int vrednost){
+		trenutnoStanje.azuriranje( tip, vrednost);
 	}
 }
 
->>>>>>> 17c4d1099af0f7868f51324d98664c5c755a1822
+

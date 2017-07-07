@@ -22,6 +22,7 @@ public class SaleUI {
 
 		}
 
+		@SuppressWarnings("unused")
 		public ArrayList<Sala> getSale() {
 			return sale;
 		}
