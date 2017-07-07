@@ -38,7 +38,7 @@ public class Odigravanje extends Stanje {
 			
 			@Override
 			public void run() {
-				if(utakmica.isPokrenut() && utakmica.getVreme() <40){
+				if(utakmica.isPokrenut() && utakmica.getVreme() <180){
 					utakmica.setVreme(utakmica.getVreme()+1);;
 					//uvecaj vreme svim aktinvim igracima
 					for(Igrac igrac:utakmica.aktivni){

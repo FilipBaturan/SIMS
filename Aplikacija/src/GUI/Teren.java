@@ -5,11 +5,11 @@ import java.awt.Graphics2D;
 import java.awt.Image;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.awt.geom.Ellipse2D;
 import java.util.ArrayList;
 
 import javax.swing.JPanel;
 
+@SuppressWarnings("serial")
 public class Teren extends JPanel {
 
 	Image image;
@@ -31,6 +31,7 @@ public class Teren extends JPanel {
 							}
 						}
 						else if(e.getClickCount() == 2){
+							if(prikaz.getEl().contains(e.getX(), e.getY()))
 							System.out.println("Kliko dva puta");
 						}
 					}

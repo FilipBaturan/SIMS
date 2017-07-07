@@ -110,7 +110,8 @@ public class DodavanjeUtakmiceDijalog extends JFrame {
 					if (Aplikacija.proveriBazu(domacin) && Aplikacija.proveriBazu(gost)) {
 						Aplikacija.dodajUtakmicu(domacin, gost);
 						dispose();
-						new SelekcijaIgracaDijalog(domacin, gost);
+						new SelekcijaIgracaDijalog(Aplikacija.listaUtakmica.get
+								(Aplikacija.listaUtakmica.size()-1));
 					} else if (!Aplikacija.proveriBazu(domacin) && !Aplikacija.proveriBazu(gost)) {
 						JOptionPane.showMessageDialog(null, Aplikacija.prikaziGresku(gost, domacin),
 								"Nedovoljno igraca", JOptionPane.INFORMATION_MESSAGE);
