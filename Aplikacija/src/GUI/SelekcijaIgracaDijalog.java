@@ -166,6 +166,7 @@ public class SelekcijaIgracaDijalog extends JFrame {
 					String noviIgrac = listaZaPrikaz.getSelectedValue();
 					if (!dodatiDomaci.contains(noviIgrac) && brojDomacih < 5) {
 						prikazDomacina.setText(prikazDomacina.getText() + "\n" + noviIgrac);
+						domacin.startnaPostava.add(Aplikacija.pronadjiIgraca(noviIgrac));
 						dodatiDomaci.add(noviIgrac);
 						brojDomacih++;
 					}
@@ -182,6 +183,7 @@ public class SelekcijaIgracaDijalog extends JFrame {
 				String noviIgrac = listaZaPrikaz2.getSelectedValue();
 				if (!dodatiGosti.contains(noviIgrac) && brojGosti < 5) {
 					prikazGosta.setText(prikazGosta.getText() + "\n" + noviIgrac);
+					gost.startnaPostava.add(Aplikacija.pronadjiIgraca(noviIgrac));
 					dodatiGosti.add(noviIgrac);
 					brojGosti++;
 				}
@@ -193,6 +195,7 @@ public class SelekcijaIgracaDijalog extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				new PrikazUtakmice(domacin, gost);
 				dispose();
 
 			}

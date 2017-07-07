@@ -15,6 +15,7 @@ public class Klub {
 	public Mesto mestoOsnivanja;
 	public Trener trener;
 	public ArrayList<Igrac> igraci;
+	public ArrayList<Igrac> startnaPostava;
 
 	public Klub() {
 	}
@@ -23,6 +24,7 @@ public class Klub {
 		this.naziv = naziv;
 		this.id = id;
 		igraci = new ArrayList<Igrac>();
+		startnaPostava = new ArrayList<>();
 	}
 
 	public Klub(String naziv, int id, Mesto mestoOsnivanja) {
@@ -31,6 +33,7 @@ public class Klub {
 		this.mestoOsnivanja = mestoOsnivanja;
 		igraci = new ArrayList<Igrac>();
 		statistikaKluba = new ArrayList<StatistikaKluba>();
+		startnaPostava = new ArrayList<>();
 	}
 
 	public String getNaziv() {

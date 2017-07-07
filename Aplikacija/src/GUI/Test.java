@@ -1,8 +1,10 @@
 package GUI;
 
+import java.awt.BorderLayout;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
 import java.awt.GridLayout;
 import java.awt.Insets;
 import java.awt.event.ActionEvent;
@@ -81,28 +83,26 @@ public class Test extends JFrame {
 
 		// JPanel teren = new JPanel();
 
-		add(teren);
+		//add(teren);
 
-		/*
-		 * JPanel glavniPanel = new JPanel(); glavniPanel.setLayout(new
-		 * GridBagLayout());
-		 * 
-		 * gbc.gridx = 0; gbc.gridy = 0; glavniPanel.add(panel1, gbc);
-		 * 
-		 * /*gbc.gridx = 0; gbc.gridy = 1; glavniPanel.add(panel2, gbc);
-		 */
+		
+		  JPanel glavniPanel = new JPanel(); glavniPanel.setLayout(new
+		  GridBagLayout());
+		  
+		  gbc.gridx = 0; gbc.gridy = 0; glavniPanel.add(panel1, gbc);
+		  
+		  gbc.gridx = 0; gbc.gridy = 1; glavniPanel.add(panel2, gbc);
+//		
+		  gbc.gridx = 0; gbc.gridy = 1; glavniPanel.add(teren, gbc);
+		 
 
-		/*
-		 * gbc.gridx = 0; gbc.gridy = 1; glavniPanel.add(teren,gbc);
-		 */
-
-		// this.getContentPane().add(glavniPanel, BorderLayout.CENTER);
+		  this.getContentPane().add(glavniPanel, BorderLayout.CENTER);
 
 		prekid.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				u.getTrenutnoStanje().prekid();
+				u.prekid();
 
 			}
 		});
@@ -112,7 +112,7 @@ public class Test extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				System.out.println("Nastavak");
-				u.getTrenutnoStanje().nastavak();
+				u.nastavak();
 
 			}
 		});
@@ -121,7 +121,7 @@ public class Test extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				u.getTrenutnoStanje().tuca();
+				u.tuca();
 
 			}
 		});

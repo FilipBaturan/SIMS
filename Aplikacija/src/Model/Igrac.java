@@ -8,6 +8,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import Model.Evidentiranje.UcinakIgraca;
 
 public class Igrac extends Osoba {
+	
+
 	private int brojDresa;
 	private double visina;
 	public Klub klub;
@@ -43,6 +45,9 @@ public class Igrac extends Osoba {
 	}
 	
 	
-	
+	@Override
+	public String toString() {
+		return "Igrac " + getIme() + " " + getPrezime();
+	}
 	
 }

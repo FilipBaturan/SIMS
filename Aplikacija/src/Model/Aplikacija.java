@@ -261,6 +261,26 @@ public class Aplikacija {
 		return null;
 	}
 	
+	public static Igrac pronadjiIgraca(String imeIPrezime){
+		String ime;
+		String prezime;
+		
+		
+		String[] reci = imeIPrezime.split(" ");
+		ime = reci[0];
+		prezime = reci[1];
+		System.out.println("Ime je: " + ime);
+		System.out.println("prezime je: " + prezime);
+		
+		for(Igrac igrac:listaIgraca){
+			System.out.println("Ime je: " + igrac.getIme());
+			System.out.println("prezime je: " + igrac.getPrezime());
+			if( (igrac.getIme().compareTo(ime) == 0) && (igrac.getPrezime().compareTo(prezime) == 0 ) ) return igrac;
+			
+		}
+		return null;
+	}
+	
 	/*public static Igrac pronadjiIgraca(double brojDresa){
 		for(Igrac igrac:listaIgraca){
 			if(igrac.getBrojDresa() == brojDresa) return igrac;
