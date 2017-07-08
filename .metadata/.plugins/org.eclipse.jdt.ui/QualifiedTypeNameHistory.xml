@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
 <fullyQualifiedTypeName name="UIPodsistem.IgraciUI"/>
-<fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="Model.StanjeUtakmice.Odigravanje"/>
 <fullyQualifiedTypeName name="Model.StanjeUtakmice.Zavrsena"/>
 <fullyQualifiedTypeName name="javax.swing.JTextField"/>
@@ -15,7 +14,6 @@
 <fullyQualifiedTypeName name="java.awt.event.ActionListener"/>
 <fullyQualifiedTypeName name="Model.Klub"/>
 <fullyQualifiedTypeName name="java.lang.Integer"/>
-<fullyQualifiedTypeName name="Model.Aplikacija"/>
 <fullyQualifiedTypeName name="Model.Evidentiranje.StatistikaKluba"/>
 <fullyQualifiedTypeName name="Model.Trener"/>
 <fullyQualifiedTypeName name="Model.Evidentiranje.UcinakIgraca"/>
@@ -35,6 +33,13 @@
 <fullyQualifiedTypeName name="java.awt.geom.Ellipse2D"/>
 <fullyQualifiedTypeName name="java.awt.geom.Ellipse2D.Double"/>
 <fullyQualifiedTypeName name="GUI.Test.PrikazIgraca"/>
-<fullyQualifiedTypeName name="Model.Igrac"/>
 <fullyQualifiedTypeName name="java.util.Date"/>
+<fullyQualifiedTypeName name="GUI.PrijavljivanjeDijalog"/>
+<fullyQualifiedTypeName name="GUI.PrikazUtakmice"/>
+<fullyQualifiedTypeName name="Model.Igrac"/>
+<fullyQualifiedTypeName name="Model.Aplikacija"/>
+<fullyQualifiedTypeName name="java.lang.ArrayIndexOutOfBoundsException"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="GUI.PrikazIgraca"/>
+<fullyQualifiedTypeName name="java.io.LineNumberInputStream"/>
 </qualifiedTypeNameHistroy>
