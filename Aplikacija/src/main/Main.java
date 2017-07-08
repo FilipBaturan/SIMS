@@ -4,12 +4,12 @@ package main;
 
 import java.util.Date;
 
-import GUI.Test;
 import Model.Aplikacija;
 import Model.Igrac;
 import Model.Klub;
 import Model.Mesto;
 import Model.Sala;
+import Model.Trener;
 import Model.Utakmica;
 
 
@@ -33,7 +33,7 @@ public class Main {
 		Aplikacija.listaSala.add(sala1);
 		Aplikacija.listaSala.add(sala2);
 		
-		Klub k1 = new Klub("Klub1", 1,mesto1);
+		Klub k1 = new Klub("Klub1", 1,mesto1, new Trener(666, "Ime trenera", "Prezime trenera", new Date(1998-01-01)));
 		Igrac igrac1 = new Igrac(1, "Ime1", "Prezime1", new Date(1998-01-01), 2, 198);
 		Igrac igrac2 = new Igrac(2, "Ime2", "Prezime2", new Date(1998-02-01), 22, 198); 
 		Igrac igrac3 = new Igrac(3, "Ime3", "Prezime3", new Date(1998-01-01), 23, 198);
@@ -49,7 +49,19 @@ public class Main {
 		k1.dodajIgraca(igrac7);k1.dodajIgraca(igrac8);k1.dodajIgraca(igrac9);
 		k1.dodajIgraca(igrac10);
 		
-		Klub k2 = new Klub("Klub2", 2,mesto2);
+		Aplikacija.listaIgraca.add(igrac1);
+		Aplikacija.listaIgraca.add(igrac2);
+		Aplikacija.listaIgraca.add(igrac3);
+		Aplikacija.listaIgraca.add(igrac4);
+		Aplikacija.listaIgraca.add(igrac5);
+		Aplikacija.listaIgraca.add(igrac6);
+		Aplikacija.listaIgraca.add(igrac7);
+		Aplikacija.listaIgraca.add(igrac8);
+		Aplikacija.listaIgraca.add(igrac9);
+		Aplikacija.listaIgraca.add(igrac10);
+		
+		
+		Klub k2 = new Klub("Klub2", 2,mesto2, new Trener(666, "Ime trenera", "Prezime trenera", new Date(1998-01-01)));
 		Igrac igrac11 = new Igrac(11, "Ime11", "Prezime11", new Date(1998-01-01), 2, 198);
 		Igrac igrac12 = new Igrac(12, "Ime12", "Prezime12", new Date(1998-02-01), 22, 198); 
 		Igrac igrac13 = new Igrac(13, "Ime13", "Prezime13", new Date(1998-01-01), 23, 198);
@@ -65,7 +77,20 @@ public class Main {
 		k2.dodajIgraca(igrac17);k2.dodajIgraca(igrac18);k2.dodajIgraca(igrac19);
 		k2.dodajIgraca(igrac20);
 		
-		Klub k3 = new Klub("Klub3", 3,mesto3);
+		
+		
+		Aplikacija.listaIgraca.add(igrac11);
+		Aplikacija.listaIgraca.add(igrac12);
+		Aplikacija.listaIgraca.add(igrac13);
+		Aplikacija.listaIgraca.add(igrac14);
+		Aplikacija.listaIgraca.add(igrac15);
+		Aplikacija.listaIgraca.add(igrac16);
+		Aplikacija.listaIgraca.add(igrac17);
+		Aplikacija.listaIgraca.add(igrac18);
+		Aplikacija.listaIgraca.add(igrac19);
+		Aplikacija.listaIgraca.add(igrac20);
+		
+		Klub k3 = new Klub("Klub3", 3,mesto3, new Trener(666, "Ime trenera", "Prezime trenera", new Date(1998-01-01)));
 		Igrac igrac21 = new Igrac(21, "Ime21", "Prezime21", new Date(1998-01-01), 2, 198);
 		Igrac igrac22 = new Igrac(22, "Ime22", "Prezime22", new Date(1998-02-01), 22, 198); 
 		Igrac igrac23 = new Igrac(23, "Ime23", "Prezime23", new Date(1998-01-01), 23, 198);

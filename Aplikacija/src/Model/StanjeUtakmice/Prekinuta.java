@@ -37,7 +37,6 @@ public class Prekinuta extends Stanje {
 				break;
 			}
 		}
-		//utakmica.tuca();
 		utakmica.promeniStanje(new Zavrsena(utakmica));
 		
 	}

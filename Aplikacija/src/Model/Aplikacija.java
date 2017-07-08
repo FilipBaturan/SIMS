@@ -273,8 +273,6 @@ public class Aplikacija {
 		System.out.println("prezime je: " + prezime);
 		
 		for(Igrac igrac:listaIgraca){
-			System.out.println("Ime je: " + igrac.getIme());
-			System.out.println("prezime je: " + igrac.getPrezime());
 			if( (igrac.getIme().compareTo(ime) == 0) && (igrac.getPrezime().compareTo(prezime) == 0 ) ) return igrac;
 			
 		}

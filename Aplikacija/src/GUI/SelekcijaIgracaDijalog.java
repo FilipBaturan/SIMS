@@ -37,6 +37,13 @@ public class SelekcijaIgracaDijalog extends JFrame {
 	public SelekcijaIgracaDijalog(Utakmica utakmica) {
 		this.utakmica = utakmica;
 		this.setTitle("Selektovanje Igraca");
+		this.setVisible(true);
+		this.setLocation(350, 100);
+		this.setSize(700, 500);
+		JPanel glavniPanel = new JPanel();
+		this.postaviElemente(glavniPanel, utakmica.domacin, utakmica.gost);
+		this.setContentPane(glavniPanel);
+		
 		this.addWindowListener(new WindowAdapter() {
 			public void windowClosing(WindowEvent WinEvt) {
 				//prilikom odustanja od kreiranja utakmice
@@ -44,12 +51,6 @@ public class SelekcijaIgracaDijalog extends JFrame {
 				Aplikacija.obrisiUtakmicu(utakmica);
 			}
 		});
-		this.setVisible(true);
-		this.setLocation(350, 150);
-		this.setSize(700, 400);
-		JPanel glavniPanel = new JPanel();
-		this.postaviElemente(glavniPanel, utakmica.domacin, utakmica.gost);
-		this.setContentPane(glavniPanel);
 	}
 
 	private void postaviElemente(JPanel glavniPanel, Klub domacin, Klub gost) {
@@ -168,7 +169,9 @@ public class SelekcijaIgracaDijalog extends JFrame {
 					String noviIgrac = listaZaPrikaz.getSelectedValue();
 					if (!dodatiDomaci.contains(noviIgrac) && brojDomacih < 5) {
 						prikazDomacina.setText(prikazDomacina.getText() + "\n" + noviIgrac);
-						domacin.startnaPostava.add(Aplikacija.pronadjiIgraca(noviIgrac));
+						Igrac i = Aplikacija.pronadjiIgraca(noviIgrac);
+						//domacin.startnaPostava.add(i);
+						utakmica.aktivni.add(i);
 						dodatiDomaci.add(noviIgrac);
 						brojDomacih++;
 					}
@@ -185,7 +188,8 @@ public class SelekcijaIgracaDijalog extends JFrame {
 				String noviIgrac = listaZaPrikaz2.getSelectedValue();
 				if (!dodatiGosti.contains(noviIgrac) && brojGosti < 5) {
 					prikazGosta.setText(prikazGosta.getText() + "\n" + noviIgrac);
-					gost.startnaPostava.add(Aplikacija.pronadjiIgraca(noviIgrac));
+					Igrac i  = Aplikacija.pronadjiIgraca(noviIgrac);
+					utakmica.aktivni.add(i);
 					dodatiGosti.add(noviIgrac);
 					brojGosti++;
 				}
@@ -197,8 +201,12 @@ public class SelekcijaIgracaDijalog extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				new PrikazUtakmice(utakmica);
-				dispose();
+				if (utakmica.aktivni.size() == 10)
+				{
+					new PrikazUtakmice(utakmica);
+					dispose();
+				}
+				
 
 			}
 		});

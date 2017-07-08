@@ -32,11 +32,11 @@ public class Teren extends JPanel {
 						}
 						else if(e.getClickCount() == 2){
 							if(prikaz.getEl().contains(e.getX(), e.getY()))
-							System.out.println("Kliko dva puta");
+								new PodaciIgracaDijalog();
 						}
 					}
 				} catch (Exception e2) {
-					System.out.println("ASDASDASD");
+					System.out.println("Greksa");
 				}
 			
 			}
@@ -58,8 +58,8 @@ public class Teren extends JPanel {
 		
 		for (PrikazIgraca el : listaKruzica) {
 			gr.draw(el.getEl());
-			g.drawString(el.getIgrac().getIme()+ " "+ el.getIgrac().getPrezime(),
-					(int)el.getEl().getCenterX()-40, (int)el.getEl().getCenterY());
+			String prikazIgraca =  el.getIgrac().getIme()+ " " + el.getIgrac().getPrezime();
+			g.drawString( prikazIgraca, (int)el.getEl().getCenterX()-50, (int)el.getEl().getCenterY());
 		}
 		
 		

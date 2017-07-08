@@ -103,7 +103,7 @@ public class Utakmica {
 	}
 	
 	public void pocetak(){
-		//postaviUcinke();
+		postaviUcinke();
 		pokrenut = true;
 		promeniStanje(new Odigravanje(this));
 	}

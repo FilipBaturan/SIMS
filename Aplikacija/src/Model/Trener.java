@@ -10,10 +10,13 @@ public class Trener extends Osoba {
 	public Klub klub;
 	public ArrayList<UcinakTrenera> ucinak;
 	
-	public Trener(){}
+	public Trener(){
+		ucinak = new ArrayList<>();
+	}
 
 	public Trener(int id, String ime, String prezime, Date datumRodjenja) {
 		super(id, ime, prezime, datumRodjenja);
+		ucinak = new ArrayList<>();
 		
 	}
 	

@@ -6,6 +6,7 @@ import java.util.Date;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import Model.Evidentiranje.UcinakIgraca;
+import Model.Evidentiranje.UcinakTrenera;
 
 public class Igrac extends Osoba {
 	
@@ -23,6 +24,7 @@ public class Igrac extends Osoba {
 		super(id, ime, prezime, datumRodjenja);
 		this.brojDresa = brojDresa;
 		this.visina = visina;
+		ucinak = new ArrayList<>();
 	}
 	
 	
@@ -47,7 +49,7 @@ public class Igrac extends Osoba {
 	
 	@Override
 	public String toString() {
-		return "Igrac " + getIme() + " " + getPrezime();
+		return ime + " " + prezime;
 	}
 	
 }
