@@ -23,6 +23,7 @@ import javax.swing.event.ListSelectionListener;
 import Model.Aplikacija;
 import Model.Igrac;
 import Model.Klub;
+import Model.Utakmica;
 
 @SuppressWarnings("serial")
 public class SelekcijaIgracaDijalog extends JFrame {
@@ -31,22 +32,23 @@ public class SelekcijaIgracaDijalog extends JFrame {
 	JTextArea prikazGosta = new JTextArea();
 	int brojDomacih = 0;
 	int brojGosti = 0;
+	Utakmica utakmica;
 
-	public SelekcijaIgracaDijalog(Klub domacin, Klub gost) {
+	public SelekcijaIgracaDijalog(Utakmica utakmica) {
+		this.utakmica = utakmica;
 		this.setTitle("Selektovanje Igraca");
 		this.addWindowListener(new WindowAdapter() {
 			public void windowClosing(WindowEvent WinEvt) {
 				//prilikom odustanja od kreiranja utakmice
 				//ukloni prethodnu dodatu utakimcu
-				Aplikacija.obrisiUtakmicu(Aplikacija.listaUtakmica.get
-						(Aplikacija.listaUtakmica.size() - 1));
+				Aplikacija.obrisiUtakmicu(utakmica);
 			}
 		});
 		this.setVisible(true);
 		this.setLocation(350, 150);
 		this.setSize(700, 400);
 		JPanel glavniPanel = new JPanel();
-		this.postaviElemente(glavniPanel, domacin, gost);
+		this.postaviElemente(glavniPanel, utakmica.domacin, utakmica.gost);
 		this.setContentPane(glavniPanel);
 	}
 
@@ -195,7 +197,7 @@ public class SelekcijaIgracaDijalog extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				new PrikazUtakmice(domacin, gost);
+				new PrikazUtakmice(utakmica);
 				dispose();
 
 			}

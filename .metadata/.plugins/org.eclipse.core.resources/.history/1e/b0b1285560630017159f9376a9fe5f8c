@@ -1,0 +1,16 @@
+package GUI;
+
+import javax.swing.JFrame;
+
+@SuppressWarnings("serial")
+public class PrekinutDijalog extends JFrame {
+	
+	public PrekinutDijalog() {
+		this.setTitle("Registracija");
+		this.setVisible(true);
+		this.setLocation(400, 200);
+		this.setSize(600, 400);
+		this.setButtons();
+	}
+	
+}

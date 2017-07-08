@@ -2,4 +2,8 @@
 <<<<<<<=HEAD
 >>>>>>>=85071d4aad13d08df86e0725ba12f2d76fa9a036
 eclipse.preferences.version=1
+<<<<<<< HEAD
 org.eclipse.jdt.launching.PREF_VM_XML=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?>\r\n<vmSettings defaultVM\="57,org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType13,1499439299879" defaultVMConnector\="">\r\n<vmType id\="org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType">\r\n<vm id\="1499439299879" name\="jdk1.8.0_73" path\="C\:\\Program Files\\Java\\jdk1.8.0_73"/>\r\n</vmType>\r\n</vmSettings>\r\n
+=======
+org.eclipse.jdt.launching.PREF_VM_XML=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?>\r\n<vmSettings defaultVM\="57,org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType13,1499121357778" defaultVMConnector\="">\r\n<vmType id\="org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType">\r\n<vm id\="1499121357778" name\="jre1.8.0_131" path\="C\:\\Program Files\\Java\\jre1.8.0_131"/>\r\n<vm id\="1499439299879" name\="jdk1.8.0_73" path\="C\:\\Program Files\\Java\\jdk1.8.0_73"/>\r\n</vmType>\r\n</vmSettings>\r\n
+>>>>>>> 7bec15e25f11eaa9647f191edd71a984cf14a38e
