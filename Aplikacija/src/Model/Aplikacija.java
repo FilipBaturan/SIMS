@@ -2,7 +2,6 @@ package Model;
 
 import java.text.ParseException;
 import java.util.ArrayList;
-import java.util.Date;
 
 import GUI.PrijavljivanjeDijalog;
 
@@ -327,8 +326,6 @@ public class Aplikacija {
 		String[] reci = imeIPrezime.split(" ");
 		ime = reci[0];
 		prezime = reci[1];
-		System.out.println("Ime je: " + ime);
-		System.out.println("prezime je: " + prezime);
 		
 		for(Igrac igrac:listaIgraca){
 			if( (igrac.getIme().compareTo(ime) == 0) && (igrac.getPrezime().compareTo(prezime) == 0 ) ) return igrac;

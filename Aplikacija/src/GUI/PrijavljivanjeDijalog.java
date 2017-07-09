@@ -16,7 +16,10 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 import Model.Aplikacija;
+<<<<<<< HEAD
 import Model.Korisnik;
+=======
+>>>>>>> e28a7b5c783406b09c822461dc364409126fb519
 
 @SuppressWarnings("serial")
 public class PrijavljivanjeDijalog extends JFrame {
@@ -103,6 +106,7 @@ public class PrijavljivanjeDijalog extends JFrame {
 				
 				String korisnickoImeTekst = poljeZaIme.getText();
 				String lozinkaTekst = poljeLozinke.getText();
+<<<<<<< HEAD
 				boolean found = false;
 				if (korisnickoImeTekst.compareTo("") != 0 && lozinkaTekst.compareTo("") != 0) {
 					for(Korisnik k : Aplikacija.listaKorisnika){
@@ -116,6 +120,15 @@ public class PrijavljivanjeDijalog extends JFrame {
 						JOptionPane.showMessageDialog(null, "Uneti korinisk ne postoji", "Nepostojeci Korosnik",
 								JOptionPane.INFORMATION_MESSAGE);
 					}
+=======
+
+				if (Aplikacija.pronadjiKorisnika(korisnickoImeTekst, lozinkaTekst)) {
+					dispose();
+					new GlavniProzor();
+				} else {
+					JOptionPane.showMessageDialog(null, "Uneti korinisk ne postoji", "Nepostojeci Korosnik",
+							JOptionPane.INFORMATION_MESSAGE);
+>>>>>>> e28a7b5c783406b09c822461dc364409126fb519
 				}
 			}
 		});

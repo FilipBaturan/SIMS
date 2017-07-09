@@ -9,6 +9,7 @@ import Model.Evidentiranje.Izmena;
 import Model.Evidentiranje.StatistikaKluba;
 import Model.Evidentiranje.UcinakIgraca;
 import Model.Evidentiranje.UcinakTrenera;
+import Model.Evidentiranje.Enumeracije.VrstaLicneGreske;
 import Model.StanjeUtakmice.Odigravanje;
 import Model.StanjeUtakmice.Stanje;
 
@@ -158,7 +159,26 @@ public class Utakmica {
 	}
 
 	
+<<<<<<< HEAD
 	public void pocetak() throws ParseException{
+=======
+	public void evidentirajTucu(){
+		for(StatistikaKluba it:domacin.statistikaKluba){
+			if(it.utakmica == this){
+				it.licneGreske.add(VrstaLicneGreske.tuca);
+				break;
+			}
+		}
+		for(StatistikaKluba it:gost.statistikaKluba){
+			if(it.utakmica == this){
+				it.licneGreske.add(VrstaLicneGreske.tuca);
+				break;
+			}
+		}
+	}
+	
+	public void pocetak(){
+>>>>>>> e28a7b5c783406b09c822461dc364409126fb519
 		postaviUcinke();
 		pokrenut = true;
 		promeniStanje(new Odigravanje(this));

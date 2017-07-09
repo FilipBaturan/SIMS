@@ -2,7 +2,6 @@ package Model;
 
 import java.text.ParseException;
 import java.util.ArrayList;
-import java.util.Date;
 
 import Model.Evidentiranje.UcinakTrenera;
 

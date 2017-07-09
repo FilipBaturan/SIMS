@@ -5,7 +5,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
 
 import javax.swing.Box;
 import javax.swing.BoxLayout;
@@ -88,9 +87,17 @@ public class IzvestajStatistike extends JFrame {
 		new PrikazStatistike(zaglavlje, domacin, gost, id);
 	}
 
+<<<<<<< HEAD
 	public static String napraviZaglavlje(int id) throws ParseException {
 		SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy.");
 		
+=======
+	public String napraviZaglavlje(int id) throws ParseException {
+		//Date d = new Date();
+		SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy.");
+		//d = sdf.parse("16.11.1996.");
+
+>>>>>>> e28a7b5c783406b09c822461dc364409126fb519
 		Utakmica ut = new Utakmica();
 
 		for (Utakmica utakmica : Aplikacija.listaUtakmica) {

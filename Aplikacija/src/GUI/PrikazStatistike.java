@@ -18,6 +18,7 @@ import Model.Evidentiranje.Pokusaj;
 import Model.Evidentiranje.UcinakIgraca;
 import Model.Evidentiranje.Enumeracije.VrstaLicneGreske;
 
+@SuppressWarnings("serial")
 public class PrikazStatistike extends JFrame {
 
 	public Klub domacin;

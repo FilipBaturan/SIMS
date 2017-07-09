@@ -11,17 +11,14 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 
-import Model.Igrac;
-import Model.Osoba;
-import Model.Utakmica;
 import Model.Evidentiranje.UcinakIgraca;
-import Model.Evidentiranje.UcinakTrenera;
-import Model.StanjeUtakmice.Odigravanje;
 
+@SuppressWarnings("serial")
 public class PodaciIgracaDijalog extends JFrame {
 	
 	private UcinakIgraca ucinak;
 	private int zona;
+	private PanelTima klub;
 
 	public PodaciIgracaDijalog(UcinakIgraca ucinakIgraca)
 	{
@@ -210,6 +207,8 @@ public class PodaciIgracaDijalog extends JFrame {
 				if (jedanPoen.isSelected())
 				{
 					ucinak.utakmica.getTrenutnoStanje().azuriranje(7, 1, zona);	
+					klub.poeni += 1;
+					klub.labela1.setText("Poeni tima " + klub.poeni);
 					JOptionPane.showMessageDialog(null, "Igrac postigao jedan poen", "Unos poena",
 							JOptionPane.INFORMATION_MESSAGE);
 				}
@@ -217,13 +216,17 @@ public class PodaciIgracaDijalog extends JFrame {
 				else if (dvaPoena.isSelected())
 				{
 					ucinak.utakmica.getTrenutnoStanje().azuriranje(7, 2, zona);	
+					klub.poeni += 2;
+					klub.labela1.setText("Poeni tima " + klub.poeni);
 					JOptionPane.showMessageDialog(null, "Igrac postigao dva poena", "Unos poena",
 							JOptionPane.INFORMATION_MESSAGE);
 				}
 					
 				else
 				{
-					ucinak.utakmica.getTrenutnoStanje().azuriranje(7, 3, zona);	
+					ucinak.utakmica.getTrenutnoStanje().azuriranje(7, 3, zona);
+					klub.poeni += 3;
+					klub.labela1.setText("Poeni tima " + klub.poeni);
 					JOptionPane.showMessageDialog(null, "Igrac postigao tri poena", "Unos poena",
 							JOptionPane.INFORMATION_MESSAGE);
 				}
@@ -263,6 +266,16 @@ public class PodaciIgracaDijalog extends JFrame {
 		});
 		
 	}
+
+	public PanelTima getKlub() {
+		return klub;
+	}
+
+	public void setKlub(PanelTima klub) {
+		this.klub = klub;
+	}
+	
+	
 	
 	
 	
