@@ -153,20 +153,12 @@ public class Main {
 
 		Utakmica u = new Utakmica(0, k1, k2, sala1, "2017-7-9");
 		u.setDelegat(new Osoba(1, "Delegat", "Delegatic", "1970-6-2"));
-<<<<<<< HEAD
-		Aplikacija.listaDelegata.add(u.getDelegat());
-		ArrayList<Osoba> sudije = new ArrayList<Osoba>();
-		sudije.add(new Osoba(2, "Sudija", "Sudinic", "1971-5-3"));
-		sudije.add(new Osoba(3, "Marko", "Markovic", "1972-4-20"));
-		Aplikacija.listaSudija.addAll(sudije);
-=======
 		Aplikacija.listaDelegata.add(new Osoba(1, "Delegat", "Delegatic", "1970-6-2"));
 		ArrayList<Osoba> sudije = new ArrayList<Osoba>();
 		sudije.add(new Osoba(2, "Sudija", "Sudinic", "1971-5-3"));
 		sudije.add(new Osoba(3, "Marko", "Markovic", "1972-4-20"));
 		Aplikacija.listaSudija.add(new Osoba(2, "Sudija", "Sudinic", "1971-5-3"));
 		Aplikacija.listaSudija.add(new Osoba(3, "Marko", "Markovic", "1972-4-20"));
->>>>>>> 1886faf65bd202ca378d53c95d25cc5f2c47ad6c
 		u.setSudije(sudije);
 		Aplikacija.listaUtakmica.add(u);
 		Utakmica u1 = new Utakmica(1, k2, k3, sala2, "2017-7-9");
