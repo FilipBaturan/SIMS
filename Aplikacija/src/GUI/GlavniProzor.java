@@ -56,7 +56,7 @@ public class GlavniProzor extends JFrame{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				if(Aplikacija.proveriBazu()){
-				new DodavanjeUtakmiceDijalog();
+					new DodavanjeUtakmiceDijalog();
 				}
 				else{
 					JOptionPane.showMessageDialog(null, Aplikacija.prikaziGresku(), "Nedovoljno podataka",

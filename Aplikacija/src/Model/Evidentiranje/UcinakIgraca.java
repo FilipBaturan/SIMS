@@ -103,34 +103,35 @@ public class UcinakIgraca {
 		switch (tip) {
 		case 0:
 			setSkokoviUNapadu(getSkokoviUNapadu()+1);
-			setIndeks(getIndeks());
+			setIndeks(getIndeks() + 1);
 			break;
 		case 1:
 			setSkokoviUOdbrani(getSkokoviUOdbrani()+1);
-			setIndeks(getIndeks());
+			setIndeks(getIndeks() + 1);
 			break;
 		case 2:
 			setAsistencije(getAsistencije()+1);
-			setIndeks(getIndeks());
+			setIndeks(getIndeks() + 1);
 			break;
 		case 3:
 			setOsvojeneLopte(getOsvojeneLopte()+1);
-			setIndeks(getIndeks());
+			setIndeks(getIndeks() + 1) ;
 			break;
 		case 4:
-			setBlokade(getBlokade()+1);
-			setIndeks(getIndeks());
+			setBlokade(getBlokade() + 1);
+			setIndeks(getIndeks() + 1);
 			break;
 		case 5:
 			licneGreske.add(VrstaLicneGreske.values()[vrednost]);
-			setIndeks(getIndeks());
+			setIndeks(getIndeks() - 1);
 			break;
 		case 6:
 			izgubljeneLopteIgraca.add(VrstaIzgubljeneLopte.values()[vrednost]);
-			setIndeks(getIndeks());
+			setIndeks(getIndeks() - 1);
 			break;
 		case 7:
 			pokusaji.add(new Pokusaj(true,vrednost,zona,utakmica.izracunaCetvrtinu()));
+			poeni = poeni + vrednost;
 			break;
 		case 8:
 			pokusaji.add(new Pokusaj(false,vrednost,zona,utakmica.izracunaCetvrtinu()));

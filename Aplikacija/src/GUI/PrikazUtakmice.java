@@ -3,16 +3,20 @@ package GUI;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Font;
-import java.awt.Graphics;
 import java.awt.Image;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.geom.Ellipse2D;
 import java.io.File;
 import java.io.IOException;
+<<<<<<< HEAD
 import java.io.LineNumberInputStream;
 import java.text.ParseException;
 import java.util.Date;
+=======
+import java.util.Timer;
+import java.util.TimerTask;
+>>>>>>> 41e6b46a0080b9b99cede91fe3c895a79505bf0a
 
 import javax.imageio.ImageIO;
 import javax.swing.BorderFactory;
@@ -22,23 +26,44 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.JSplitPane;
+import javax.swing.JTable;
 import javax.swing.JTextArea;
 
 import Model.Igrac;
 import Model.Klub;
+import Model.Utakmica;
 
+@SuppressWarnings("serial")
 public class PrikazUtakmice extends JFrame {
+<<<<<<< HEAD
 	
 	public PrikazUtakmice(Klub domacin, Klub gost) throws ParseException {
+=======
+	private Utakmica utakmica;
+	private Timer timer;
+	private JLabel vreme;;
+
+	public PrikazUtakmice(Utakmica utakmica) {
+		this.utakmica = utakmica;
+		timer = new Timer();
+>>>>>>> 41e6b46a0080b9b99cede91fe3c895a79505bf0a
 		this.setTitle("Prikaz utakmice");
 		this.setVisible(true);
 		this.setLocation(250, 50);
 		this.setSize(1000, 700);
 		JSplitPane glavniPanel = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT);
 		glavniPanel.setEnabled(false);
+<<<<<<< HEAD
 		this.postaviElemente(glavniPanel, domacin, gost);
 		this.setContentPane(glavniPanel);
+=======
+		this.postaviElemente(glavniPanel, utakmica.domacin, utakmica.gost);
+		this.setContentPane( glavniPanel);
+		refresh();
+		utakmica.pocetak();
+>>>>>>> 41e6b46a0080b9b99cede91fe3c895a79505bf0a
 	}
 
 	private void postaviElemente(JSplitPane glavniPanel, Klub domacin, Klub gost) throws ParseException {
@@ -48,16 +73,25 @@ public class PrikazUtakmice extends JFrame {
 		desniPanel.setEnabled(false);
 		desniPanel.setEnabled(false);
 		desniPanel.setBorder(BorderFactory.createLineBorder(Color.black) );
-		JPanel domaciTim = new PanelTima(domacin);
+		JPanel domaciTim = new PanelTima(domacin, utakmica);
 		
 		JSplitPane donjiPanel = new JSplitPane(JSplitPane.VERTICAL_SPLIT);
 		donjiPanel.setEnabled(false);
 		JPanel prelazstanja = new JPanel();
 		JButton prekid = new JButton("Prekini");
+		
+		prekid.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				utakmica.prekid();
+				
+			}
+		});
 		prelazstanja.add(prekid);
 		
 		
-		JPanel gostojuciTim = new PanelTima(gost);
+		JPanel gostojuciTim = new PanelTima(gost, utakmica);
 		
 		donjiPanel.setTopComponent(gostojuciTim);
 		donjiPanel.setBottomComponent(prelazstanja);
@@ -76,7 +110,7 @@ public class PrikazUtakmice extends JFrame {
 		JLabel nazivDomacina = new JLabel();
 		nazivDomacina.setText(domacin.getNaziv());
 		nazivDomacina.setFont(new Font("Serif", Font.PLAIN, 19));
-		JLabel vreme = new JLabel("0:00");
+		vreme = new JLabel("0:00");
 		JLabel nazivGosta = new JLabel();
 		nazivGosta.setText(gost.getNaziv());
 		nazivGosta.setFont(new Font("Serif", Font.PLAIN, 19));
@@ -88,17 +122,30 @@ public class PrikazUtakmice extends JFrame {
 		podaciTima.add(Box.createVerticalStrut(5));
 		podaciTima.add(nazivGosta);
 		podaciTima.add(Box.createVerticalStrut(5));
-
-		Teren panelZaSliku = new Teren();
-		for (int i = 0; i < 5; i++) {
-			panelZaSliku.listaKruzica.add(new PrikazIgraca(1, i));
+		
+		Teren panelZaSliku = new Teren(utakmica);
+		
+		int i1 = 0;
+		int i2 = 0;
+		for (Igrac igrac : utakmica.aktivni) {
+			
+			/*System.out.println("ime ovde: " + igrac.getIme());
+			System.out.println("prezime ovde: " + igrac.getPrezime());*/
+			if (utakmica.domacin == igrac.klub)
+			{
+				panelZaSliku.listaKruzica.add(new PrikazIgraca(igrac, 1, i1));
+				i1 += 1;
+			}
+				
+			else
+			{
+				panelZaSliku.listaKruzica.add(new PrikazIgraca(igrac, 2, i2));
+				i2++;
+			}
+				
 		}
-		for (int i = 0; i < 5; i++) {
-			panelZaSliku.listaKruzica.add(new PrikazIgraca(2, i));
-		}
+		
 		postaviSliku(panelZaSliku);
-		
-		
 		
 		
 		
@@ -126,38 +173,73 @@ public class PrikazUtakmice extends JFrame {
 		}
 		
 	}
+	
+	private void refresh(){
+		timer.schedule(new TimerTask() {
+
+			@Override
+			public void run() {
+				
+				vreme.setText(utakmica.getVreme()/60 + ":"+
+				(utakmica.getVreme()%60 + ""));
+
+			}
+		}, 0, 100);
+	}
 
 }
 
 
+@SuppressWarnings("serial")
 class PanelTima extends JPanel
 {
-	public PanelTima(Klub klub)
+	
+	public PanelTima(Klub klub, Utakmica utakmica)
 	{
 		
 		this.setLayout(new BorderLayout());
 		
-		JPanel rezervniIgraci = new JPanel();
+		//JPanel rezervniIgraci = new JPanel();
 		
 		JTextArea praznaLabela = new JTextArea("OVDE CE DA STOJE KRUZICI ZA IGRACE NA KLUPI");
 		//praznaLabela.setSize(new Dimension(desniPanel.getWidth() - 50, desniPanel.getHeight() / 3));
-		this.add(praznaLabela);
+		
+		
+		String[] zaglavlje = {"Ime", "Prezime"};
+		int brojRezervi = klub.igraci.size() - 5;
+		System.out.println("broj rezervi: " + brojRezervi);
+		String[][] podaci = new String[brojRezervi][];
+		
+		int i = 0;
+		for (Igrac igrac : klub.igraci) {
+			if (!utakmica.aktivni.contains(igrac))
+			{
+				String ime = igrac.getIme();
+				String prezime = igrac.getPrezime();
+				podaci[i] = new String[] {ime, prezime};
+				i++;
+			}
+		}
+		
+		JTable tabelaRezervnihIgraca = new JTable(podaci, zaglavlje);
+		JScrollPane skrol = new JScrollPane(tabelaRezervnihIgraca);
+		this.add(skrol);
 		
 		JPanel panelLabelaDom = new JPanel();
 		panelLabelaDom.setLayout(new BoxLayout(panelLabelaDom, BoxLayout.Y_AXIS));
-		JLabel labela1 = new JLabel("Broj poJena tima");
+		JLabel labela1 = new JLabel("Poeni tima " + 0);
 		labela1.setFont(new Font("Serif", Font.PLAIN, 15));
 		labela1.setAlignmentX(CENTER_ALIGNMENT);
 		panelLabelaDom.add(labela1);
 		panelLabelaDom.add(Box.createVerticalStrut(25));
 		
-		JLabel labela2 = new JLabel("Broj napada");
+		JLabel labela2 = new JLabel("Broj napada tima " + 0);
 		labela2.setFont(new Font("Serif", Font.PLAIN, 15));
 		labela2.setAlignmentX(CENTER_ALIGNMENT);
 		panelLabelaDom.add(labela2);
 		panelLabelaDom.add(Box.createVerticalStrut(25));
 		
-		JLabel labela3 = new JLabel("Nesto jos, zaboravio sam sta");
+		JLabel labela3 = new JLabel("Broj izmena tima " + 0);
 		labela3.setFont(new Font("Serif", Font.PLAIN, 15));
 		labela3.setAlignmentX(CENTER_ALIGNMENT);
 		panelLabelaDom.add(labela3);
@@ -191,17 +273,26 @@ class PrikazIgraca  {
 	}
 
 	//parametri strana i broj su stavljeni da bi prilikom crtanja krug znao gde da se iscrta (broj - redni broj igraca)
+<<<<<<< HEAD
 	public PrikazIgraca(int strana, int broj) throws ParseException {
+=======
+	public PrikazIgraca(Igrac i, int strana, int broj) {
+>>>>>>> 41e6b46a0080b9b99cede91fe3c895a79505bf0a
 		if (strana == 1)
 		{
-			el = new Ellipse2D.Double(500, 20 + broj * 100, 90, 90);
+			el = new Ellipse2D.Double(480, 30 + broj * 100, 110, 90);
 		}
 		else if (strana == 2)
+<<<<<<< HEAD
 			el = new Ellipse2D.Double(130, 20 + broj * 100, 90, 90);
 		igrac = new Igrac(7, "Nikola", "Markovic", "1996-5-12", 10, 207);
+=======
+			el = new Ellipse2D.Double(70, 30 + broj * 100, 110, 90);
+		igrac = i;
+>>>>>>> 41e6b46a0080b9b99cede91fe3c895a79505bf0a
 		
 	}
-
+	
 	
 
 }

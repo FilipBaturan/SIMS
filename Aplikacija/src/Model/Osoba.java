@@ -9,8 +9,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class Osoba {
 	
 	private int id;
-	private String ime;
-	private String prezime;
+	protected String ime;
+	protected String prezime;
 	private Date datumRodjenja;
 	public Korisnik korisnik;
 	

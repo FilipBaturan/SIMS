@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 [[{"location":"D:\\FTN-SIIT\\SIMS\\projekat_kosarka\\SIMS\\Aplikacija","type":"PROJECT","hints":{"PROJECT_NAME":"Aplikacija"}},"ABSENT"],[{"location":"C:\\Program Files\\Java\\jre1.8.0_131","type":"JRE","hints":{"EXECUTION_ENVIRONMENT":"JavaSE-1.8"}},"jre:jre:1.8.0"]]
+=======
+[[{"location":"C:\\Program Files\\Java\\jdk1.8.0_73","type":"JRE","hints":{"EXECUTION_ENVIRONMENT":"JavaSE-1.8"}},"jre:jre:1.8.0"],[{"location":"D:\\Faks\\Semestar IV\\SIMS\\Klonovanje\\SIMS\\Aplikacija","type":"PROJECT","hints":{"PROJECT_NAME":"Aplikacija"}},"ABSENT"]]
+>>>>>>> 41e6b46a0080b9b99cede91fe3c895a79505bf0a

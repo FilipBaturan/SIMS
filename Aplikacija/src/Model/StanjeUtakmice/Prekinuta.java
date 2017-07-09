@@ -1,5 +1,6 @@
 package Model.StanjeUtakmice;
 
+import GUI.PrekinutDijalog;
 import Model.Igrac;
 import Model.Klub;
 import Model.Osoba;
@@ -18,6 +19,7 @@ public class Prekinuta extends Stanje {
 	@Override
 	public void entry() {
 		utakmica.setPokrenut(false);
+		new PrekinutDijalog(utakmica);
 		
 	}
 
@@ -35,7 +37,6 @@ public class Prekinuta extends Stanje {
 				break;
 			}
 		}
-		//utakmica.tuca();
 		utakmica.promeniStanje(new Zavrsena(utakmica));
 		
 	}

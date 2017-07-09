@@ -50,6 +50,19 @@ public class Aplikacija {
 	}
 	
 	
+	public static boolean pronadjiKorisnika(Korisnik k)
+	{
+		for (Korisnik korisnik : listaKorisnika) {
+			
+			if( (korisnik.getKorisnickoIme().compareTo(k.getKorisnickoIme()) == 0) &&
+					(korisnik.getLozinka().compareTo(k.getLozinka()) == 0) )
+				return true;
+		}
+		
+		return false;
+	}
+	
+	
 	public static boolean dodajKorisnika(String korisnickoIme, String lozinka){
 		if (!pronadjiKorisnika(korisnickoIme, lozinka)){
 			listaKorisnika.add(new Korisnik(korisnickoIme, lozinka));
@@ -60,10 +73,50 @@ public class Aplikacija {
 		}
 	}
 	
+	
+	public static boolean dodajKorisnika(Korisnik korisnik){
+		String ime = korisnik.getKorisnickoIme();
+		String lozinka = korisnik.getLozinka();
+		if (!pronadjiKorisnika(ime, lozinka)){
+			listaKorisnika.add(korisnik);
+			return true;
+		}
+		else{
+			return false;
+		}
+	}
+	
 	public static boolean obrisiKorisnika(Korisnik korisnik){
-		if(listaIgraca.contains(korisnik))
-			return listaKorisnika.remove(korisnik);
+		if(listaKorisnika.contains(korisnik))
+		{
+			listaKorisnika.remove(korisnik);
+			return true;
+		}
 		return false;
+	}
+	
+	
+	public static boolean izmeniKoriniska(Korisnik k, String novoIme, String novaSifra)
+	{
+		if (!pronadjiKorisnika(k))
+			return false;
+		if (novoIme.compareTo("") == 0 )
+			novoIme = k.getKorisnickoIme();
+		if (novaSifra.compareTo("") == 0)
+			novaSifra = k.getLozinka();
+		
+		Korisnik noviKorisnik = new Korisnik(novoIme, novaSifra);
+		
+		
+		if(pronadjiKorisnika(noviKorisnik))
+			return false;
+		else
+		{
+			k.setKorisnickoIme(novoIme);
+			k.setLozinka(novaSifra);
+			return true;
+		}
+			
 	}
 	
 	public static boolean pronadjiMesto(Mesto mesto){
@@ -171,13 +224,6 @@ public class Aplikacija {
 		return klubovi;
 	}
 	
-	/*private static int brojKlubova(ArrayList<Klub> listaKlubova) {
-		int i = 0;
-		for (Klub klub: listaKlubova) {
-			i++;
-		}
-		return i;
-	}*/
 
 	public static boolean dodajSalu(String naziv,Mesto mesto){
 		if (pronadjiSalu(naziv) == null){
@@ -285,8 +331,6 @@ public class Aplikacija {
 		System.out.println("prezime je: " + prezime);
 		
 		for(Igrac igrac:listaIgraca){
-			System.out.println("Ime je: " + igrac.getIme());
-			System.out.println("prezime je: " + igrac.getPrezime());
 			if( (igrac.getIme().compareTo(ime) == 0) && (igrac.getPrezime().compareTo(prezime) == 0 ) ) return igrac;
 			
 		}
@@ -357,9 +401,15 @@ public class Aplikacija {
 		listaUtakmica.add(new Utakmica(generisiKluc('U'),domacin,gost));
 	}
 	
+<<<<<<< HEAD
 	public static void dodajUtakmicu(Klub domacin,Klub gost,Sala sala, String datum) throws ParseException{
 		listaUtakmica.add(new Utakmica(generisiKluc('U'), domacin, gost, sala, datum));
 	}
+=======
+	/*public static void dodajUtakmicu(Klub domacin,Klub gost,Sala sala){
+		listaUtakmica.add(new Utakmica(generisiKluc('U'), domacin, gost, sala));
+	}*/
+>>>>>>> 41e6b46a0080b9b99cede91fe3c895a79505bf0a
 	
 	public static Utakmica pronadjiUtamicu(int id){
 		for(Utakmica utakmica:listaUtakmica){

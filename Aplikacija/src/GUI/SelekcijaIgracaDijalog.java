@@ -24,6 +24,7 @@ import javax.swing.event.ListSelectionListener;
 import Model.Aplikacija;
 import Model.Igrac;
 import Model.Klub;
+import Model.Utakmica;
 
 @SuppressWarnings("serial")
 public class SelekcijaIgracaDijalog extends JFrame {
@@ -32,23 +33,25 @@ public class SelekcijaIgracaDijalog extends JFrame {
 	JTextArea prikazGosta = new JTextArea();
 	int brojDomacih = 0;
 	int brojGosti = 0;
+	Utakmica utakmica;
 
-	public SelekcijaIgracaDijalog(Klub domacin, Klub gost) {
+	public SelekcijaIgracaDijalog(Utakmica utakmica) {
+		this.utakmica = utakmica;
 		this.setTitle("Selektovanje Igraca");
+		this.setVisible(true);
+		this.setLocation(350, 100);
+		this.setSize(700, 500);
+		JPanel glavniPanel = new JPanel();
+		this.postaviElemente(glavniPanel, utakmica.domacin, utakmica.gost);
+		this.setContentPane(glavniPanel);
+		
 		this.addWindowListener(new WindowAdapter() {
 			public void windowClosing(WindowEvent WinEvt) {
 				//prilikom odustanja od kreiranja utakmice
 				//ukloni prethodnu dodatu utakimcu
-				Aplikacija.obrisiUtakmicu(Aplikacija.listaUtakmica.get
-						(Aplikacija.listaUtakmica.size() - 1));
+				Aplikacija.obrisiUtakmicu(utakmica);
 			}
 		});
-		this.setVisible(true);
-		this.setLocation(350, 150);
-		this.setSize(700, 400);
-		JPanel glavniPanel = new JPanel();
-		this.postaviElemente(glavniPanel, domacin, gost);
-		this.setContentPane(glavniPanel);
 	}
 
 	private void postaviElemente(JPanel glavniPanel, Klub domacin, Klub gost) {
@@ -165,14 +168,27 @@ public class SelekcijaIgracaDijalog extends JFrame {
 					// cuvanje izmena
 
 					String noviIgrac = listaZaPrikaz.getSelectedValue();
-					if (!dodatiDomaci.contains(noviIgrac) && brojDomacih < 5) {
+					boolean uspesnoDodavanje = dodajStartnogIgraca(noviIgrac);
+					if (uspesnoDodavanje)
+					{
 						prikazDomacina.setText(prikazDomacina.getText() + "\n" + noviIgrac);
-						domacin.startnaPostava.add(Aplikacija.pronadjiIgraca(noviIgrac));
+						Igrac i = Aplikacija.pronadjiIgraca(noviIgrac);
+						//domacin.startnaPostava.add(i);
+						utakmica.aktivni.add(i);
 						dodatiDomaci.add(noviIgrac);
 						brojDomacih++;
 					}
 
 				}
+			}
+
+			private boolean dodajStartnogIgraca(String noviIgrac) {
+				if (!dodatiDomaci.contains(noviIgrac) && brojDomacih < 5) {
+					
+					return true;
+				}
+				else return false;
+				
 			}
 		});
 
@@ -184,7 +200,8 @@ public class SelekcijaIgracaDijalog extends JFrame {
 				String noviIgrac = listaZaPrikaz2.getSelectedValue();
 				if (!dodatiGosti.contains(noviIgrac) && brojGosti < 5) {
 					prikazGosta.setText(prikazGosta.getText() + "\n" + noviIgrac);
-					gost.startnaPostava.add(Aplikacija.pronadjiIgraca(noviIgrac));
+					Igrac i  = Aplikacija.pronadjiIgraca(noviIgrac);
+					utakmica.aktivni.add(i);
 					dodatiGosti.add(noviIgrac);
 					brojGosti++;
 				}
@@ -196,6 +213,7 @@ public class SelekcijaIgracaDijalog extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+<<<<<<< HEAD
 				try {
 					new PrikazUtakmice(domacin, gost);
 				} catch (ParseException e1) {
@@ -203,6 +221,14 @@ public class SelekcijaIgracaDijalog extends JFrame {
 					e1.printStackTrace();
 				}
 				dispose();
+=======
+				if (utakmica.aktivni.size() == 10)
+				{
+					new PrikazUtakmice(utakmica);
+					dispose();
+				}
+				
+>>>>>>> 41e6b46a0080b9b99cede91fe3c895a79505bf0a
 
 			}
 		});

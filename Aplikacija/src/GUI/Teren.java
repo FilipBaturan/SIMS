@@ -9,12 +9,15 @@ import java.util.ArrayList;
 
 import javax.swing.JPanel;
 
+import Model.Utakmica;
+
+@SuppressWarnings("serial")
 public class Teren extends JPanel {
 
 	Image image;
 	ArrayList<PrikazIgraca> listaKruzica;
 	
-	public Teren()
+	public Teren(Utakmica utakmica)
 	{
 		listaKruzica = new ArrayList<>();
 		addMouseListener(new MouseAdapter() {
@@ -30,11 +33,15 @@ public class Teren extends JPanel {
 							}
 						}
 						else if(e.getClickCount() == 2){
-							System.out.println("Kliko dva puta");
+							if(prikaz.getEl().contains(e.getX(), e.getY()))
+							{
+								utakmica.getTrenutnoStanje().dijalog(prikaz.getIgrac());
+							}
+								
 						}
 					}
 				} catch (Exception e2) {
-					System.out.println("ASDASDASD");
+					System.out.println("Greksa");
 				}
 			
 			}
@@ -56,8 +63,8 @@ public class Teren extends JPanel {
 		
 		for (PrikazIgraca el : listaKruzica) {
 			gr.draw(el.getEl());
-			g.drawString(el.getIgrac().getIme()+ " "+ el.getIgrac().getPrezime(),
-					(int)el.getEl().getCenterX()-40, (int)el.getEl().getCenterY());
+			String prikazIgraca =  el.getIgrac().getIme()+ " " + el.getIgrac().getPrezime();
+			g.drawString( prikazIgraca, (int)el.getEl().getCenterX()-50, (int)el.getEl().getCenterY());
 		}
 		
 		

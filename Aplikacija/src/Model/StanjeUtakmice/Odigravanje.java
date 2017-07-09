@@ -3,6 +3,9 @@ package Model.StanjeUtakmice;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import javax.swing.plaf.SliderUI;
+
+import GUI.PodaciIgracaDijalog;
 import Model.Igrac;
 import Model.Klub;
 import Model.Osoba;
@@ -38,7 +41,7 @@ public class Odigravanje extends Stanje {
 			
 			@Override
 			public void run() {
-				if(utakmica.isPokrenut() && utakmica.getVreme() <40){
+				if(utakmica.isPokrenut() && utakmica.getVreme() <180){
 					utakmica.setVreme(utakmica.getVreme()+1);;
 					//uvecaj vreme svim aktinvim igracima
 					for(Igrac igrac:utakmica.aktivni){
@@ -62,7 +65,6 @@ public class Odigravanje extends Stanje {
 					timer.purge();
 					return;
 				}
-				System.out.println(utakmica.getVreme());
 				
 			}
 		}, 0, 1000);
@@ -98,7 +100,12 @@ public class Odigravanje extends Stanje {
 	@Override
 	public void dijalog(Osoba osoba) {
 		selektovanaOsoba = osoba;
-		System.out.println(osoba.getId() + " " + osoba.getIme());
+		Igrac i = ( (Igrac) selektovanaOsoba);
+		for (UcinakIgraca ui : i.ucinak) {
+			if(ui.utakmica == utakmica)
+				new PodaciIgracaDijalog(ui);
+		}
+		
 		
 	}
 
@@ -130,6 +137,8 @@ public class Odigravanje extends Stanje {
 			for(UcinakIgraca ucinak:((Igrac)selektovanaOsoba).ucinak){
 				if(ucinak.utakmica == utakmica){
 					ucinak.azuriranje(tip, vrednost, zona);
+					System.out.println("Broj poena:" + ucinak.getPoeni());
+					System.out.println("Broj skokova napad:" + ucinak.getSkokoviUNapadu());
 					break;
 				}
 			}
