@@ -28,27 +28,16 @@ public class AzurianjeIgracaKlubova {
 		Aplikacija.listaMesta.add(mesto2);
 	
 		
-<<<<<<< HEAD
-		Klub k1 = new Klub("Klub1", 1,mesto1);
+
+		Klub k1 = new Klub("Klub1", 1,mesto1, new Trener(666, "Ime trenera", "Prezime trenera", "1998-01-01"));
 		Igrac igrac1 = new Igrac(1, "Ime1", "Prezime1", "1998-01-01", 2, 198);
 		Igrac igrac2 = new Igrac(2, "Ime2", "Prezime2", "1998-02-01", 22, 198);
 		k1.dodajIgraca(igrac1);
 		k1.dodajIgraca(igrac2);
 		
-		Klub k2 = new Klub("Klub2", 2,mesto2);
+		Klub k2 = new Klub("Klub2", 2,mesto2, new Trener(666, "Ime trenera", "Prezime trenera", "1998-01-01"));
 		Igrac igrac3 = new Igrac(3, "Ime3", "Prezime3", "1998-01-01", 23, 198);
 		Igrac igrac4 = new Igrac(4, "Ime4", "Prezime4", "1998-03-01", 24, 198);
-=======
-		Klub k1 = new Klub("Klub1", 1,mesto1, new Trener(666, "Ime trenera", "Prezime trenera", new Date(1998-01-01)));
-		Igrac igrac1 = new Igrac(1, "Ime1", "Prezime1", new Date(1998-01-01), 2, 198);
-		Igrac igrac2 = new Igrac(2, "Ime2", "Prezime2", new Date(1998-02-01), 22, 198);
-		k1.dodajIgraca(igrac1);
-		k1.dodajIgraca(igrac2);
-		
-		Klub k2 = new Klub("Klub2", 2,mesto2, new Trener(666, "Ime trenera", "Prezime trenera", new Date(1998-01-01)));
-		Igrac igrac3 = new Igrac(3, "Ime3", "Prezime3", new Date(1998-01-01), 23, 198);
-		Igrac igrac4 = new Igrac(4, "Ime4", "Prezime4", new Date(1998-03-01), 24, 198);
->>>>>>> 41e6b46a0080b9b99cede91fe3c895a79505bf0a
 		k2.dodajIgraca(igrac3);
 		k2.dodajIgraca(igrac4);
 		
@@ -106,8 +95,8 @@ public class AzurianjeIgracaKlubova {
 	}
 	
 	@Test
-	public void brisanjeIgracaIzPrazneListeTest(){
-		Klub klub = new Klub("Metalac",3,Aplikacija.listaMesta.get(0), new Trener(666, "Ime trenera", "Prezime trenera", new Date(1998-01-01)));
+	public void brisanjeIgracaIzPrazneListeTest() throws ParseException{
+		Klub klub = new Klub("Metalac",3,Aplikacija.listaMesta.get(0), new Trener(666, "Ime trenera", "Prezime trenera", "1998-01-01"));
 		assertFalse(klub.obrisiIgraca(null));
 		assertTrue(klub.igraci.size() == 0);
 			

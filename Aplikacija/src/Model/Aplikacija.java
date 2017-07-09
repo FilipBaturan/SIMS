@@ -401,15 +401,12 @@ public class Aplikacija {
 		listaUtakmica.add(new Utakmica(generisiKluc('U'),domacin,gost));
 	}
 	
-<<<<<<< HEAD
 	public static void dodajUtakmicu(Klub domacin,Klub gost,Sala sala, String datum) throws ParseException{
 		listaUtakmica.add(new Utakmica(generisiKluc('U'), domacin, gost, sala, datum));
 	}
-=======
 	/*public static void dodajUtakmicu(Klub domacin,Klub gost,Sala sala){
 		listaUtakmica.add(new Utakmica(generisiKluc('U'), domacin, gost, sala));
 	}*/
->>>>>>> 41e6b46a0080b9b99cede91fe3c895a79505bf0a
 	
 	public static Utakmica pronadjiUtamicu(int id){
 		for(Utakmica utakmica:listaUtakmica){

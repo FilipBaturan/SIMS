@@ -103,7 +103,11 @@ public class Odigravanje extends Stanje {
 		Igrac i = ( (Igrac) selektovanaOsoba);
 		for (UcinakIgraca ui : i.ucinak) {
 			if(ui.utakmica == utakmica)
+			{
 				new PodaciIgracaDijalog(ui);
+				break;
+			}
+				
 		}
 		
 		

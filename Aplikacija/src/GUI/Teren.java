@@ -27,18 +27,15 @@ public class Teren extends JPanel {
 				try {
 					for (PrikazIgraca prikaz : listaKruzica) {
 						
-						if (e.getClickCount() == 1) {
-							if (prikaz.getEl().contains(e.getX(), e.getY())) {
-								System.out.println(prikaz.getEl().getCenterX());
-							}
-						}
-						else if(e.getClickCount() == 2){
+						
+						if(e.getClickCount() == 2){
 							if(prikaz.getEl().contains(e.getX(), e.getY()))
 							{
 								utakmica.getTrenutnoStanje().dijalog(prikaz.getIgrac());
 							}
-								
+							
 						}
+						
 					}
 				} catch (Exception e2) {
 					System.out.println("Greksa");

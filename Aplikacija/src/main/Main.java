@@ -35,7 +35,7 @@ public class Main {
 		Aplikacija.listaSala.add(sala1);
 		Aplikacija.listaSala.add(sala2);
 
-		Klub k1 = new Klub("Klub1", 1, mesto1);
+		Klub k1 = new Klub("Klub1", 1,mesto1, new Trener(666, "Ime trenera", "Prezime trenera", "1998-01-01"));
 		Igrac igrac1 = new Igrac(1, "Ime1", "Prezime1", "1998-01-01", 2, 198);
 		Igrac igrac2 = new Igrac(2, "Ime2", "Prezime2", "1998-02-01", 22, 198);
 		Igrac igrac3 = new Igrac(3, "Ime3", "Prezime3", "1998-01-01", 23, 198);
@@ -57,7 +57,6 @@ public class Main {
 		k1.dodajIgraca(igrac9);
 		k1.dodajIgraca(igrac10);
 
-		Klub k2 = new Klub("Klub2", 2, mesto2);
 		Igrac igrac11 = new Igrac(11, "Ime11", "Prezime11", "1998-01-01", 2, 198);
 		Igrac igrac12 = new Igrac(12, "Ime12", "Prezime12", "1998-02-01", 22, 198);
 		Igrac igrac13 = new Igrac(13, "Ime13", "Prezime13", "1998-01-01", 23, 198);
@@ -68,6 +67,8 @@ public class Main {
 		Igrac igrac18 = new Igrac(18, "Ime18", "Prezime18", "1998-01-01", 28, 198);
 		Igrac igrac19 = new Igrac(19, "Ime19", "Prezime19", "1998-01-01", 29, 198);
 		Igrac igrac20 = new Igrac(20, "Ime20", "Prezime20", "1998-01-01", 30, 198);
+		
+		Klub k2 = new Klub("Klub2", 2,mesto2, new Trener(666, "Ime trenera", "Prezime trenera", "1998-01-01"));
 		k2.dodajIgraca(igrac11);
 		k2.dodajIgraca(igrac12);
 		k2.dodajIgraca(igrac13);
@@ -79,7 +80,6 @@ public class Main {
 		k2.dodajIgraca(igrac19);
 		k2.dodajIgraca(igrac20);
 
-		Klub k3 = new Klub("Klub3", 3, mesto3);
 		Igrac igrac21 = new Igrac(21, "Ime21", "Prezime21", "1998-01-01", 2, 198);
 		Igrac igrac22 = new Igrac(22, "Ime22", "Prezime22", "1998-02-01", 22, 198);
 		Igrac igrac23 = new Igrac(23, "Ime23", "Prezime23", "1998-01-01", 23, 198);
@@ -90,6 +90,8 @@ public class Main {
 		Igrac igrac28 = new Igrac(28, "Ime28", "Prezime28", "1998-01-01", 28, 198);
 		Igrac igrac29 = new Igrac(29, "Ime29", "Prezime29", "1998-01-01", 29, 198);
 		Igrac igrac30 = new Igrac(30, "Ime30", "Prezime30", "1998-01-01", 30, 198);
+		
+		Klub k3 = new Klub("Klub3", 3,mesto3, new Trener(666, "Ime trenera", "Prezime trenera", "1998-01-01"));
 		k3.dodajIgraca(igrac21);
 		k3.dodajIgraca(igrac22);
 		k3.dodajIgraca(igrac23);
@@ -100,7 +102,6 @@ public class Main {
 		k3.dodajIgraca(igrac28);
 		k3.dodajIgraca(igrac29);
 		
-		Klub k1 = new Klub("Klub1", 1,mesto1, new Trener(666, "Ime trenera", "Prezime trenera", new Date(1998-01-01)));
 		k1.dodajIgraca(igrac1);k1.dodajIgraca(igrac2);k1.dodajIgraca(igrac3);
 		k1.dodajIgraca(igrac4);k1.dodajIgraca(igrac5);k1.dodajIgraca(igrac6);
 		k1.dodajIgraca(igrac7);k1.dodajIgraca(igrac8);k1.dodajIgraca(igrac9);
@@ -118,7 +119,7 @@ public class Main {
 		Aplikacija.listaIgraca.add(igrac10);
 		
 		
-		Klub k2 = new Klub("Klub2", 2,mesto2, new Trener(666, "Ime trenera", "Prezime trenera", new Date(1998-01-01)));
+		
 		k2.dodajIgraca(igrac11);k2.dodajIgraca(igrac12);k2.dodajIgraca(igrac13);
 		k2.dodajIgraca(igrac14);k2.dodajIgraca(igrac15);k2.dodajIgraca(igrac16);
 		k2.dodajIgraca(igrac17);k2.dodajIgraca(igrac18);k2.dodajIgraca(igrac19);
@@ -137,17 +138,7 @@ public class Main {
 		Aplikacija.listaIgraca.add(igrac19);
 		Aplikacija.listaIgraca.add(igrac20);
 		
-		Klub k3 = new Klub("Klub3", 3,mesto3, new Trener(666, "Ime trenera", "Prezime trenera", new Date(1998-01-01)));
-		Igrac igrac21 = new Igrac(21, "Ime21", "Prezime21", new Date(1998-01-01), 2, 198);
-		Igrac igrac22 = new Igrac(22, "Ime22", "Prezime22", new Date(1998-02-01), 22, 198); 
-		Igrac igrac23 = new Igrac(23, "Ime23", "Prezime23", new Date(1998-01-01), 23, 198);
-		Igrac igrac24 = new Igrac(24, "Ime24", "Prezime24", new Date(1998-03-01), 24, 198);
-		Igrac igrac25 = new Igrac(25, "Ime25", "Prezime25", new Date(1998-05-01), 25, 198);
-		Igrac igrac26 = new Igrac(26, "Ime26", "Prezime26", new Date(1998-06-01), 26, 198);
-		Igrac igrac27 = new Igrac(27, "Ime27", "Prezime27", new Date(1998-07-01), 27, 198);
-		Igrac igrac28 = new Igrac(28, "Ime28", "Prezime28", new Date(1998-01-01), 28, 198);
-		Igrac igrac29 = new Igrac(29, "Ime29", "Prezime29", new Date(1998-01-01), 29, 198);
-		Igrac igrac30 = new Igrac(30, "Ime30", "Prezime30", new Date(1998-01-01), 30, 198);
+		
 		k3.dodajIgraca(igrac21);k3.dodajIgraca(igrac22);k3.dodajIgraca(igrac23);
 		k3.dodajIgraca(igrac24);k3.dodajIgraca(igrac25);k3.dodajIgraca(igrac26);
 		k3.dodajIgraca(igrac27);k3.dodajIgraca(igrac28);k3.dodajIgraca(igrac29);

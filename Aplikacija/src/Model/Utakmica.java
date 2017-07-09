@@ -156,15 +156,10 @@ public class Utakmica {
 		gost.trener.ucinak.add(new UcinakTrenera(this));
 
 	}
-<<<<<<< HEAD
 
-	public void pocetak() {
-		// postaviUcinke();
-=======
 	
 	public void pocetak(){
 		postaviUcinke();
->>>>>>> 41e6b46a0080b9b99cede91fe3c895a79505bf0a
 		pokrenut = true;
 		promeniStanje(new Odigravanje(this));
 	}

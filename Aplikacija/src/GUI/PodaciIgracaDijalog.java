@@ -34,6 +34,7 @@ public class PodaciIgracaDijalog extends JFrame {
 		glavniPanel.setLayout(new BoxLayout(glavniPanel, BoxLayout.Y_AXIS));
 		this.postaviElemente(glavniPanel);
 		this.setContentPane(glavniPanel);
+		
 	}
 
 	private void postaviElemente(JPanel glavniPanel) {
@@ -227,6 +228,7 @@ public class PodaciIgracaDijalog extends JFrame {
 							JOptionPane.INFORMATION_MESSAGE);
 				}
 					
+				
 					
 			}
 		});
