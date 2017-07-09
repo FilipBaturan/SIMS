@@ -159,9 +159,7 @@ public class Utakmica {
 	}
 
 	
-<<<<<<< HEAD
-	public void pocetak() throws ParseException{
-=======
+
 	public void evidentirajTucu(){
 		for(StatistikaKluba it:domacin.statistikaKluba){
 			if(it.utakmica == this){
@@ -177,8 +175,7 @@ public class Utakmica {
 		}
 	}
 	
-	public void pocetak(){
->>>>>>> e28a7b5c783406b09c822461dc364409126fb519
+	public void pocetak() throws ParseException{
 		postaviUcinke();
 		pokrenut = true;
 		promeniStanje(new Odigravanje(this));
