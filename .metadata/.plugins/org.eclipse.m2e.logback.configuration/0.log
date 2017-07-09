@@ -97,3 +97,4 @@ Caused by: org.apache.http.conn.ConnectTimeoutException: Connect to download.ecl
 =======
 2017-07-07 23:09:21,471 [Worker-0] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
 >>>>>>> 7bec15e25f11eaa9647f191edd71a984cf14a38e
+2017-07-08 13:53:48,511 [main] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache file is not out-of-date. No remote download required.
