@@ -143,7 +143,7 @@ public class Utakmica {
 		this.datum = datum;
 	}
 
-	void postaviUcinke() {
+	private void postaviUcinke() {
 		domacin.statistikaKluba.add(new StatistikaKluba(this));
 		gost.statistikaKluba.add(new StatistikaKluba(this));
 		for (Igrac igrac : domacin.igraci) {

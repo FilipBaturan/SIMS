@@ -488,4 +488,15 @@ public class Aplikacija {
 		return "Seletkovani klubovi nemaju po pet igraca";
 	}
 			
+	public static void izvestajIgraca(Igrac igrac){
+		
+	}
+	
+	public static void izvestajKluba(Klub klub){
+		
+	}
+	
+	public static void izvestajUtakmice(Utakmica utakmica){
+		
+	}
 }
