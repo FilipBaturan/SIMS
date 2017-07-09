@@ -3,8 +3,6 @@ package Model.StanjeUtakmice;
 import java.util.Timer;
 import java.util.TimerTask;
 
-import javax.swing.plaf.SliderUI;
-
 import GUI.PodaciIgracaDijalog;
 import Model.Igrac;
 import Model.Klub;
@@ -14,6 +12,7 @@ import Model.Utakmica;
 import Model.Evidentiranje.StatistikaKluba;
 import Model.Evidentiranje.UcinakIgraca;
 import Model.Evidentiranje.UcinakTrenera;
+import GUI.PrikazUtakmice;
 
 public class Odigravanje extends Stanje {
 	public Osoba selektovanaOsoba;
@@ -30,7 +29,8 @@ public class Odigravanje extends Stanje {
 	
 	@Override
 	public void entry() {
-		System.out.println("Prikaz terena");
+		//System.out.println("Prikaz terena");
+		//prikazkuje teren
 		
 	}
 
@@ -54,7 +54,6 @@ public class Odigravanje extends Stanje {
 					}
 				}
 				else if( utakmica.isPokrenut() && utakmica.getVreme() >=40){
-					System.out.println("Usao u if");
 					timer.cancel();
 					timer.purge();
 					zavrsetak();
@@ -104,7 +103,11 @@ public class Odigravanje extends Stanje {
 		for (UcinakIgraca ui : i.ucinak) {
 			if(ui.utakmica == utakmica)
 			{
-				new PodaciIgracaDijalog(ui);
+				
+				PodaciIgracaDijalog dijalog =new PodaciIgracaDijalog(ui);
+				if(utakmica.domacin.igraci.contains(i))
+				dijalog.setKlub(PrikazUtakmice.domaciTim);
+				else dijalog.setKlub(PrikazUtakmice.gostojuciTim);
 				break;
 			}
 				
@@ -141,8 +144,6 @@ public class Odigravanje extends Stanje {
 			for(UcinakIgraca ucinak:((Igrac)selektovanaOsoba).ucinak){
 				if(ucinak.utakmica == utakmica){
 					ucinak.azuriranje(tip, vrednost, zona);
-					System.out.println("Broj poena:" + ucinak.getPoeni());
-					System.out.println("Broj skokova napad:" + ucinak.getSkokoviUNapadu());
 					break;
 				}
 			}

@@ -23,7 +23,6 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JSplitPane;
 import javax.swing.JTable;
-import javax.swing.JTextArea;
 
 import Model.Igrac;
 import Model.Klub;
@@ -33,7 +32,9 @@ import Model.Utakmica;
 public class PrikazUtakmice extends JFrame {
 	private Utakmica utakmica;
 	private Timer timer;
-	private JLabel vreme;;
+	private JLabel vreme;
+	public static PanelTima domaciTim;
+	public static PanelTima gostojuciTim;
 
 	public PrikazUtakmice(Utakmica utakmica) {
 		this.utakmica = utakmica;
@@ -57,7 +58,7 @@ public class PrikazUtakmice extends JFrame {
 		desniPanel.setEnabled(false);
 		desniPanel.setEnabled(false);
 		desniPanel.setBorder(BorderFactory.createLineBorder(Color.black) );
-		JPanel domaciTim = new PanelTima(domacin, utakmica);
+		domaciTim = new PanelTima(domacin, utakmica);
 		
 		JSplitPane donjiPanel = new JSplitPane(JSplitPane.VERTICAL_SPLIT);
 		donjiPanel.setEnabled(false);
@@ -75,7 +76,7 @@ public class PrikazUtakmice extends JFrame {
 		prelazstanja.add(prekid);
 		
 		
-		JPanel gostojuciTim = new PanelTima(gost, utakmica);
+		gostojuciTim = new PanelTima(gost, utakmica);
 		
 		donjiPanel.setTopComponent(gostojuciTim);
 		donjiPanel.setBottomComponent(prelazstanja);
@@ -153,7 +154,7 @@ public class PrikazUtakmice extends JFrame {
 			panelZaSliku.postaviPozadinu(slika);
 			
 		} catch (IOException e) {
-			System.out.println("Greska");
+			
 		}
 		
 	}
@@ -171,15 +172,21 @@ public class PrikazUtakmice extends JFrame {
 		}, 0, 100);
 	}
 
+
+	
+	
 }
 
 
 @SuppressWarnings("serial")
 class PanelTima extends JPanel
 {
+	public JLabel labela1;
+	public int poeni;
 	
 	public PanelTima(Klub klub, Utakmica utakmica)
 	{
+		poeni = 0;
 		
 		this.setLayout(new BorderLayout());
 		
@@ -191,7 +198,6 @@ class PanelTima extends JPanel
 		
 		String[] zaglavlje = {"Ime", "Prezime"};
 		int brojRezervi = klub.igraci.size() - 5;
-		System.out.println("broj rezervi: " + brojRezervi);
 		String[][] podaci = new String[brojRezervi][];
 		
 		int i = 0;
@@ -211,7 +217,7 @@ class PanelTima extends JPanel
 		
 		JPanel panelLabelaDom = new JPanel();
 		panelLabelaDom.setLayout(new BoxLayout(panelLabelaDom, BoxLayout.Y_AXIS));
-		JLabel labela1 = new JLabel("Poeni tima " + 0);
+		labela1 = new JLabel("Poeni tima " + 0);
 		labela1.setFont(new Font("Serif", Font.PLAIN, 15));
 		labela1.setAlignmentX(CENTER_ALIGNMENT);
 		panelLabelaDom.add(labela1);

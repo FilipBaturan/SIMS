@@ -5,8 +5,6 @@ import Model.Igrac;
 import Model.Klub;
 import Model.Osoba;
 import Model.Utakmica;
-import Model.Evidentiranje.StatistikaKluba;
-import Model.Evidentiranje.Enumeracije.VrstaLicneGreske;
 
 public class Prekinuta extends Stanje {
 
@@ -25,18 +23,7 @@ public class Prekinuta extends Stanje {
 
 	@Override
 	public void tuca() {
-		for(StatistikaKluba it:utakmica.domacin.statistikaKluba){
-			if(it.utakmica == utakmica){
-				it.licneGreske.add(VrstaLicneGreske.tuca);
-				break;
-			}
-		}
-		for(StatistikaKluba it:utakmica.gost.statistikaKluba){
-			if(it.utakmica == utakmica){
-				it.licneGreske.add(VrstaLicneGreske.tuca);
-				break;
-			}
-		}
+		utakmica.evidentirajTucu();
 		utakmica.promeniStanje(new Zavrsena(utakmica));
 		
 	}

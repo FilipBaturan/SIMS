@@ -17,6 +17,7 @@ public class Teren extends JPanel {
 	Image image;
 	ArrayList<PrikazIgraca> listaKruzica;
 	
+	
 	public Teren(Utakmica utakmica)
 	{
 		listaKruzica = new ArrayList<>();

@@ -2,12 +2,10 @@ package Model;
 
 import java.text.ParseException;
 import java.util.ArrayList;
-import java.util.Date;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import Model.Evidentiranje.UcinakIgraca;
-import Model.Evidentiranje.UcinakTrenera;
 
 public class Igrac extends Osoba {
 	

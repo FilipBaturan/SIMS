@@ -9,6 +9,7 @@ import Model.Evidentiranje.Izmena;
 import Model.Evidentiranje.StatistikaKluba;
 import Model.Evidentiranje.UcinakIgraca;
 import Model.Evidentiranje.UcinakTrenera;
+import Model.Evidentiranje.Enumeracije.VrstaLicneGreske;
 import Model.StanjeUtakmice.Odigravanje;
 import Model.StanjeUtakmice.Stanje;
 
@@ -157,6 +158,21 @@ public class Utakmica {
 
 	}
 
+	
+	public void evidentirajTucu(){
+		for(StatistikaKluba it:domacin.statistikaKluba){
+			if(it.utakmica == this){
+				it.licneGreske.add(VrstaLicneGreske.tuca);
+				break;
+			}
+		}
+		for(StatistikaKluba it:gost.statistikaKluba){
+			if(it.utakmica == this){
+				it.licneGreske.add(VrstaLicneGreske.tuca);
+				break;
+			}
+		}
+	}
 	
 	public void pocetak(){
 		postaviUcinke();

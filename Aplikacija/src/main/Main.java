@@ -2,7 +2,7 @@ package main;
 
 import java.text.ParseException;
 import java.util.ArrayList;
-import java.util.Date;
+
 import Model.Aplikacija;
 import Model.Igrac;
 import Model.Klub;
