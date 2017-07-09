@@ -1,5 +1,7 @@
 package Model;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -17,12 +19,13 @@ public class Osoba {
 	
 	
 
-	public Osoba(int id, String ime, String prezime, Date datumRodjenja) {
+	public Osoba(int id, String ime, String prezime, String datumRodjenja) throws ParseException {
 		super();
 		this.id = id;
 		this.ime = ime;
 		this.prezime = prezime;
-		this.datumRodjenja = datumRodjenja;
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+		this.datumRodjenja = sdf.parse(datumRodjenja);
 	}
 
 

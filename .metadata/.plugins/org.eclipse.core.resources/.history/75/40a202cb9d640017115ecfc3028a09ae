@@ -1,0 +1,102 @@
+package GUI;
+
+import java.awt.Dimension;
+import java.awt.Label;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+import javax.swing.Box;
+import javax.swing.BoxLayout;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+
+import Model.Aplikacija;
+import Model.Osoba;
+import Model.Utakmica;
+
+@SuppressWarnings("serial")
+public class IzvestajStatistike extends JFrame {
+	JTable tabela;
+
+	public IzvestajStatistike() {
+		this.setSize(400, 150);
+		this.setVisible(true);
+		this.setLocation(420, 180);
+		this.setTitle("Izvestaj izabrane utakmice");
+		JPanel panel = new JPanel();
+		this.postaviElemente(panel);
+		this.setContentPane(panel);
+	}
+
+	public void postaviElemente(JPanel panel) {
+		panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
+
+		JPanel panel1 = new JPanel();
+		String[] utakmice = Aplikacija.preuzmiUtakmice();
+		panel1.add(new Label("Izaberite utakmicu za koju se trazi izvestaj: "));
+		JComboBox<String> izbor = new JComboBox<String>(utakmice);
+		panel1.add(izbor);
+
+		panel.add(panel1);
+		panel.add(Box.createVerticalStrut(25));
+
+		JButton dugme = new JButton("Potvrdi");
+		panel.add(dugme);
+		panel.add(Box.createVerticalStrut(25));
+
+		dugme.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				String u = utakmice[izbor.getSelectedIndex()];
+				String[] args = u.split("\\s+");
+				int id = Integer.parseInt(args[1]);
+				String zaglavlje = napraviZaglavlje(id);
+				System.out.println(zaglavlje);
+
+			}
+		});
+	}
+
+	public void prikaziIzvestaj() {
+		tabela = new JTable();
+		tabela.setPreferredScrollableViewportSize(new Dimension(400, 50));
+		tabela.setFillsViewportHeight(true);
+		JScrollPane jsp = new JScrollPane(tabela);
+		this.add(jsp);
+	}
+
+	public String napraviZaglavlje(int id) {
+		Date d = new Date();
+		SimpleDateFormat sdf = new SimpleDateFormat();
+		System.out.println(d);
+		
+		
+		Utakmica ut = new Utakmica();
+
+		for (Utakmica utakmica : Aplikacija.listaUtakmica) {
+			if (id == utakmica.getId()) {
+				ut = utakmica;
+				break;
+			}
+		}
+		SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy.");
+		StringBuilder strb = new StringBuilder();
+		System.out.println(ut.getDatum());
+		strb.append(ut.getSala().getNazivSale() + ", " + ut.getSala().mesto.getNaziv() + ", "
+				+ sdf.format(ut.getDatum()) + ", ");
+		for (Osoba sudija : ut.getSudije()) {
+			strb.append(sudija.getIme() + " " + sudija.getPrezime() + ", ");
+		}
+		strb.append(ut.getDelegat().getIme() + " " + ut.getDelegat().getPrezime());
+		String zaglavlje = strb.toString();
+		return zaglavlje;
+	}
+
+}

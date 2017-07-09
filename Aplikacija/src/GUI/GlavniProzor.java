@@ -66,6 +66,14 @@ public class GlavniProzor extends JFrame{
 			}
 		});
 		
+		izvestajiDugme.addActionListener(new ActionListener() {
+				
+			@Override
+			public void actionPerformed(ActionEvent e){
+				new IzvestajStatistike();
+			}
+		});
+		
 
 		
 	}

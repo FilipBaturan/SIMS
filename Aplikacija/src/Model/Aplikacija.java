@@ -1,5 +1,6 @@
 package Model;
 
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -15,7 +16,7 @@ public class Aplikacija {
 	public static ArrayList<Trener> listaTrenera = new ArrayList<Trener>();
 	public static ArrayList<Osoba> listaSudija = new ArrayList<Osoba>();
 	public static ArrayList<Utakmica> listaUtakmica = new ArrayList<Utakmica>();
-	
+	public static ArrayList<Osoba> listaDelegata = new ArrayList<Osoba>(); 
 	
 	private static int idKlub = 0;
 	private static int idSala = 0;
@@ -228,8 +229,8 @@ public class Aplikacija {
 	}
 	
 
-	public static boolean dodajIgraca(String ime, String prezime, Date datumRodjenja,
-			int brojDresa,double visina){
+	public static boolean dodajIgraca(String ime, String prezime, String datumRodjenja,
+			int brojDresa,double visina) throws ParseException{
 		//if(pronadjiIgraca(brojDresa)== null){
 
 		listaIgraca.add(new Igrac(generisiKluc('O'), ime, prezime, datumRodjenja,
@@ -261,6 +262,17 @@ public class Aplikacija {
 		return null;
 	}
 	
+	public static String[] preuzmiUtakmice(){
+		int broj = listaUtakmica.size();
+		String[] utakmice = new String[broj];
+		int brojac = -1;
+		for(Utakmica u : listaUtakmica){
+			String utakmica = u.getDomacin().getNaziv() +  "-" + u.getGost().getNaziv() + " " + u.getId() + " ";
+			utakmice[++brojac] = utakmica;
+		}
+		return utakmice;
+	}
+	
 	public static Igrac pronadjiIgraca(String imeIPrezime){
 		String ime;
 		String prezime;
@@ -289,7 +301,7 @@ public class Aplikacija {
 	}*/
 	
 	public static void dodajTrenera(String ime, String prezime,
-			Date datumRodjenja){
+			String datumRodjenja) throws ParseException{
 		listaTrenera.add(new Trener(generisiKluc('O'), ime, prezime,
 				datumRodjenja));
 	}
@@ -316,7 +328,7 @@ public class Aplikacija {
 		return false;
 	}
 	
-	public static void dodajSudiju( String ime, String prezime, Date datumRodjenja){
+	public static void dodajSudiju( String ime, String prezime, String datumRodjenja) throws ParseException{
 		listaSudija.add(new Osoba(generisiKluc('O'),ime,prezime,datumRodjenja));
 	}
 	
@@ -345,8 +357,8 @@ public class Aplikacija {
 		listaUtakmica.add(new Utakmica(generisiKluc('U'),domacin,gost));
 	}
 	
-	public static void dodajUtakmicu(Klub domacin,Klub gost,Sala sala){
-		listaUtakmica.add(new Utakmica(generisiKluc('U'), domacin, gost, sala));
+	public static void dodajUtakmicu(Klub domacin,Klub gost,Sala sala, String datum) throws ParseException{
+		listaUtakmica.add(new Utakmica(generisiKluc('U'), domacin, gost, sala, datum));
 	}
 	
 	public static Utakmica pronadjiUtamicu(int id){

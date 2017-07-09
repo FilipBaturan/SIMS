@@ -32,7 +32,6 @@ public class DodavanjeUtakmiceDijalog extends JFrame {
 		JPanel glavniPanel = new JPanel();
 		this.postaviElemente(glavniPanel);
 		this.setContentPane(glavniPanel);
-
 	}
 
 	private void postaviElemente(JPanel glavniPanel) {

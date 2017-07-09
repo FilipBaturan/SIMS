@@ -1,5 +1,6 @@
 package Model.StanjeUtakmice;
 
+import GUI.IzvestajStatistike;
 import Model.Igrac;
 import Model.Klub;
 import Model.Osoba;
@@ -16,9 +17,7 @@ public class Zavrsena extends Stanje {
 	
 	@Override
 	public void entry() {
-		System.out.println("Prikaz statistike");
-		
-		
+		new IzvestajStatistike();
 	}
 
 	@Override

@@ -11,6 +11,7 @@ import java.awt.geom.Ellipse2D;
 import java.io.File;
 import java.io.IOException;
 import java.io.LineNumberInputStream;
+import java.text.ParseException;
 import java.util.Date;
 
 import javax.imageio.ImageIO;
@@ -29,7 +30,7 @@ import Model.Klub;
 
 public class PrikazUtakmice extends JFrame {
 	
-	public PrikazUtakmice(Klub domacin, Klub gost) {
+	public PrikazUtakmice(Klub domacin, Klub gost) throws ParseException {
 		this.setTitle("Prikaz utakmice");
 		this.setVisible(true);
 		this.setLocation(250, 50);
@@ -37,10 +38,10 @@ public class PrikazUtakmice extends JFrame {
 		JSplitPane glavniPanel = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT);
 		glavniPanel.setEnabled(false);
 		this.postaviElemente(glavniPanel, domacin, gost);
-		this.setContentPane( glavniPanel);
+		this.setContentPane(glavniPanel);
 	}
 
-	private void postaviElemente(JSplitPane glavniPanel, Klub domacin, Klub gost) {
+	private void postaviElemente(JSplitPane glavniPanel, Klub domacin, Klub gost) throws ParseException {
 		
 		
 		JSplitPane desniPanel = new JSplitPane(JSplitPane.VERTICAL_SPLIT);
@@ -190,14 +191,14 @@ class PrikazIgraca  {
 	}
 
 	//parametri strana i broj su stavljeni da bi prilikom crtanja krug znao gde da se iscrta (broj - redni broj igraca)
-	public PrikazIgraca(int strana, int broj) {
+	public PrikazIgraca(int strana, int broj) throws ParseException {
 		if (strana == 1)
 		{
 			el = new Ellipse2D.Double(500, 20 + broj * 100, 90, 90);
 		}
 		else if (strana == 2)
 			el = new Ellipse2D.Double(130, 20 + broj * 100, 90, 90);
-		igrac = new Igrac(7, "Nikola", "Markovic", new Date(), 10, 207);
+		igrac = new Igrac(7, "Nikola", "Markovic", "1996-5-12", 10, 207);
 		
 	}
 
