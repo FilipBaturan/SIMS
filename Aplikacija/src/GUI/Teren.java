@@ -9,13 +9,15 @@ import java.util.ArrayList;
 
 import javax.swing.JPanel;
 
+import Model.Utakmica;
+
 @SuppressWarnings("serial")
 public class Teren extends JPanel {
 
 	Image image;
 	ArrayList<PrikazIgraca> listaKruzica;
 	
-	public Teren()
+	public Teren(Utakmica utakmica)
 	{
 		listaKruzica = new ArrayList<>();
 		addMouseListener(new MouseAdapter() {
@@ -32,7 +34,10 @@ public class Teren extends JPanel {
 						}
 						else if(e.getClickCount() == 2){
 							if(prikaz.getEl().contains(e.getX(), e.getY()))
-								new PodaciIgracaDijalog();
+							{
+								utakmica.getTrenutnoStanje().dijalog(prikaz.getIgrac());
+							}
+								
 						}
 					}
 				} catch (Exception e2) {

@@ -107,7 +107,7 @@ public class PrikazUtakmice extends JFrame {
 		podaciTima.add(nazivGosta);
 		podaciTima.add(Box.createVerticalStrut(5));
 		
-		Teren panelZaSliku = new Teren();
+		Teren panelZaSliku = new Teren(utakmica);
 		
 		int i1 = 0;
 		int i2 = 0;

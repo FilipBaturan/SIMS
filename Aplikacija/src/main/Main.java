@@ -21,7 +21,7 @@ public class Main {
 		Aplikacija.dodajKorisnika("bb", "bb");
 		Aplikacija.dodajKorisnika("cc", "cc");
 		
-		Mesto mesto1 = new Mesto("11000", "Beogra");
+		Mesto mesto1 = new Mesto("11000", "Beograd");
 		Mesto mesto2 = new Mesto("11070", "Novi Beograd");
 		Mesto mesto3 = new Mesto("26300", "Vrsac");
 		Aplikacija.listaMesta.add(mesto1);

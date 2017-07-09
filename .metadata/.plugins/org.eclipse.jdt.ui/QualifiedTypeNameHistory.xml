@@ -14,8 +14,6 @@
 <fullyQualifiedTypeName name="Model.Klub"/>
 <fullyQualifiedTypeName name="java.lang.Integer"/>
 <fullyQualifiedTypeName name="Model.Evidentiranje.StatistikaKluba"/>
-<fullyQualifiedTypeName name="Model.Evidentiranje.UcinakIgraca"/>
-<fullyQualifiedTypeName name="Model.Utakmica"/>
 <fullyQualifiedTypeName name="javax.swing.JFrame"/>
 <fullyQualifiedTypeName name="java.awt.GridLayout"/>
 <fullyQualifiedTypeName name="java.util.GregorianCalendar"/>
@@ -36,8 +34,6 @@
 <fullyQualifiedTypeName name="java.lang.ArrayIndexOutOfBoundsException"/>
 <fullyQualifiedTypeName name="GUI.PrikazIgraca"/>
 <fullyQualifiedTypeName name="java.io.LineNumberInputStream"/>
-<fullyQualifiedTypeName name="Model.Aplikacija"/>
-<fullyQualifiedTypeName name="Model.Evidentiranje.UcinakTrenera"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="Model.Trener"/>
 <fullyQualifiedTypeName name="javax.swing.JTable"/>
@@ -49,5 +45,14 @@
 <fullyQualifiedTypeName name="javax.swing.ButtonGroup"/>
 <fullyQualifiedTypeName name="javax.swing.JButton"/>
 <fullyQualifiedTypeName name="javax.swing.JPanel"/>
+<fullyQualifiedTypeName name="junit.framework.Assert"/>
+<fullyQualifiedTypeName name="Model.Aplikacija"/>
+<fullyQualifiedTypeName name="Model.Korisnik"/>
+<fullyQualifiedTypeName name="Model.Utakmica"/>
+<fullyQualifiedTypeName name="javax.swing.plaf.SliderUI"/>
+<fullyQualifiedTypeName name="Model.Osoba"/>
+<fullyQualifiedTypeName name="org.hamcrest.core.IsInstanceOf"/>
+<fullyQualifiedTypeName name="Model.Evidentiranje.UcinakTrenera"/>
+<fullyQualifiedTypeName name="Model.Evidentiranje.UcinakIgraca"/>
 <fullyQualifiedTypeName name="java.awt.event.ActionListener"/>
 </qualifiedTypeNameHistroy>

@@ -32,4 +32,16 @@ public class Korisnik {
 	public void setLozinka(String lozinka) {
 		this.lozinka = lozinka;
 	}
+
+	@Override
+	public boolean equals(Object obj) {
+		String ime = ((Korisnik) obj).getKorisnickoIme();
+		String sifra = ((Korisnik) obj).getLozinka();
+		
+		if(korisnickoIme.compareTo(ime) == 0 && lozinka.compareTo(sifra) == 0)
+			return true;
+		else
+			return false;
+	}
+	
 }

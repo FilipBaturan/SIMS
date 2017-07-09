@@ -1,0 +1,75 @@
+package JUnit;
+
+import static org.junit.Assert.*;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+import Model.Aplikacija;
+import Model.Korisnik;
+import junit.framework.Assert;
+
+public class AzuriranjeKorisnika {
+
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception {
+		Aplikacija.dodajKorisnika("korisnickoIme1", "sifra1");
+		Aplikacija.dodajKorisnika("korisnickoIme2", "sifra2");
+		Aplikacija.dodajKorisnika("korisnickoIme3", "sifra3");
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception {
+	}
+
+	@Before
+	public void setUp() throws Exception {
+	}
+
+	@After
+	public void tearDown() throws Exception {
+	}
+
+	@Test
+	public void testDodavanjaKorisnika() {
+		Korisnik k3 = new Korisnik("korisnickoIme3", "sifra3");
+		Korisnik k4 = new Korisnik("korisnickoIme4", "sifra4");
+		Korisnik k5 = new Korisnik("korisnickoIme5", "sifra5");
+		
+		//dodavanje novih korisnika
+		assertTrue(Aplikacija.dodajKorisnika(k4));
+		assertTrue(Aplikacija.dodajKorisnika(k5));
+		
+		//dodavanje postojeceg korisnika
+		assertFalse(Aplikacija.dodajKorisnika(k3));
+	}
+	@Test
+	public void testBirsanjaKorisnika()
+	{
+		Korisnik k1 = new Korisnik("korisnickoIme1", "sifra1");
+		Korisnik k2 = new Korisnik("korisnickoIme2", "sifra2");
+		Korisnik k3 = new Korisnik("korisnickoIme7", "sifra7");
+		
+		//brisanje postojeceg korisnika
+		assertTrue(Aplikacija.obrisiKorisnika(k1));
+		assertTrue(Aplikacija.obrisiKorisnika(k2));
+		
+		//brisanje nepostojeceg korisnika
+		assertFalse(Aplikacija.obrisiKorisnika(k3));
+	}
+	
+	@Test
+	public void testIzmeneKorisnika()
+	{
+		//izmena nepostojeceg korisnika
+		Korisnik k = new Korisnik("ime", "sifra");
+		assertFalse(Aplikacija.izmeniKoriniska(k, "novoIme", "novaSifra"));
+		
+		
+		
+	}
+
+}

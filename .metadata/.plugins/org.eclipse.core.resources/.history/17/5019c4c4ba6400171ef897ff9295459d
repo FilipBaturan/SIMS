@@ -1,0 +1,50 @@
+package JUnit;
+
+import static org.junit.Assert.*;
+
+import javax.swing.DefaultListModel;
+import javax.swing.JList;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+import Model.Igrac;
+
+public class OdabirIgracaTima {
+
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception {
+		
+		DefaultListModel<String> modelDomacina = new DefaultListModel<String>();
+		for (Igrac igrac : listaIgracaDomacina) {
+			modelDomacina.addElement(igrac.getIme() + " " + igrac.getPrezime());
+		}
+		
+		JList<String> listaZaPrikaz = new JList<String>();
+		listaZaPrikaz.setVisible(true);
+		listaZaPrikaz.setVisibleRowCount(5);
+		// DefaultListModel<String> model = modelDomacina;
+		listaZaPrikaz.setModel(modelDomacina);
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception {
+	}
+
+	@Before
+	public void setUp() throws Exception {
+	}
+
+	@After
+	public void tearDown() throws Exception {
+	}
+
+	@Test
+	public void test() {
+		fail("Not yet implemented");
+	}
+
+}

@@ -74,7 +74,7 @@ public class AzurianjeIgracaKlubova {
 	}
 	
 	@Test
-	public void dodavanjeIgracaViseKlubovima(){
+	public void dodavanjeIgracaViseKlubova(){
 		Klub klub = Aplikacija.listaKlubova.get(0);
 		int velicina = klub.igraci.size();
 		int indikator = klub.dodajIgraca

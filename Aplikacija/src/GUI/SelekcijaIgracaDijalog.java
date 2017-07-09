@@ -167,7 +167,9 @@ public class SelekcijaIgracaDijalog extends JFrame {
 					// cuvanje izmena
 
 					String noviIgrac = listaZaPrikaz.getSelectedValue();
-					if (!dodatiDomaci.contains(noviIgrac) && brojDomacih < 5) {
+					boolean uspesnoDodavanje = dodajStartnogIgraca(noviIgrac);
+					if (uspesnoDodavanje)
+					{
 						prikazDomacina.setText(prikazDomacina.getText() + "\n" + noviIgrac);
 						Igrac i = Aplikacija.pronadjiIgraca(noviIgrac);
 						//domacin.startnaPostava.add(i);
@@ -177,6 +179,15 @@ public class SelekcijaIgracaDijalog extends JFrame {
 					}
 
 				}
+			}
+
+			private boolean dodajStartnogIgraca(String noviIgrac) {
+				if (!dodatiDomaci.contains(noviIgrac) && brojDomacih < 5) {
+					
+					return true;
+				}
+				else return false;
+				
 			}
 		});
 
