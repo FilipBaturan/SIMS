@@ -146,7 +146,7 @@ public class Test extends JFrame {
 
 		public PrikazIgraca() {
 			el = new Ellipse2D.Double(170, 150, 100, 100);
-			igrac = new Igrac(7, "Nikola", "Markovic", new Date(), 10, 207);
+			//igrac = new Igrac(7, "Nikola", "Markovic", new Date(), 10, 207);
 			addMouseListener(new MouseAdapter() {
 				@Override
 				public void mouseClicked(MouseEvent e) {

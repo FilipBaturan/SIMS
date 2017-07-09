@@ -8,6 +8,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.text.ParseException;
 import java.util.ArrayList;
 
 import javax.swing.BoxLayout;
@@ -212,12 +213,22 @@ public class SelekcijaIgracaDijalog extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+<<<<<<< HEAD
+				try {
+					new PrikazUtakmice(domacin, gost);
+				} catch (ParseException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				dispose();
+=======
 				if (utakmica.aktivni.size() == 10)
 				{
 					new PrikazUtakmice(utakmica);
 					dispose();
 				}
 				
+>>>>>>> 41e6b46a0080b9b99cede91fe3c895a79505bf0a
 
 			}
 		});

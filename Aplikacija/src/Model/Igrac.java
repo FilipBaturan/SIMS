@@ -1,5 +1,6 @@
 package Model;
 
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -19,8 +20,8 @@ public class Igrac extends Osoba {
 	
 	public Igrac(){}
 
-	public Igrac(int id, String ime, String prezime, Date datumRodjenja,
-			int brojDresa,double visina) {
+	public Igrac(int id, String ime, String prezime, String datumRodjenja,
+			int brojDresa,double visina) throws ParseException {
 		super(id, ime, prezime, datumRodjenja);
 		this.brojDresa = brojDresa;
 		this.visina = visina;

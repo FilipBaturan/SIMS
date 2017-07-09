@@ -9,8 +9,14 @@ import java.awt.event.ActionListener;
 import java.awt.geom.Ellipse2D;
 import java.io.File;
 import java.io.IOException;
+<<<<<<< HEAD
+import java.io.LineNumberInputStream;
+import java.text.ParseException;
+import java.util.Date;
+=======
 import java.util.Timer;
 import java.util.TimerTask;
+>>>>>>> 41e6b46a0080b9b99cede91fe3c895a79505bf0a
 
 import javax.imageio.ImageIO;
 import javax.swing.BorderFactory;
@@ -31,6 +37,10 @@ import Model.Utakmica;
 
 @SuppressWarnings("serial")
 public class PrikazUtakmice extends JFrame {
+<<<<<<< HEAD
+	
+	public PrikazUtakmice(Klub domacin, Klub gost) throws ParseException {
+=======
 	private Utakmica utakmica;
 	private Timer timer;
 	private JLabel vreme;;
@@ -38,19 +48,25 @@ public class PrikazUtakmice extends JFrame {
 	public PrikazUtakmice(Utakmica utakmica) {
 		this.utakmica = utakmica;
 		timer = new Timer();
+>>>>>>> 41e6b46a0080b9b99cede91fe3c895a79505bf0a
 		this.setTitle("Prikaz utakmice");
 		this.setVisible(true);
 		this.setLocation(250, 50);
 		this.setSize(1000, 700);
 		JSplitPane glavniPanel = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT);
 		glavniPanel.setEnabled(false);
+<<<<<<< HEAD
+		this.postaviElemente(glavniPanel, domacin, gost);
+		this.setContentPane(glavniPanel);
+=======
 		this.postaviElemente(glavniPanel, utakmica.domacin, utakmica.gost);
 		this.setContentPane( glavniPanel);
 		refresh();
 		utakmica.pocetak();
+>>>>>>> 41e6b46a0080b9b99cede91fe3c895a79505bf0a
 	}
 
-	private void postaviElemente(JSplitPane glavniPanel, Klub domacin, Klub gost) {
+	private void postaviElemente(JSplitPane glavniPanel, Klub domacin, Klub gost) throws ParseException {
 		
 		
 		JSplitPane desniPanel = new JSplitPane(JSplitPane.VERTICAL_SPLIT);
@@ -257,14 +273,23 @@ class PrikazIgraca  {
 	}
 
 	//parametri strana i broj su stavljeni da bi prilikom crtanja krug znao gde da se iscrta (broj - redni broj igraca)
+<<<<<<< HEAD
+	public PrikazIgraca(int strana, int broj) throws ParseException {
+=======
 	public PrikazIgraca(Igrac i, int strana, int broj) {
+>>>>>>> 41e6b46a0080b9b99cede91fe3c895a79505bf0a
 		if (strana == 1)
 		{
 			el = new Ellipse2D.Double(480, 30 + broj * 100, 110, 90);
 		}
 		else if (strana == 2)
+<<<<<<< HEAD
+			el = new Ellipse2D.Double(130, 20 + broj * 100, 90, 90);
+		igrac = new Igrac(7, "Nikola", "Markovic", "1996-5-12", 10, 207);
+=======
 			el = new Ellipse2D.Double(70, 30 + broj * 100, 110, 90);
 		igrac = i;
+>>>>>>> 41e6b46a0080b9b99cede91fe3c895a79505bf0a
 		
 	}
 	

@@ -1,5 +1,6 @@
 package Model;
 
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -14,7 +15,7 @@ public class Trener extends Osoba {
 		ucinak = new ArrayList<>();
 	}
 
-	public Trener(int id, String ime, String prezime, Date datumRodjenja) {
+	public Trener(int id, String ime, String prezime, String datumRodjenja) throws ParseException {
 		super(id, ime, prezime, datumRodjenja);
 		ucinak = new ArrayList<>();
 		
