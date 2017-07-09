@@ -34,6 +34,8 @@ public class Main {
 		Sala sala2 = new Sala("sala2", 2, mesto2);
 		Aplikacija.listaSala.add(sala1);
 		Aplikacija.listaSala.add(sala2);
+		
+		
 
 		Klub k1 = new Klub("Klub1", 1,mesto1, new Trener(666, "Ime trenera", "Prezime trenera", "1998-01-01"));
 		Igrac igrac1 = new Igrac(1, "Ime1", "Prezime1", "1998-01-01", 2, 198);
@@ -148,12 +150,15 @@ public class Main {
 		Aplikacija.dodajKlub(k2);
 		Aplikacija.dodajKlub(k3);
 		// Aplikacija.dodajKlub(k4);
+		
 
 		Utakmica u = new Utakmica(0, k1, k2, sala1, "2017-7-9");
 		u.setDelegat(new Osoba(1, "Delegat", "Delegatic", "1970-6-2"));
+		Aplikacija.listaDelegata.add(u.getDelegat());
 		ArrayList<Osoba> sudije = new ArrayList<Osoba>();
 		sudije.add(new Osoba(2, "Sudija", "Sudinic", "1971-5-3"));
 		sudije.add(new Osoba(3, "Marko", "Markovic", "1972-4-20"));
+		Aplikacija.listaSudija.addAll(sudije);
 		u.setSudije(sudije);
 		Aplikacija.listaUtakmica.add(u);
 		Utakmica u1 = new Utakmica(1, k2, k3, sala2, "2017-7-9");
@@ -161,6 +166,7 @@ public class Main {
 		sudije = new ArrayList<Osoba>();
 		sudije.add(new Osoba(4, "Aleksa", "Dimic", "1975-2-28"));
 		sudije.add(new Osoba(6, "Boza", "Pub", "1974-4-20"));
+		Aplikacija.listaSudija.addAll(sudije);
 		u1.setSudije(sudije);
 		Aplikacija.listaUtakmica.add(u1);
 		

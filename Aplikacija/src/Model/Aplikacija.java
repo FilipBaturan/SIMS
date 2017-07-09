@@ -443,7 +443,8 @@ public class Aplikacija {
 	
 	
 	public static boolean proveriBazu(){
-		return listaKlubova.size()>=2 && listaSala.size()>=1;
+		return listaKlubova.size()>=2 && listaSala.size()>=1
+				&& listaDelegata.size() >=1 && listaSudija.size()>=3;
 	}
 	
 	public static boolean proveriBazu(Klub klub){
@@ -451,7 +452,8 @@ public class Aplikacija {
 	}
 	
 	public static String prikaziGresku(){
-		return "U bazi ne postoje dva kluba i jedna sala";
+		return "U bazi mora da  postoje bar dva kluba, jedna sala"
+				+ ",tri sudije i delegat";
 	}
 	
 	public static String prikaziGresku(Klub klub){
