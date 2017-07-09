@@ -1,5 +1,7 @@
 package Model.StanjeUtakmice;
 
+import java.text.ParseException;
+
 import GUI.PrekinutDijalog;
 import Model.Igrac;
 import Model.Klub;
@@ -24,7 +26,7 @@ public class Prekinuta extends Stanje {
 	}
 
 	@Override
-	public void tuca() {
+	public void tuca() throws ParseException {
 		for(StatistikaKluba it:utakmica.domacin.statistikaKluba){
 			if(it.utakmica == utakmica){
 				it.licneGreske.add(VrstaLicneGreske.tuca);
@@ -42,7 +44,7 @@ public class Prekinuta extends Stanje {
 	}
 
 	@Override
-	public void nastavak() {
+	public void nastavak() throws ParseException{
 		utakmica.setPokrenut(true);
 		utakmica.promeniStanje(new Odigravanje(utakmica));
 		

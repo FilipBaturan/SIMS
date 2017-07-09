@@ -16,13 +16,12 @@ import Model.Igrac;
 import Model.Klub;
 import Model.Evidentiranje.Pokusaj;
 import Model.Evidentiranje.UcinakIgraca;
-import Model.Evidentiranje.Enumeracije.VrstaIzgubljeneLopte;
 import Model.Evidentiranje.Enumeracije.VrstaLicneGreske;
 
 public class PrikazStatistike extends JFrame {
 
-	Klub domacin;
-	Klub gost;
+	public Klub domacin;
+	public Klub gost;
 
 	public PrikazStatistike(String zaglavlje, Klub domacin, Klub gost, int id) {
 		this.domacin = domacin;

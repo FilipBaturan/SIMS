@@ -9,6 +9,7 @@ import java.awt.event.ActionListener;
 import java.awt.geom.Ellipse2D;
 import java.io.File;
 import java.io.IOException;
+import java.text.ParseException;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -35,7 +36,7 @@ public class PrikazUtakmice extends JFrame {
 	private Timer timer;
 	private JLabel vreme;;
 
-	public PrikazUtakmice(Utakmica utakmica) {
+	public PrikazUtakmice(Utakmica utakmica) throws ParseException {
 		this.utakmica = utakmica;
 		timer = new Timer();
 		this.setTitle("Prikaz utakmice");
@@ -68,7 +69,11 @@ public class PrikazUtakmice extends JFrame {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				utakmica.prekid();
+				try {
+					utakmica.prekid();
+				} catch (ParseException e1) {
+					e1.printStackTrace();
+				}
 				
 			}
 		});

@@ -7,6 +7,7 @@ import java.awt.GridLayout;
 import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.text.ParseException;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -64,7 +65,11 @@ public class PrekinutDijalog extends JFrame {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				utakmica.nastavak();
+				try {
+					utakmica.nastavak();
+				} catch (ParseException e1) {
+					e1.printStackTrace();
+				}
 				dispose();
 				
 			}
@@ -75,7 +80,11 @@ public class PrekinutDijalog extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				dispose();
-				utakmica.tuca();
+				try {
+					utakmica.tuca();
+				} catch (ParseException e1) {
+					e1.printStackTrace();
+				}
 				
 				
 			}

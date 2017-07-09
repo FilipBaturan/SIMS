@@ -14,6 +14,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.awt.geom.Ellipse2D;
+import java.text.ParseException;
 import java.util.Date;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -102,7 +103,11 @@ public class Test extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				u.prekid();
+				try {
+					u.prekid();
+				} catch (ParseException e1) {
+					e1.printStackTrace();
+				}
 
 			}
 		});
@@ -112,7 +117,11 @@ public class Test extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				System.out.println("Nastavak");
-				u.nastavak();
+				try {
+					u.nastavak();
+				} catch (ParseException e1) {
+					e1.printStackTrace();
+				}
 
 			}
 		});
@@ -121,7 +130,11 @@ public class Test extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				u.tuca();
+				try {
+					u.tuca();
+				} catch (ParseException e1) {
+					e1.printStackTrace();
+				}
 
 			}
 		});
