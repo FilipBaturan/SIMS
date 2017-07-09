@@ -159,6 +159,7 @@ public class Utakmica {
 	}
 
 	
+
 	public void evidentirajTucu(){
 		for(StatistikaKluba it:domacin.statistikaKluba){
 			if(it.utakmica == this){
@@ -174,7 +175,7 @@ public class Utakmica {
 		}
 	}
 	
-	public void pocetak(){
+	public void pocetak() throws ParseException{
 		postaviUcinke();
 		pokrenut = true;
 		promeniStanje(new Odigravanje(this));
@@ -191,7 +192,7 @@ public class Utakmica {
 			return 4;
 	}
 
-	public void promeniStanje(Stanje stanje) {
+	public void promeniStanje(Stanje stanje) throws ParseException {
 		trenutnoStanje = stanje;
 		stanje.entry();
 		stanje.do_();
@@ -201,11 +202,11 @@ public class Utakmica {
 		aktivni = igraci;
 	}
 
-	public void prekid() {
+	public void prekid() throws ParseException {
 		trenutnoStanje.prekid();
 	}
 
-	public void nastavak() {
+	public void nastavak() throws ParseException {
 		trenutnoStanje.nastavak();
 	}
 
@@ -239,7 +240,7 @@ public class Utakmica {
 
 	}
 
-	public void tuca() {
+	public void tuca() throws ParseException {
 		trenutnoStanje.tuca();
 	}
 

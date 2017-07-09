@@ -87,11 +87,10 @@ public class IzvestajStatistike extends JFrame {
 		new PrikazStatistike(zaglavlje, domacin, gost, id);
 	}
 
-	public String napraviZaglavlje(int id) throws ParseException {
-		//Date d = new Date();
-		SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy.");
-		//d = sdf.parse("16.11.1996.");
 
+	public static String napraviZaglavlje(int id) throws ParseException {
+		SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy.");
+		
 		Utakmica ut = new Utakmica();
 
 		for (Utakmica utakmica : Aplikacija.listaUtakmica) {

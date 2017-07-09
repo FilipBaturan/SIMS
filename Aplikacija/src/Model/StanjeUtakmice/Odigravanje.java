@@ -1,5 +1,6 @@
 package Model.StanjeUtakmice;
 
+import java.text.ParseException;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -56,7 +57,11 @@ public class Odigravanje extends Stanje {
 				else if( utakmica.isPokrenut() && utakmica.getVreme() >=40){
 					timer.cancel();
 					timer.purge();
-					zavrsetak();
+					try {
+						zavrsetak();
+					} catch (ParseException e) {
+						e.printStackTrace();
+					}
 					return;
 				}
 				else {
@@ -84,13 +89,13 @@ public class Odigravanje extends Stanje {
 	}
 
 	@Override
-	public void prekid() {
+	public void prekid() throws ParseException {
 		utakmica.promeniStanje(new Prekinuta(utakmica));
 		
 	}
 
 	@Override
-	public void zavrsetak() {
+	public void zavrsetak() throws ParseException {
 		
 		utakmica.promeniStanje(new Zavrsena(utakmica));
 		

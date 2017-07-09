@@ -1,6 +1,5 @@
 package main;
 
-import java.text.ParseException;
 import java.util.ArrayList;
 
 import Model.Aplikacija;
@@ -18,7 +17,7 @@ import Model.Evidentiranje.Enumeracije.VrstaLicneGreske;
 
 public class Main {
 
-	public static void main(String[] args) throws ParseException {
+	public static void main(String[] args) throws Exception {
 		new Aplikacija();
 		Aplikacija.dodajKorisnika("aa", "aa");
 		Aplikacija.dodajKorisnika("bb", "bb");
@@ -154,11 +153,20 @@ public class Main {
 
 		Utakmica u = new Utakmica(0, k1, k2, sala1, "2017-7-9");
 		u.setDelegat(new Osoba(1, "Delegat", "Delegatic", "1970-6-2"));
+<<<<<<< HEAD
 		Aplikacija.listaDelegata.add(u.getDelegat());
 		ArrayList<Osoba> sudije = new ArrayList<Osoba>();
 		sudije.add(new Osoba(2, "Sudija", "Sudinic", "1971-5-3"));
 		sudije.add(new Osoba(3, "Marko", "Markovic", "1972-4-20"));
 		Aplikacija.listaSudija.addAll(sudije);
+=======
+		Aplikacija.listaDelegata.add(new Osoba(1, "Delegat", "Delegatic", "1970-6-2"));
+		ArrayList<Osoba> sudije = new ArrayList<Osoba>();
+		sudije.add(new Osoba(2, "Sudija", "Sudinic", "1971-5-3"));
+		sudije.add(new Osoba(3, "Marko", "Markovic", "1972-4-20"));
+		Aplikacija.listaSudija.add(new Osoba(2, "Sudija", "Sudinic", "1971-5-3"));
+		Aplikacija.listaSudija.add(new Osoba(3, "Marko", "Markovic", "1972-4-20"));
+>>>>>>> 1886faf65bd202ca378d53c95d25cc5f2c47ad6c
 		u.setSudije(sudije);
 		Aplikacija.listaUtakmica.add(u);
 		Utakmica u1 = new Utakmica(1, k2, k3, sala2, "2017-7-9");
@@ -168,6 +176,9 @@ public class Main {
 		sudije.add(new Osoba(6, "Boza", "Pub", "1974-4-20"));
 		Aplikacija.listaSudija.addAll(sudije);
 		u1.setSudije(sudije);
+		Aplikacija.listaDelegata.add(new Osoba(5, "Milan", "Rakic", "1976-6-2"));
+		Aplikacija.listaSudija.add(new Osoba(4, "Aleksa", "Dimic", "1975-2-28"));
+		Aplikacija.listaSudija.add(new Osoba(6, "Boza", "Pub", "1974-4-20"));
 		Aplikacija.listaUtakmica.add(u1);
 		
 		UcinakIgraca uc = new UcinakIgraca(u);

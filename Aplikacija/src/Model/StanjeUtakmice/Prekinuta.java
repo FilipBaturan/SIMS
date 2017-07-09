@@ -1,5 +1,7 @@
 package Model.StanjeUtakmice;
 
+import java.text.ParseException;
+
 import GUI.PrekinutDijalog;
 import Model.Igrac;
 import Model.Klub;
@@ -22,14 +24,15 @@ public class Prekinuta extends Stanje {
 	}
 
 	@Override
-	public void tuca() {
+
+	public void tuca() throws ParseException {
 		utakmica.evidentirajTucu();
 		utakmica.promeniStanje(new Zavrsena(utakmica));
 		
 	}
 
 	@Override
-	public void nastavak() {
+	public void nastavak() throws ParseException{
 		utakmica.setPokrenut(true);
 		utakmica.promeniStanje(new Odigravanje(utakmica));
 		

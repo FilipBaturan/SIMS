@@ -21,8 +21,8 @@ import Model.Evidentiranje.Enumeracije.VrstaLicneGreske;
 @SuppressWarnings("serial")
 public class PrikazStatistike extends JFrame {
 
-	Klub domacin;
-	Klub gost;
+	public Klub domacin;
+	public Klub gost;
 
 	public PrikazStatistike(String zaglavlje, Klub domacin, Klub gost, int id) {
 		this.domacin = domacin;
