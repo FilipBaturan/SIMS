@@ -15,7 +15,6 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.awt.geom.Ellipse2D;
 import java.text.ParseException;
-import java.util.Date;
 import java.util.Timer;
 import java.util.TimerTask;
 

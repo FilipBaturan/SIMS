@@ -120,20 +120,15 @@ public class RegistracijaDijalog extends JFrame {
 				String lozinkaTekst = poljeLozinke.getText();
 				String potvrdaTekst = poljePotvrdeLozinke.getText();
 
-				if (!Aplikacija.pronadjiKorisnika(korisnickoImeTekst, lozinkaTekst)) {
-					if (lozinkaTekst.compareTo(potvrdaTekst) == 0) {
-						Aplikacija.dodajKorisnika(korisnickoImeTekst, lozinkaTekst);
-						dispose();
-						System.out.println(Aplikacija.listaKorisnika.size());
-					} else {
-						JOptionPane.showMessageDialog(null, "Vase lozinke se ne poklapaju", "Razlicite lozinke",
-								JOptionPane.INFORMATION_MESSAGE);
-					}
-
+				boolean registrovan = Aplikacija.registrovanjeKorisnika(korisnickoImeTekst, lozinkaTekst, potvrdaTekst);
+				if (registrovan){		
+					dispose();
+				
 				} else {
-					JOptionPane.showMessageDialog(null, "Uneti korinisk vec postoji", "Postojeci Korosnik",
+					JOptionPane.showMessageDialog(null, "Neuspesno registrovanje korisnika", "Greska",
 							JOptionPane.INFORMATION_MESSAGE);
 				}
+
 			}
 
 		});

@@ -16,7 +16,6 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 import Model.Aplikacija;
-import Model.Korisnik;
 
 
 @SuppressWarnings("serial")
@@ -104,21 +103,15 @@ public class PrijavljivanjeDijalog extends JFrame {
 				
 				String korisnickoImeTekst = poljeZaIme.getText();
 				String lozinkaTekst = poljeLozinke.getText();
-
-				boolean found = false;
-				if (korisnickoImeTekst.compareTo("") != 0 && lozinkaTekst.compareTo("") != 0) {
-					for(Korisnik k : Aplikacija.listaKorisnika){
-						if (k.getKorisnickoIme().compareTo(korisnickoImeTekst) == 0 && k.getLozinka().compareTo(lozinkaTekst) == 0){
-							new GlavniProzor();
-							found = true;
-							break;
-						}
-					}
-					if (!found){
-						JOptionPane.showMessageDialog(null, "Uneti korinisk ne postoji", "Nepostojeci Korosnik",
-								JOptionPane.INFORMATION_MESSAGE);
-					}
+				boolean prijava = Aplikacija.prijavaKorisnika(korisnickoImeTekst, lozinkaTekst);
+				if (prijava){
+					new GlavniProzor();
 				}
+				else{
+					JOptionPane.showMessageDialog(null, "Uneti korinisk ne postoji", "Nepostojeci Korosnik",
+							JOptionPane.INFORMATION_MESSAGE);
+				}
+				
 			}
 		});
 

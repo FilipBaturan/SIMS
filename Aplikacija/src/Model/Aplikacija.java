@@ -334,6 +334,30 @@ public class Aplikacija {
 		return null;
 	}
 	
+	public static boolean prijavaKorisnika(String korisnickoImeTekst, String lozinkaTekst){
+		boolean nasao = false;
+		if (korisnickoImeTekst.compareTo("") != 0 && lozinkaTekst.compareTo("") != 0) {
+			for(Korisnik k : Aplikacija.listaKorisnika){
+				if (k.getKorisnickoIme().compareTo(korisnickoImeTekst) == 0 && k.getLozinka().compareTo(lozinkaTekst) == 0){
+					nasao = true;
+					break;
+				}
+			}
+		}
+		return nasao;
+	}
+	
+	public static boolean registrovanjeKorisnika(String korisnickoIme, String lozinka, String potvrdnaLozinka){
+		boolean prihvatanje = false;
+		if (!Aplikacija.pronadjiKorisnika(korisnickoIme, lozinka)) {
+			if (lozinka.compareTo(potvrdnaLozinka) == 0) {
+				Aplikacija.dodajKorisnika(korisnickoIme, lozinka);
+				prihvatanje = true;
+			}
+		}
+		return prihvatanje;
+	}
+	
 	/*public static Igrac pronadjiIgraca(double brojDresa){
 		for(Igrac igrac:listaIgraca){
 			if(igrac.getBrojDresa() == brojDresa) return igrac;
